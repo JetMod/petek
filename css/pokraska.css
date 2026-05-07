@@ -1,0 +1,7 @@
+/* pokraska.css — Styles for pokraska.html (Покраска фасадов) */
+@import url("service.css");
+
+.svc-hero__bg {
+  background-image: url("../img/DSC01208.jpg");
+  background-position: center 45%;
+}

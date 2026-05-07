@@ -1,0 +1,368 @@
+/* =====================================================
+   prices.css — Styles for prices.html (Прайс-лист)
+   Requires: secondary.css loaded before this file
+   ===================================================== */
+
+/* =====================================================
+   PAGE HERO — compact dark banner
+   ===================================================== */
+.page-hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/DSC00045.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
+}
+
+.page-hero.is-visible .page-hero__bg {
+  transform: scale(1);
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 10, 0.85) 0%,
+    rgba(20, 16, 10, 0.55) 55%,
+    rgba(20, 16, 10, 0.30) 100%
+  );
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: 3.5rem;
+  width: 100%;
+}
+
+.page-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+}
+
+.page-hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--transition);
+}
+
+.page-hero__breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.page-hero__breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.page-hero__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+  max-width: none;
+}
+
+.page-hero__title {
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+.page-hero__subtitle {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 56ch;
+  margin-bottom: var(--space-xl);
+}
+
+.page-hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.page-hero__btn-outline {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+}
+
+.page-hero__btn-outline:hover,
+.page-hero__btn-outline:focus-visible {
+  border-color: var(--gold);
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 38vh;
+  }
+
+  .page-hero__content {
+    padding-block: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__bg {
+    transform: none !important;
+  }
+}
+
+/* =====================================================
+   NOTICE BAR
+   ===================================================== */
+.prices-notice {
+  background-color: rgba(193, 162, 107, 0.10);
+  border-top: 1px solid rgba(193, 162, 107, 0.25);
+  border-bottom: 1px solid rgba(193, 162, 107, 0.25);
+  padding-block: 0.875rem;
+}
+
+.prices-notice__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: #6b5533;
+}
+
+.prices-notice__inner svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+.prices-notice__inner p {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #6b5533;
+  margin-bottom: 0;
+  max-width: none;
+}
+
+/* =====================================================
+   PRICES SECTION HEADER
+   ===================================================== */
+.prices-section__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.prices-section__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  color: var(--dark);
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.prices-section__title::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--gold);
+  margin: var(--space-sm) auto 0;
+  border-radius: 2px;
+}
+
+.prices-section__sub {
+  color: #666;
+  font-size: 0.9375rem;
+  max-width: none;
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   PRICE BLOCK
+   ===================================================== */
+.price-block {
+  margin-bottom: var(--space-xl);
+}
+
+.price-block:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   PRICE TABLE
+   ===================================================== */
+.price-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  /* Sticky thead: the wrapper must NOT scroll vertically */
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  background-color: var(--white);
+}
+
+/* Sticky header */
+.price-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.price-table thead th {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.price-table thead th:last-child {
+  text-align: right;
+  min-width: 110px;
+}
+
+/* Zebra rows */
+.price-table tbody tr {
+  border-bottom: 1px solid var(--gray);
+  transition: background-color var(--transition);
+}
+
+.price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.price-table tbody tr:not(.price-table__group-header):hover {
+  background-color: rgba(193, 162, 107, 0.07);
+}
+
+.price-table tbody tr:not(.price-table__group-header):nth-child(even) {
+  background-color: rgba(239, 239, 239, 0.50);
+}
+
+.price-table tbody tr:not(.price-table__group-header):nth-child(even):hover {
+  background-color: rgba(193, 162, 107, 0.07);
+}
+
+/* Table cells */
+.price-table td {
+  padding: 0.75rem 1.25rem;
+  color: #444;
+  vertical-align: middle;
+}
+
+.price-table td:last-child {
+  text-align: right;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+/* Group header rows — gold accent */
+.price-table__group-header td {
+  background-color: rgba(193, 162, 107, 0.12) !important;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding-block: 0.625rem;
+  border-bottom: 1px solid rgba(193, 162, 107, 0.20);
+}
+
+/* Footer note */
+.price-table__note {
+  font-size: 0.8125rem;
+  color: #888;
+  margin-top: var(--space-md);
+  max-width: none;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   CTA BANNER
+   ===================================================== */
+.prices-cta {
+  background: linear-gradient(135deg, var(--dark) 0%, #1e1a12 100%);
+  padding-block: var(--space-2xl);
+  color: var(--white);
+}
+
+.prices-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.prices-cta__text h2 {
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.prices-cta__text p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 52ch;
+  margin-bottom: 0;
+}
+
+.prices-cta__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus-visible {
+  border-color: var(--gold);
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .prices-cta__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prices-cta__text p {
+    margin-inline: auto;
+  }
+
+  .prices-cta__actions {
+    justify-content: center;
+  }
+}

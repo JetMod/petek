@@ -1,0 +1,7 @@
+/* proektirovanie.css — Styles for proektirovanie.html (Проектирование) */
+@import url("service.css");
+
+.svc-hero__bg {
+  background-image: url("../img/building1.jpg");
+  background-position: center 60%;
+}

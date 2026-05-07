@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Галерея производства Petek — снимки цеха, оборудования и готовых изделий. Распил, покраска, проектирование мебели в Симферополе." />
+  <title>Галерея производства — Petek, Симферополь</title>
+  <link rel="stylesheet" href="css/secondary.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-util">
+      <div class="container header-util__inner">
+        <div class="header-util__group">
+          <span class="header-util__item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/></svg>
+            Симферополь, ул. Генерала Васильева, 32Д, стр.1
+          </span>
+          <span class="header-util__item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Пн–Пт: 9:00–18:00
+          </span>
+        </div>
+        <div class="header-util__group">
+          <a href="mailto:zakaz@petek.pro" class="header-util__item header-util__item--link">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            zakaz@petek.pro
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-main__inner">
+        <a href="index.html" class="header-logo" aria-label="Petek — на главную">
+          <img src="img/logo/logo-default.svg" alt="Petek логотип" width="120" height="44" />
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+          <a href="raspiil.html"          class="site-nav__link">Распил</a>
+          <a href="pokraska.html"         class="site-nav__link">Покраска</a>
+          <a href="proektirovanie.html"   class="site-nav__link">Проектирование</a>
+          <a href="furnitura.html"        class="site-nav__link">Фурнитура</a>
+          <a href="prices.html"           class="site-nav__link">Прайс</a>
+          <a href="gallery.html"          class="site-nav__link site-nav__link--active">Галерея</a>
+          <a href="contacts.html"         class="site-nav__link">Контакты</a>
+        </nav>
+        <div class="header-actions">
+          <a href="tel:+79786187313" class="header-phone">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            +7 978 618-73-13
+          </a>
+          <a href="contacts.html#order" class="btn btn-primary header-cta">Оставить заявку</a>
+        </div>
+        <button class="site-header__burger" id="burger-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="site-header__overlay" id="nav-overlay"></div>
+  </header>
+
+  <main>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="gallery-hero" aria-label="Баннер страницы">
+      <div class="container gallery-hero__content">
+        <nav class="gallery-hero__breadcrumb" aria-label="Путь навигации">
+          <a href="index.html">Главная</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Галерея</span>
+        </nav>
+        <h1 class="gallery-hero__title">Галерея производства</h1>
+        <p class="gallery-hero__sub">Снимки прямо из цеха — оборудование, процессы и готовые изделия</p>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY GRID ===================== -->
+    <section class="section gallery-section" aria-label="Галерея фотографий">
+      <div class="container">
+        <div class="gallery-masonry" id="gallery-grid" role="list">
+          <!-- populated by JS below -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Предыдущее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="lightbox__stage" id="lightbox-stage">
+      <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Следующее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="lightbox__counter" id="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer" aria-label="Подвал сайта">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <!-- Brand -->
+        <div class="site-footer__brand">
+          <a href="index.html" class="site-footer__logo" aria-label="Petek — на главную">
+            <img src="img/logo/logo-default.svg" alt="Petek логотип" width="110" height="40" />
+          </a>
+          <p class="site-footer__tagline">Полный цикл обработки плитных материалов в Симферополе с 2010 года.</p>
+        </div>
+
+        <!-- Nav -->
+        <div>
+          <p class="site-footer__heading">Услуги</p>
+          <nav class="site-footer__nav" aria-label="Услуги">
+            <a href="raspiil.html">Распил и раскрой</a>
+            <a href="pokraska.html">Покраска фасадов</a>
+            <a href="proektirovanie.html">Проектирование</a>
+            <a href="furnitura.html">Фурнитура</a>
+            <a href="prices.html">Прайс-лист</a>
+            <a href="gallery.html">Галерея</a>
+          </nav>
+        </div>
+
+        <!-- Contacts -->
+        <div>
+          <p class="site-footer__heading">Контакты</p>
+          <address class="site-footer__contacts" style="font-style:normal;">
+            <div class="site-footer__contact-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/></svg>
+              <span>ул. Генерала Васильева, 32Д, стр.1,<br>Симферополь</span>
+            </div>
+            <div class="site-footer__contact-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <a href="tel:+79786187313">+7 978 618-73-13</a>
+            </div>
+            <div class="site-footer__contact-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <a href="mailto:zakaz@petek.pro">zakaz@petek.pro</a>
+            </div>
+            <div class="site-footer__contact-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>Пн–Пт: 9:00–18:00</span>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copy">&copy; 2010–2026 ООО «Петек». Все права защищены.</p>
+        <div class="site-footer__legal">
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* ----------------------------------------------------------
+         Gallery image list
+      ---------------------------------------------------------- */
+      var IMGS = ['DSC00003.jpg','DSC00005.jpg','DSC00007.jpg','DSC00008.jpg','DSC00015.jpg','DSC00019.jpg','DSC00021.jpg','DSC00025.jpg','DSC00036.jpg','DSC00038.jpg','DSC00045.jpg','DSC00053.jpg','DSC00056.jpg','DSC00057.jpg','DSC00062.jpg','DSC00067.jpg','DSC00069.jpg','DSC00073.jpg','DSC00077.jpg','DSC00078.jpg','DSC00080.jpg','DSC00083.jpg','DSC00085.jpg','DSC00087.jpg','DSC00090.jpg','DSC00100.jpg','DSC00105.jpg','DSC00106.jpg','DSC00107.jpg','DSC00111.jpg','DSC00114.jpg','DSC00118.jpg','DSC00131.jpg','DSC00136.jpg','DSC00138.jpg','DSC00141.jpg','DSC00144.jpg','DSC00145.jpg','DSC00149.jpg','DSC00151.jpg','DSC00154.jpg','DSC00157.jpg','DSC00160.jpg','DSC00162.jpg','DSC00163.jpg','DSC00171.jpg','DSC00174.jpg','DSC00181.jpg','DSC00183.jpg','DSC00185.jpg','DSC00186.jpg','DSC00188.jpg','DSC00190.jpg','DSC00193.jpg','DSC00199.jpg','DSC00200.jpg','DSC00203.jpg','DSC00205.jpg','DSC00206.jpg','DSC00207.jpg','DSC00208.jpg','DSC00211.jpg','DSC00212.jpg','DSC00220.jpg','DSC00221.jpg','DSC00225.jpg','DSC00229.jpg','DSC00230.jpg','DSC00231.jpg','DSC00233.jpg','DSC00234.jpg','DSC00235.jpg','DSC00241.jpg','DSC00246.jpg','DSC00250.jpg','DSC00259.jpg','DSC00268.jpg','DSC00272.jpg','DSC00279.jpg','DSC00290.jpg','DSC00294.jpg','DSC00296.jpg','DSC00297.jpg','DSC00315.jpg','DSC00318.jpg','DSC00327.jpg','DSC00330.jpg','DSC00340.jpg','DSC00345.jpg','DSC00347.jpg','DSC00353.jpg','DSC00356.jpg','DSC00360.jpg','DSC00367.jpg','DSC00370.jpg','DSC00381.jpg','DSC00395.jpg','DSC00418.jpg','DSC00424.jpg','DSC00432.jpg','DSC00442.jpg','DSC00452.jpg','DSC00456.jpg','DSC00470.jpg','DSC00477.jpg','DSC00491.jpg','DSC00492.jpg','DSC00495.jpg','DSC00499.jpg','DSC00501.jpg','DSC00505.jpg','DSC00506.jpg','DSC00509.jpg','DSC01208.jpg','DSC01209.jpg','DSC01213.jpg','DSC01214.jpg','DSC01215.jpg','DSC01216.jpg','DSC01219.jpg','DSC01222.jpg','DSC01223.jpg','DSC01225.jpg','DSC01230.jpg','DSC01234.jpg','DSC01238.jpg','DSC01243.jpg','DSC01247.jpg','DSC01257.jpg','DSC01266.jpg','DSC01268.jpg','DSC01273.jpg','DSC01280.jpg','DSC01284.jpg','DSC01286.jpg','DSC01290.jpg','DSC01294.jpg','DSC01295.jpg','DSC01299.jpg','DSC01308.jpg','DSC01310.jpg','DSC01311.jpg','DSC01313.jpg','DSC01317.jpg','DSC01319.jpg','DSC01323.jpg','DSC01326.jpg','DSC01337.jpg','DSC01339.jpg','DSC01340.jpg','DSC01342.jpg','DSC01349.jpg','DSC01353.jpg','DSC01357.jpg','DSC01359.jpg','DSC01363.jpg','DSC01368.jpg','DSC01369.jpg','DSC01372.jpg','DSC01379.jpg','DSC01386.jpg','DSC01394.jpg','DSC01395.jpg','DSC01397.jpg','DSC01399.jpg','DSC01401.jpg','DSC01403.jpg','DSC01409.jpg','DSC01410.jpg','DSC01414.jpg','DSC01417.jpg','DSC01420.jpg','DSC01422.jpg','DSC01427.jpg','DSC01435.jpg','DSC01439.jpg','DSC01444.jpg','DSC01450.jpg','DSC01452.jpg','DSC01463.jpg','DSC01469.jpg','DSC01471.jpg','DSC01474.jpg','DSC01484.jpg','DSC01489.jpg','DSC01491.jpg','DSC01493.jpg','DSC01496.jpg','DSC01499.jpg','DSC01500.jpg','DSC01502.jpg','DSC01505.jpg','DSC01507.jpg','DSC01510.jpg','DSC01513.jpg','DSC01515.jpg','DSC01516.jpg','DSC01518.jpg','DSC01521.jpg','DSC01523.jpg','DSC01525.jpg','DSC01530.jpg','DSC01535.jpg','DSC01537.jpg','DSC01542.jpg','DSC01550.jpg','DSC01552.jpg','DSC01554.jpg','DSC01556.jpg','DSC01560.jpg','DSC01562.jpg','DSC01564.jpg','DSC01573.jpg','DSC01575.jpg','DSC01579.jpg','DSC01582.jpg','DSC01584.jpg','DSC01589.jpg','DSC01600.jpg','DSC01605.jpg','DSC01610.jpg','DSC01613.jpg','DSC01627.jpg','DSC01634.jpg','DSC01637.jpg','DSC01639.jpg','DSC01641.jpg','DSC01656.jpg','DSC01659.jpg','DSC01661.jpg','DSC01665.jpg','DSC01667.jpg','DSC01676.jpg','DSC01681.jpg','DSC01683.jpg','DSC01685.jpg','DSC01691.jpg','DSC01694.jpg','DSC01699.jpg','DSC01710.jpg','DSC01711.jpg','DSC01722.jpg','DSC01731.jpg','DSC01741.jpg','DSC01742.jpg','DSC01748.jpg','DSC01753.jpg','DSC01756.jpg','DSC01759.jpg','DSC01763.jpg','DSC01764.jpg','DSC01772.jpg','DSC01774.jpg','DSC01776.jpg','DSC01779.jpg','DSC01781.jpg','DSC01783.jpg','DSC01784.jpg','DSC01786.jpg','DSC01788.jpg','DSC01789.jpg','DSC01794.jpg','DSC01802.jpg','DSC01804.jpg','DSC01806.jpg','DSC01818.jpg','DSC01822.jpg','DSC01827.jpg','DSC01830.jpg','DSC01831.jpg','DSC01834.jpg','DSC01837.jpg','DSC01838.jpg','DSC01841.jpg','DSC01845.jpg','DSC01853.jpg','DSC01860.jpg','DSC01863.jpg','DSC01865.jpg','DSC01868.jpg','DSC01870.jpg','DSC01875.jpg','DSC01876.jpg','DSC01877.jpg','DSC01883.jpg','DSC01885.jpg','DSC01886.jpg','DSC01891.jpg','DSC01894.jpg','DSC01896.jpg','DSC01903.jpg','DSC01908.jpg','DSC01913.jpg','DSC01916.jpg','DSC01918.jpg','DSC01934.jpg','DSC01941.jpg','DSC01944.jpg','DSC01948.jpg','DSC01958.jpg','DSC01963.jpg','DSC01965.jpg','DSC01969.jpg','DSC01976.jpg','DSC01985.jpg','DSC01988.jpg','DSC01993.jpg','DSC01999.jpg','DSC02002.jpg','DSC02012.jpg','DSC02013.jpg','DSC02020.jpg','DSC02021.jpg','DSC02026.jpg','DSC02030.jpg','DSC02036.jpg','DSC02039.jpg','DSC02049.jpg','DSC02051.jpg','DSC02053.jpg','DSC02054.jpg','DSC02056.jpg','DSC02059.jpg','DSC02064.jpg','DSC02066.jpg','DSC02067.jpg','DSC02068.jpg','DSC02071.jpg','DSC02073.jpg','DSC02076.jpg','DSC02080.jpg','DSC02087.jpg','DSC02089.jpg','DSC02091.jpg','DSC02096.jpg','DSC02097.jpg','DSC02101.jpg','DSC02110.jpg','DSC02115.jpg','DSC02116.jpg','DSC02117.jpg','DSC02120.jpg','DSC02121.jpg','DSC02128.jpg','DSC02129.jpg','DSC02134.jpg','DSC02143.jpg','DSC02154.jpg','DSC02157.jpg','DSC02160.jpg','DSC02167.jpg','DSC02170.jpg','DSC02174.jpg','DSC02180.jpg','DSC02189.jpg','DSC02192.jpg','DSC02193.jpg','DSC02196.jpg','DSC02198.jpg','DSC02199.jpg','DSC02204.jpg','DSC02206.jpg','DSC02209.jpg','DSC02211.jpg','DSC02224.jpg','DSC02230.jpg','DSC02231.jpg','DSC02233.jpg','DSC02238.jpg','DSC02239.jpg','DSC02245.jpg','DSC02247.jpg','DSC02249.jpg','DSC02255.jpg','DSC02257.jpg','DSC02258.jpg','DSC02261.jpg','DSC02265.jpg','DSC02268.jpg','DSC02270.jpg','DSC02275.jpg','DSC02278.jpg','DSC02279.jpg','DSC02284.jpg','DSC02288.jpg','DSC02289.jpg','DSC02291.jpg','DSC02292.jpg','DSC02299.jpg','DSC02302.jpg','DSC02304.jpg','DSC02309.jpg','DSC02313.jpg','DSC02315.jpg','DSC02318.jpg','DSC02319.jpg','DSC02324.jpg','DSC02328.jpg','DSC02335.jpg','DSC02339.jpg','DSC02341.jpg','DSC02342.jpg','DSC02343.jpg','DSC02344.jpg','DSC02346.jpg','DSC02351.jpg','DSC02353.jpg','DSC02356.jpg','DSC02360.jpg','DSC02365.jpg','DSC02369.jpg','DSC02375.jpg','DSC02379.jpg','DSC02383.jpg','DSC02386.jpg','DSC02394.jpg','DSC02398.jpg','DSC02404.jpg','DSC02412.jpg','DSC02416.jpg','DSC02418.jpg','DSC02425.jpg','DSC02429.jpg','DSC02436.jpg','DSC02437.jpg','DSC02447.jpg','DSC02466.jpg','DSC02469.jpg','DSC02473.jpg','DSC09930.jpg','DSC09931.jpg','DSC09933.jpg','DSC09934.jpg','DSC09936.jpg','DSC09937.jpg','DSC09938.jpg','DSC09940.jpg','DSC09941.jpg','DSC09942.jpg','DSC09943.jpg','DSC09944.jpg','DSC09945.jpg','DSC09947.jpg','DSC09952.jpg','DSC09953.jpg','DSC09954.jpg','DSC09956.jpg','DSC09957.jpg','DSC09960.jpg','DSC09964.jpg','DSC09967.jpg','DSC09969.jpg','DSC09971.jpg','DSC09973.jpg','DSC09976.jpg','DSC09978.jpg','DSC09979.jpg','DSC09981.jpg','DSC09983.jpg','DSC09985.jpg','DSC09988.jpg','DSC09989.jpg','DSC09990.jpg','DSC09992.jpg','DSC09994.jpg','DSC09996.jpg','DSC09998.jpg','DSC09999.jpg'];
+
+      /* ----------------------------------------------------------
+         Render gallery items
+      ---------------------------------------------------------- */
+      var grid = document.getElementById('gallery-grid');
+
+      IMGS.forEach(function (fname, idx) {
+        var btn = document.createElement('button');
+        btn.className = 'gallery-item';
+        btn.setAttribute('role', 'listitem');
+        btn.setAttribute('aria-label', 'Открыть фото ' + (idx + 1));
+        btn.dataset.index = idx;
+
+        var img = document.createElement('img');
+        img.src = 'img/' + fname;
+        img.alt = 'Производство Petek — фото ' + (idx + 1);
+        img.loading = 'lazy';
+        img.decoding = 'async';
+
+        btn.appendChild(img);
+        grid.appendChild(btn);
+      });
+
+      /* ----------------------------------------------------------
+         Lightbox
+      ---------------------------------------------------------- */
+      var lightbox  = document.getElementById('lightbox');
+      var lbImg     = document.getElementById('lightbox-img');
+      var lbCounter = document.getElementById('lightbox-counter');
+      var lbClose   = document.getElementById('lightbox-close');
+      var lbPrev    = document.getElementById('lightbox-prev');
+      var lbNext    = document.getElementById('lightbox-next');
+      var current   = 0;
+      var total     = IMGS.length;
+
+      function openLightbox(idx) {
+        current = idx;
+        lbImg.src = 'img/' + IMGS[current];
+        lbImg.alt = 'Производство Petek — фото ' + (current + 1);
+        lbCounter.textContent = (current + 1) + ' / ' + total;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        var trigger = grid.querySelector('[data-index="' + current + '"]');
+        if (trigger) trigger.focus();
+      }
+
+      function showPrev() {
+        current = (current - 1 + total) % total;
+        lbImg.src = 'img/' + IMGS[current];
+        lbImg.alt = 'Производство Petek — фото ' + (current + 1);
+        lbCounter.textContent = (current + 1) + ' / ' + total;
+      }
+
+      function showNext() {
+        current = (current + 1) % total;
+        lbImg.src = 'img/' + IMGS[current];
+        lbImg.alt = 'Производство Petek — фото ' + (current + 1);
+        lbCounter.textContent = (current + 1) + ' / ' + total;
+      }
+
+      grid.addEventListener('click', function (e) {
+        var btn = e.target.closest('.gallery-item');
+        if (btn) openLightbox(parseInt(btn.dataset.index, 10));
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lbPrev.addEventListener('click', showPrev);
+      lbNext.addEventListener('click', showNext);
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape')      closeLightbox();
+        if (e.key === 'ArrowLeft')   showPrev();
+        if (e.key === 'ArrowRight')  showNext();
+      });
+
+      /* swipe support on touch devices */
+      var touchStartX = 0;
+      lightbox.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+      lightbox.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 50) dx < 0 ? showNext() : showPrev();
+      }, { passive: true });
+
+    }());
+  </script>
+</body>
+</html>

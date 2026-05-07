@@ -1,0 +1,326 @@
+@import url("order-studio.css");
+
+/* =====================================================
+   contacts.css — Styles for contacts.html
+   Requires: secondary.css (main + header + footer)
+   ===================================================== */
+
+/* =====================================================
+   PAGE HERO
+   ===================================================== */
+.page-hero {
+  position: relative;
+  min-height: 44vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
+}
+
+.page-hero.is-visible .page-hero__bg {
+  transform: scale(1);
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 10, 0.82) 0%,
+    rgba(20, 16, 10, 0.52) 55%,
+    rgba(20, 16, 10, 0.28) 100%
+  );
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: 3.5rem 3.5rem;
+  width: 100%;
+}
+
+.page-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+}
+
+.page-hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--transition);
+}
+
+.page-hero__breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.page-hero__breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.page-hero__title {
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+.page-hero__subtitle {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 52ch;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 36vh;
+  }
+
+  .page-hero__content {
+    padding-block: 2.5rem 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__bg {
+    transform: none !important;
+  }
+}
+
+/* =====================================================
+   CONTACT INFO CARDS
+   ===================================================== */
+.contacts-info {
+  padding-bottom: var(--space-xl);
+}
+
+.contacts-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.contact-card {
+  background-color: var(--white);
+  border-radius: calc(var(--radius) * 2);
+  box-shadow: var(--shadow);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-top: 3px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  border-top-color: var(--gold);
+}
+
+.contact-card__icon {
+  margin-bottom: var(--space-xs);
+}
+
+.contact-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-card__body {
+  font-size: 0.9375rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+.contact-card__link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--dark);
+  transition: color var(--transition);
+  display: block;
+}
+
+.contact-card__link:hover,
+.contact-card__link:focus-visible {
+  color: var(--gold);
+}
+
+.contact-card__note {
+  font-size: 0.8125rem;
+  color: #999;
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.contact-card__hours {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-card__hours:last-child {
+  margin-bottom: 0;
+}
+
+.contact-card__day {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.contact-card__time {
+  color: #444;
+}
+
+.contact-card__time--closed {
+  color: #aaa;
+}
+
+@media (max-width: 1024px) {
+  .contacts-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .contacts-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   YANDEX MAP
+   ===================================================== */
+.contacts-map {
+  line-height: 0;
+  background-color: var(--gray);
+}
+
+.contacts-map__frame {
+  width: 100%;
+  overflow: hidden;
+}
+
+.contacts-map__frame iframe {
+  display: block;
+  width: 100%;
+  height: 480px;
+  border: 0;
+  filter: saturate(0.85) contrast(0.95);
+}
+
+@media (max-width: 768px) {
+  .contacts-map__frame iframe {
+    height: 340px;
+  }
+}
+
+/* =====================================================
+   ABOUT COMPANY
+   ===================================================== */
+.about-company__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.about-company__photo {
+  border-radius: calc(var(--radius) * 2);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 4 / 3;
+}
+
+.about-company__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-company__photo:hover img {
+  transform: scale(1.03);
+}
+
+.about-company__label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+  max-width: none;
+}
+
+.about-company__title {
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+}
+
+.about-company__text p {
+  color: #555;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.about-company__stats {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray);
+  flex-wrap: wrap;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.about-stat__num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.about-stat__label {
+  font-size: 0.875rem;
+  color: #777;
+  max-width: 14ch;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .about-company__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .about-company__stats {
+    gap: var(--space-lg);
+  }
+}

@@ -1,0 +1,7 @@
+/* raspiil.css — Styles for raspiil.html (Распил и раскрой) */
+@import url("service.css");
+
+.svc-hero__bg {
+  background-image: url("../img/DSC00003.jpg");
+  background-position: center 55%;
+}

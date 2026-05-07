@@ -1,0 +1,446 @@
+/* =====================================================
+   service.css — Shared styles for all service pages
+   (raspiil, pokraska, proektirovanie, furnitura)
+   Requires: secondary.css loaded before this file
+   ===================================================== */
+
+/* =====================================================
+   SERVICE HERO BANNER
+   ===================================================== */
+.svc-hero {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.svc-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  transition: transform 8s ease-out;
+}
+
+.svc-hero.is-visible .svc-hero__bg {
+  transform: scale(1);
+}
+
+.svc-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 10, 0.82) 0%,
+    rgba(20, 16, 10, 0.52) 55%,
+    rgba(20, 16, 10, 0.28) 100%
+  );
+}
+
+.svc-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-block: 3.5rem 3.5rem;
+  width: 100%;
+}
+
+.svc-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-heading);
+}
+
+.svc-hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--transition);
+}
+
+.svc-hero__breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.svc-hero__breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.svc-hero__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+  max-width: none;
+}
+
+.svc-hero__title {
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+.svc-hero__subtitle {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 56ch;
+  margin-bottom: var(--space-xl);
+}
+
+.svc-hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.svc-hero__btn-outline {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+}
+
+.svc-hero__btn-outline:hover,
+.svc-hero__btn-outline:focus-visible {
+  border-color: var(--gold);
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .svc-hero {
+    min-height: 44vh;
+  }
+
+  .svc-hero__content {
+    padding-block: 2.5rem 2.5rem;
+  }
+}
+
+/* =====================================================
+   SERVICE ABOUT — 2-column description
+   ===================================================== */
+.svc-about {
+  padding-block: var(--space-2xl);
+}
+
+.svc-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.svc-about__grid--reversed {
+  direction: rtl;
+}
+
+.svc-about__grid--reversed > * {
+  direction: ltr;
+}
+
+.svc-about__label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+  max-width: none;
+}
+
+.svc-about__title {
+  margin-bottom: var(--space-lg);
+}
+
+.svc-about__text p {
+  color: #555;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.svc-about__photo {
+  border-radius: calc(var(--radius) * 2);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  aspect-ratio: 4 / 3;
+}
+
+.svc-about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.svc-about__photo:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 860px) {
+  .svc-about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .svc-about__grid--reversed {
+    direction: ltr;
+  }
+}
+
+/* =====================================================
+   ADVANTAGES — icon cards grid
+   ===================================================== */
+.svc-advantages {
+  background-color: var(--gray);
+  padding-block: var(--space-2xl);
+}
+
+.svc-advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.adv-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-top: 3px solid transparent;
+}
+
+.adv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--gold);
+}
+
+.adv-card__icon {
+  color: var(--gold);
+  margin-bottom: var(--space-xs);
+}
+
+.adv-card__title {
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.adv-card__desc {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .svc-advantages__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .svc-advantages__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PRICE FRAGMENT TABLE
+   ===================================================== */
+.svc-prices {
+  padding-block: var(--space-2xl);
+}
+
+.svc-prices__subtitle {
+  text-align: center;
+  color: #666;
+  margin-top: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-xl);
+  max-width: none;
+}
+
+.price-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  background-color: var(--white);
+}
+
+.price-table thead th {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.price-table thead th:last-child {
+  text-align: right;
+}
+
+.price-table tbody tr {
+  border-bottom: 1px solid var(--gray);
+  transition: background-color var(--transition);
+}
+
+.price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.price-table tbody tr:hover {
+  background-color: rgba(193, 162, 107, 0.06);
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: rgba(239, 239, 239, 0.45);
+}
+
+.price-table tbody tr:nth-child(even):hover {
+  background-color: rgba(193, 162, 107, 0.06);
+}
+
+.price-table td {
+  padding: 0.75rem 1.25rem;
+  color: #444;
+  vertical-align: middle;
+}
+
+.price-table td:last-child {
+  text-align: right;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+.price-table__group-header td {
+  background-color: rgba(193, 162, 107, 0.12);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-block: 0.625rem;
+}
+
+.price-table__note {
+  font-size: 0.8125rem;
+  color: #888;
+  margin-top: var(--space-lg);
+  text-align: center;
+  max-width: none;
+}
+
+.svc-prices__cta {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+/* =====================================================
+   CTA BANNER
+   ===================================================== */
+.svc-cta {
+  background: linear-gradient(135deg, var(--dark) 0%, #1e1a12 100%);
+  padding-block: var(--space-2xl);
+  color: var(--white);
+}
+
+.svc-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.svc-cta__text h2 {
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.svc-cta__text p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 52ch;
+  margin-bottom: 0;
+}
+
+.svc-cta__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--dark);
+  border-color: var(--white);
+}
+
+.btn-white:hover,
+.btn-white:focus-visible {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus-visible {
+  border-color: var(--gold);
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .svc-cta__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .svc-cta__text p {
+    margin-inline: auto;
+  }
+
+  .svc-cta__actions {
+    justify-content: center;
+  }
+}
+
+/* =====================================================
+   Reduced motion
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .svc-hero__bg {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,153 @@
+/* =====================================================
+   Site Footer
+   ===================================================== */
+
+.site-footer {
+  background-color: var(--dark);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9375rem;
+  padding-block: var(--space-2xl) var(--space-lg);
+}
+
+/* ---------- Top row (3 columns) ---------- */
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* --- Logo + tagline column --- */
+.site-footer__brand .site-footer__logo {
+  display: inline-flex;
+  margin-bottom: var(--space-md);
+  line-height: 0;
+}
+
+.site-footer__brand .site-footer__logo img {
+  height: 40px;
+  width: auto;
+  /* invert to white on dark background */
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.site-footer__tagline {
+  max-width: 30ch;
+  line-height: 1.6;
+}
+
+/* --- Navigation column --- */
+.site-footer__heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__nav a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible {
+  color: var(--gold);
+}
+
+/* --- Contacts column --- */
+.site-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer__contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+.site-footer__contact-item a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.site-footer__contact-item a:hover,
+.site-footer__contact-item a:focus-visible {
+  color: var(--gold);
+}
+
+/* ---------- Bottom row ---------- */
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-lg);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.site-footer__copy {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.site-footer__legal {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.site-footer__legal a {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color var(--transition);
+}
+
+.site-footer__legal a:hover,
+.site-footer__legal a:focus-visible {
+  color: var(--gold);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: auto;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
