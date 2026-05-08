@@ -225,6 +225,10 @@
   ------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
+      if (anchor.getAttribute('data-open-quick-modal') === 'true') {
+        e.preventDefault();
+        return;
+      }
       var raw = anchor.getAttribute('href');
       if (!raw || raw === '#') {
         e.preventDefault();
@@ -295,6 +299,141 @@
 
     update();
     setInterval(update, 60000);
+  }());
+
+  /* -------------------------------------------------------
+     Quick call popup — floating phone button + modal
+  ------------------------------------------------------- */
+  (function () {
+    var openBtn = document.getElementById('quick-call-btn');
+    var modal = document.getElementById('quick-modal');
+    var closeBtn = document.getElementById('quick-modal-close');
+    var form = document.getElementById('quick-modal-form');
+    var nameEl = document.getElementById('qm-name');
+    var phoneEl = document.getElementById('qm-phone');
+    var nameErr = document.getElementById('qm-name-error');
+    var phoneErr = document.getElementById('qm-phone-error');
+    if (!openBtn || !modal || !closeBtn || !form || !nameEl || !phoneEl || !nameErr || !phoneErr) return;
+    var phonePrefill = '+7';
+    var phoneAutoclearDone = false;
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      clearFieldError(nameEl, nameErr);
+      clearFieldError(phoneEl, phoneErr);
+      phoneEl.value = phonePrefill;
+      phoneAutoclearDone = false;
+      nameEl.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    document.querySelectorAll('[data-open-quick-modal="true"]').forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    modal.addEventListener('click', function (e) {
+      var target = e.target;
+      if (target && target.getAttribute('data-close') === 'quick-modal') {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    function clearFieldError(field, errorEl) {
+      field.classList.remove('is-error');
+      field.removeAttribute('aria-invalid');
+      errorEl.textContent = '';
+    }
+
+    function setFieldError(field, errorEl, message) {
+      field.classList.add('is-error');
+      field.setAttribute('aria-invalid', 'true');
+      errorEl.textContent = message;
+    }
+
+    function hasValidName(value) {
+      var v = value.trim();
+      return v.length >= 2 && /^[A-Za-zА-Яа-яЁё\-\s]+$/.test(v);
+    }
+
+    function hasValidPhone(value) {
+      var digits = value.replace(/\D/g, '');
+      return digits.length >= 11 && digits.length <= 15;
+    }
+
+    function normalizePhoneValue(value) {
+      var hasPlus = value.trim().charAt(0) === '+';
+      var digits = value.replace(/\D/g, '').slice(0, 15);
+      return (hasPlus ? '+' : '') + digits;
+    }
+
+    [nameEl, phoneEl].forEach(function (el) {
+      el.addEventListener('input', function () {
+        if (el === nameEl) clearFieldError(nameEl, nameErr);
+        if (el === phoneEl) {
+          el.value = normalizePhoneValue(el.value);
+          clearFieldError(phoneEl, phoneErr);
+        }
+      });
+    });
+
+    phoneEl.addEventListener('keydown', function (e) {
+      var isEditableKey = e.key.length === 1 || e.key === 'Backspace' || e.key === 'Delete';
+      if (!phoneAutoclearDone && phoneEl.value === phonePrefill && isEditableKey) {
+        phoneEl.value = '';
+        phoneAutoclearDone = true;
+      }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = true;
+      clearFieldError(nameEl, nameErr);
+      clearFieldError(phoneEl, phoneErr);
+
+      if (!hasValidName(nameEl.value)) {
+        setFieldError(nameEl, nameErr, 'Введите имя: минимум 2 буквы.');
+        ok = false;
+      }
+      if (!hasValidPhone(phoneEl.value)) {
+        setFieldError(phoneEl, phoneErr, 'Введите телефон: 11-15 цифр.');
+        ok = false;
+      }
+      if (!ok) {
+        (nameEl.classList.contains('is-error') ? nameEl : phoneEl).focus();
+        return;
+      }
+
+      var submit = form.querySelector('.quick-modal__submit');
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = 'Отправлено!';
+      }
+      setTimeout(function () {
+        form.reset();
+        phoneEl.value = phonePrefill;
+        phoneAutoclearDone = false;
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = 'Отправить заявку';
+        }
+        closeModal();
+      }, 1200);
+    });
   }());
 
 })();

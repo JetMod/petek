@@ -1992,5 +1992,184 @@
 }
 
 /* =====================================================
+   QUICK CALL BUTTON + POPUP
+   ===================================================== */
+
+.quick-call {
+  position: fixed;
+  right: clamp(0.8rem, 2.2vw, 1.2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2b220f;
+  cursor: pointer;
+  background: linear-gradient(140deg, #f2cc69, #d5a747);
+  box-shadow:
+    0 10px 26px rgba(193, 162, 107, 0.44),
+    0 2px 8px rgba(20, 23, 31, 0.22);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.quick-call:hover,
+.quick-call:focus-visible {
+  transform: translateY(calc(-50% - 2px));
+  filter: brightness(1.03);
+  outline: none;
+}
+
+.quick-modal[hidden] {
+  display: none;
+}
+
+.quick-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.quick-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 23, 35, 0.28);
+  backdrop-filter: blur(3px);
+}
+
+.quick-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 392px);
+  border-radius: 16px;
+  padding: 0.95rem 0.9rem 0.85rem;
+  border: 1px solid rgba(34, 39, 55, 0.12);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(193, 162, 107, 0.16), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f7f8fc);
+  box-shadow: 0 24px 56px rgba(25, 30, 44, 0.2);
+}
+
+.quick-modal__close {
+  position: absolute;
+  top: 0.56rem;
+  right: 0.56rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(27, 33, 48, 0.14);
+  background: #ffffff;
+  color: #616778;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.quick-modal__eyebrow {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b49a67;
+}
+
+.quick-modal__title {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.22rem, 2.3vw, 1.44rem);
+  color: #1f2430;
+}
+
+.quick-modal__text {
+  margin: 0.28rem 0 0.7rem;
+  font-size: 0.8rem;
+  color: #7a8193;
+}
+
+.quick-modal__form {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.quick-modal__label {
+  font-size: 0.74rem;
+  color: #6f778b;
+}
+
+.quick-modal__input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d8dce7;
+  background: #ffffff;
+  color: #1f2430;
+  min-height: 40px;
+  padding: 0.45rem 0.64rem;
+}
+
+.quick-modal__input--area {
+  min-height: 74px;
+  resize: vertical;
+}
+
+.quick-modal__input:focus-visible {
+  outline: none;
+  border-color: rgba(193, 162, 107, 0.86);
+  box-shadow: 0 0 0 3px rgba(193, 162, 107, 0.2);
+}
+
+.quick-modal__input.is-error {
+  border-color: #dd5d5d;
+  box-shadow: 0 0 0 3px rgba(221, 93, 93, 0.16);
+}
+
+.quick-modal__error {
+  min-height: 0.82rem;
+  margin: -0.05rem 0 0.08rem;
+  color: #d35656;
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
+
+.quick-modal__submit {
+  margin-top: 0.3rem;
+  min-height: 40px;
+  border: 0;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2f2512;
+  background: linear-gradient(140deg, #f2cc69, #d5a747);
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.quick-modal__submit:hover,
+.quick-modal__submit:focus-visible {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .quick-call {
+    width: 52px;
+    height: 52px;
+    right: 0.6rem;
+  }
+}
+
+/* =====================================================
    ORDER — studio card (light)
    ===================================================== */
