@@ -102,8 +102,6 @@
     <div class="site-header__overlay" id="nav-overlay"></div>
   </header>
 
-
-
   <main>
   <!-- ===================== TOP HERO ===================== -->
   <section class="top-hero" aria-label="Главный экран">
@@ -506,171 +504,89 @@
       </div>
     </section>
 
-    <!-- ===================== PROJECTS — filmstrip + screen ===================== -->
+    <!-- ===================== PROJECTS — static showcase ===================== -->
     <section class="section section--gray proj-wall" id="projects-showcase">
       <div class="container">
         <header class="proj-wall__head">
-          <div class="proj-wall__head-row">
-            <p class="proj-wall__eyebrow">Портфолио</p>
-            <span class="proj-wall__badge" aria-hidden="true">12 фото</span>
-          </div>
-          <h2 class="proj-wall__title">
-            Наши проекты говорят
-            <span class="proj-wall__title-accent">сами за себя</span>
-          </h2>
-          <p class="proj-wall__lead">
-            Реальные объекты и детали заказов — без постановки. Полную подборку смотрите в галерее.
-          </p>
+          <p class="proj-wall__eyebrow">Наши работы</p>
+          <h2 class="proj-wall__title">Реальные проекты нашего производства</h2>
         </header>
 
-        <div
-          class="proj-split"
-          id="proj-showcase-slider"
-          role="region"
-          aria-roledescription="карусель"
-          aria-label="Подборка проектов"
-          tabindex="0"
-        >
-          <div class="proj-split__grid">
-            <div class="proj-split__stage">
-              <div class="proj-split__viewport" id="proj-slider-viewport">
-                <a href="gallery.html" class="proj-split__link" id="proj-split-link">
-                  <div class="proj-split__media">
-                    <img
-                      id="proj-split-img"
-                      src="img/DSC00003.jpg"
-                      alt="Пример мебельного проекта — общий вид"
-                      width="960"
-                      height="600"
-                      decoding="async"
-                    />
-                  </div>
-                  <div class="proj-split__overlay">
-                    <span class="proj-split__overlay-num" id="proj-split-idx">01</span>
-                    <span class="proj-split__overlay-title" id="proj-split-title">Кухни и корпусная мебель</span>
-                  </div>
-                </a>
-              </div>
-              <div class="proj-split__nav-bar">
-                <button type="button" class="proj-split__nav-btn" id="proj-slider-prev" aria-label="Предыдущий кадр">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 6l-6 6 6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <button type="button" class="proj-split__nav-btn" id="proj-slider-next" aria-label="Следующий кадр">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-              </div>
-            </div>
-
-            <aside class="proj-split__aside" aria-label="Список кадров">
-              <p class="proj-split__aside-label">Оглавление</p>
-              <div class="proj-split__toc-scroll" id="proj-slider-toc-scroll">
-                <div class="proj-split__toc" id="proj-slider-toc" role="tablist" aria-label="Миниатюры проектов">
-                  <button type="button" class="proj-split__item is-active" role="tab" aria-selected="true"
-                    data-src="img/DSC00003.jpg" data-alt="Пример мебельного проекта — общий вид" data-caption="Кухни и корпусная мебель">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00003.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">01</span>
-                      <span class="proj-split__item-label">Кухни и корпусная мебель</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00100.jpg" data-alt="Мебельный проект — вертикальный кадр" data-caption="Детали и фактуры">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00100.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">02</span>
-                      <span class="proj-split__item-label">Детали и фактуры</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00025.jpg" data-alt="Производство и распил" data-caption="Цех и точность раскроя">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00025.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">03</span>
-                      <span class="proj-split__item-label">Цех и точность раскроя</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00045.jpg" data-alt="Мебельный проект — фрагмент" data-caption="Фасады в интерьере">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00045.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">04</span>
-                      <span class="proj-split__item-label">Фасады в интерьере</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00056.jpg" data-alt="Проект — фото" data-caption="Реализованный объект">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00056.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">05</span>
-                      <span class="proj-split__item-label">Реализованный объект</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00083.jpg" data-alt="Проект — фото" data-caption="Свет и объём">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00083.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">06</span>
-                      <span class="proj-split__item-label">Свет и объём</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00105.jpg" data-alt="Проект — фото" data-caption="Композиция пространства">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00105.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">07</span>
-                      <span class="proj-split__item-label">Композиция пространства</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00183.jpg" data-alt="Проект — фото" data-caption="Фурнитура и узлы">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00183.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">08</span>
-                      <span class="proj-split__item-label">Фурнитура и узлы</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC02245.jpg" data-alt="Проект — фото" data-caption="Готовая установка">
-                    <span class="proj-split__item-thumb"><img src="img/DSC02245.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">09</span>
-                      <span class="proj-split__item-label">Готовая установка</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00193.jpg" data-alt="Проект — фото" data-caption="Текстуры материалов">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00193.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">10</span>
-                      <span class="proj-split__item-label">Текстуры материалов</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC00203.jpg" data-alt="Проект — фото" data-caption="До и после монтажа">
-                    <span class="proj-split__item-thumb"><img src="img/DSC00203.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">11</span>
-                      <span class="proj-split__item-label">До и после монтажа</span>
-                    </span>
-                  </button>
-                  <button type="button" class="proj-split__item" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="img/DSC01213.jpg" data-alt="Проект — покраска и фасады" data-caption="Покраска и финиш">
-                    <span class="proj-split__item-thumb"><img src="img/DSC01213.jpg" alt="" loading="lazy" width="96" height="72" /></span>
-                    <span class="proj-split__item-body">
-                      <span class="proj-split__item-num" aria-hidden="true">12</span>
-                      <span class="proj-split__item-label">Покраска и финиш</span>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </aside>
+        <div class="proj-show" id="projects-work-showcase">
+          <div class="proj-show__tabs" role="tablist" aria-label="Направления работ">
+            <button type="button" class="proj-show__tab is-active" role="tab" aria-selected="true" data-filter="all">Все</button>
+            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="raspil">Распил</button>
+            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="kromlenie">Кромление</button>
+            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="prisadka">Присадка</button>
+            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="contract">Контрактное производство мебели</button>
+            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="commercial">Коммерческий распил</button>
           </div>
 
-          <div class="proj-split__meta">
-            <p class="proj-split__fraction" aria-live="polite">
-              <span id="proj-slider-cur">1</span><span class="proj-split__fraction-sep">/</span><span id="proj-slider-total">12</span>
-            </p>
-            <p class="proj-split__hint">Оглавление · стрелки под фото · свайп по кадру · пауза при наведении</p>
+          <div class="proj-show__masonry" aria-label="Галерея выполненных работ">
+            <article class="proj-show__tile proj-show__tile--sm" data-cats="raspil,commercial">
+              <img src="img/DSC00100.jpg" alt="Распил листовых материалов в производстве" loading="lazy" />
+              <span class="proj-show__tile-tag">Распил</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="raspil,commercial">
+              <img src="img/DSC00025.jpg" alt="Дисковая пила и точный раскрой" loading="lazy" />
+              <span class="proj-show__tile-tag">Коммерческий распил</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--wide" data-cats="kromlenie,contract">
+              <img src="img/DSC00193.jpg" alt="Заготовки мебельных деталей на производстве" loading="lazy" />
+              <span class="proj-show__tile-tag">Кромление</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--xl" data-cats="contract,raspil">
+              <img src="img/DSC00056.jpg" alt="Подача заготовки на станок для распила" loading="lazy" />
+              <span class="proj-show__tile-tag">Контрактное производство</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="prisadka,kromlenie">
+              <img src="img/DSC00203.jpg" alt="Фрезеровка и обработка кромки" loading="lazy" />
+              <span class="proj-show__tile-tag">Присадка</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--sm" data-cats="prisadka,contract">
+              <img src="img/DSC01213.jpg" alt="Финишная обработка поверхности детали" loading="lazy" />
+              <span class="proj-show__tile-tag">Финишная обработка</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--wide" data-cats="kromlenie,commercial">
+              <img src="img/DSC00083.jpg" alt="Подготовка деталей перед кромкованием" loading="lazy" />
+              <span class="proj-show__tile-tag">Кромление</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="raspil,contract">
+              <img src="img/DSC00105.jpg" alt="Работа с крупными листовыми материалами" loading="lazy" />
+              <span class="proj-show__tile-tag">Распил</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--sm" data-cats="kromlenie,prisadka">
+              <img src="img/DSC00183.jpg" alt="Точная обработка узлов и кромок" loading="lazy" />
+              <span class="proj-show__tile-tag">Присадка и кромка</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--xl" data-cats="commercial,raspil">
+              <img src="img/DSC02245.jpg" alt="Производственный участок коммерческого распила" loading="lazy" />
+              <span class="proj-show__tile-tag">Коммерческий распил</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="contract,prisadka">
+              <img src="img/DSC00003.jpg" alt="Готовые мебельные элементы после обработки" loading="lazy" />
+              <span class="proj-show__tile-tag">Контрактное производство</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--sm" data-cats="kromlenie,contract">
+              <img src="img/DSC00045.jpg" alt="Качество фасадов и точность геометрии" loading="lazy" />
+              <span class="proj-show__tile-tag">Качество фасадов</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--wide" data-cats="prisadka,commercial">
+              <img src="img/raspil.png" alt="Подготовка деталей к присадке и серийному раскрою" loading="lazy" />
+              <span class="proj-show__tile-tag">Серийный раскрой</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="kromlenie,contract">
+              <img src="img/kromka.png" alt="Кромление мебельных деталей на производстве" loading="lazy" />
+              <span class="proj-show__tile-tag">Кромление ПВХ</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--sm" data-cats="contract,commercial">
+              <img src="img/proektirovanie.png" alt="Проектирование и подготовка карт раскроя" loading="lazy" />
+              <span class="proj-show__tile-tag">Проектирование</span>
+            </article>
+            <article class="proj-show__tile proj-show__tile--md" data-cats="prisadka,kromlenie">
+              <img src="img/pokraska.png" alt="Финишная обработка и покраска мебельных фасадов" loading="lazy" />
+              <span class="proj-show__tile-tag">Финиш и покраска</span>
+            </article>
           </div>
         </div>
 
@@ -679,6 +595,89 @@
             Открыть галерею проектов
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTS ===================== -->
+    <section class="section contacts-show" id="contacts-show">
+      <div class="container">
+
+        <header class="contacts-show__head">
+          <p class="contacts-show__eyebrow">Связаться с нами</p>
+          <h2 class="contacts-show__title">Контакты</h2>
+        </header>
+
+        <div class="contacts-show__grid">
+
+          <article class="contacts-show__card" aria-labelledby="contacts-card-heading">
+
+            <div class="contacts-show__card-top">
+              <span class="contacts-show__card-tag" id="contacts-card-heading">Производство и шоурум</span>
+              <span class="contacts-show__status" id="contacts-status" aria-live="polite"></span>
+            </div>
+
+            <div class="contacts-show__addr-row">
+              <span class="contacts-show__addr-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.52-7-10a7 7 0 0 1 14 0c0 4.48-7 10-7 10z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
+              </span>
+              <p class="contacts-show__address">ул. Генерала Васильева, 32Д, стр.1, Симферополь</p>
+            </div>
+
+            <a class="contacts-show__phone" href="tel:+79786187313">+7 978 618-73-13</a>
+
+            <a class="contacts-show__email" href="mailto:zakaz@petek.pro">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 8.5l9 5.5 9-5.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              zakaz@petek.pro
+            </a>
+
+            <div class="contacts-show__actions" aria-label="Быстрые действия">
+              <a class="contacts-show__action-btn contacts-show__action-btn--primary" href="tel:+79786187313">
+                Позвонить сейчас
+              </a>
+              <a class="contacts-show__action-btn" href="#order-studio">
+                Оставить заявку
+              </a>
+            </div>
+
+            <ul class="contacts-show__features" aria-label="Преимущества">
+              <li>Консультация по заказу за 10 минут</li>
+              <li>Удобный подъезд и погрузка на месте</li>
+              <li>Поддержка по телефону и почте в рабочее время</li>
+            </ul>
+
+            <div class="contacts-show__footer">
+              <span class="contacts-show__hours-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v5l3 1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Пн–Пт: 9:00–18:00
+              </span>
+              <a class="contacts-show__map-link" href="https://yandex.ru/maps/-/CHwh7Qf9" target="_blank" rel="noopener noreferrer">
+                На карте
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+          </article>
+
+          <div class="contacts-show__map-wrap" aria-label="Карта проезда">
+            <div class="contacts-show__map-pill" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.52-7-10a7 7 0 0 1 14 0c0 4.48-7 10-7 10z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+              Симферополь
+            </div>
+            <div class="contacts-show__map-card">
+              <p class="contacts-show__map-card-title">Petek</p>
+              <p class="contacts-show__map-card-text">ул. Генерала Васильева, 32Д</p>
+              <a class="contacts-show__map-card-link" href="https://yandex.ru/maps/-/CHwh7Qf9" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах</a>
+            </div>
+            <iframe
+              class="contacts-show__map"
+              title="Яндекс Карта Petek в Симферополе"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://yandex.ru/map-widget/v1/?ll=34.110988%2C44.978896&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Njg1MTE3NBJm0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQmtGA0YvQvCwg0KHQuNC80YDQvtC_0L7Qv9C-0LvRjCwg0YPQu9C40YbQsCDQk9C10L3QtdGA0LDQu9CwINCS0LDRgdC40LvRjNC10LLQsCwgMzLQlCIKDfD6TkIVKp9CQg%2C%2C&z=16"
+            ></iframe>
+          </div>
+
         </div>
       </div>
     </section>
@@ -695,11 +694,12 @@
           <a href="index.html" class="site-footer__logo" aria-label="Petek — на главную">
             <img src="img/logo/logo-default.svg" alt="Petek логотип" width="110" height="40" />
           </a>
-          <p class="site-footer__tagline">Полный цикл обработки плитных материалов в Симферополе с 2010 года.</p>
+          <p class="site-footer__tagline">Производство, раскрой, кромление, присадка и сопровождение проектов с 2010 года.</p>
+          <a class="site-footer__cta" href="#order-studio">Оставить заявку</a>
         </div>
 
         <!-- Nav -->
-        <div>
+        <div class="site-footer__col">
           <p class="site-footer__heading">Услуги</p>
           <nav class="site-footer__nav" aria-label="Услуги">
             <a href="raspiil.html">Распил и раскрой</a>
@@ -712,7 +712,7 @@
         </div>
 
         <!-- Contacts -->
-        <div>
+        <div class="site-footer__col">
           <p class="site-footer__heading">Контакты</p>
           <address class="site-footer__contacts" style="font-style:normal;">
             <div class="site-footer__contact-item">
@@ -739,6 +739,7 @@
       <div class="site-footer__bottom">
         <p class="site-footer__copy">&copy; 2010–2026 ООО «Петек». Все права защищены.</p>
         <div class="site-footer__legal">
+          <a href="#contacts-show">Контакты</a>
           <a href="#">Политика конфиденциальности</a>
         </div>
       </div>
@@ -746,6 +747,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/projects-showcase.js"></script>
   <script>
     /* ---- Stat counter: count up on first viewport entry ---- */
     (function () {

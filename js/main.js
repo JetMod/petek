@@ -221,177 +221,6 @@
   }
 
   /* -------------------------------------------------------
-     Projects showcase — split hero + index list
-  ------------------------------------------------------- */
-  (function () {
-    var root = document.getElementById('proj-showcase-slider');
-    var viewport = document.getElementById('proj-slider-viewport');
-    var tocScroll = document.getElementById('proj-slider-toc-scroll');
-    var toc = document.getElementById('proj-slider-toc');
-    var heroImg = document.getElementById('proj-split-img');
-    var titleEl = document.getElementById('proj-split-title');
-    var idxEl = document.getElementById('proj-split-idx');
-    var prevBtn = document.getElementById('proj-slider-prev');
-    var nextBtn = document.getElementById('proj-slider-next');
-    var curEl = document.getElementById('proj-slider-cur');
-    var totalEl = document.getElementById('proj-slider-total');
-
-    if (!root || !toc || !heroImg || !titleEl || !idxEl || !prevBtn || !nextBtn || !curEl || !totalEl) return;
-
-    var picks = toc.querySelectorAll('.proj-split__item');
-    var n = picks.length;
-    if (!n) return;
-
-    totalEl.textContent = String(n);
-
-    var active = 0;
-    var autoTimer = null;
-    var reduceMotion =
-      typeof window.matchMedia === 'function' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function pad2(num) {
-      var s = String(num);
-      return s.length < 2 ? '0' + s : s;
-    }
-
-    function scrollToc() {
-      var el = picks[active];
-      if (!el || !tocScroll) return;
-      var elRect = el.getBoundingClientRect();
-      var scRect = tocScroll.getBoundingClientRect();
-      var dy = elRect.top + elRect.height / 2 - scRect.top - scRect.height / 2;
-      var dx = elRect.left + elRect.width / 2 - scRect.left - scRect.width / 2;
-      tocScroll.scrollBy({
-        top: dy,
-        left: dx,
-        behavior: reduceMotion ? 'auto' : 'smooth',
-      });
-    }
-
-    function select(i) {
-      active = (i + n) % n;
-      var btn = picks[active];
-      if (!btn) return;
-
-      heroImg.src = btn.getAttribute('data-src') || heroImg.src;
-      heroImg.alt = btn.getAttribute('data-alt') || '';
-
-      titleEl.textContent = btn.getAttribute('data-caption') || '';
-      idxEl.textContent = pad2(active + 1);
-      curEl.textContent = String(active + 1);
-
-      picks.forEach(function (p, j) {
-        var on = j === active;
-        p.classList.toggle('is-active', on);
-        p.setAttribute('aria-selected', on ? 'true' : 'false');
-        p.setAttribute(
-          'aria-label',
-          'Кадр ' +
-            (j + 1) +
-            ' из ' +
-            n +
-            (p.getAttribute('data-caption') ? ': ' + p.getAttribute('data-caption') : '')
-        );
-        p.tabIndex = on ? 0 : -1;
-      });
-
-      scrollToc();
-    }
-
-    function go(delta) {
-      select(active + delta);
-    }
-
-    function resetAuto() {
-      clearInterval(autoTimer);
-      if (reduceMotion) return;
-      autoTimer = window.setInterval(function () {
-        go(1);
-      }, 5600);
-    }
-
-    picks.forEach(function (pick, i) {
-      pick.addEventListener('click', function () {
-        select(i);
-        resetAuto();
-      });
-    });
-
-    prevBtn.addEventListener('click', function () {
-      go(-1);
-      resetAuto();
-    });
-    nextBtn.addEventListener('click', function () {
-      go(1);
-      resetAuto();
-    });
-
-    root.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        go(-1);
-        resetAuto();
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        go(1);
-        resetAuto();
-      }
-    });
-
-    root.addEventListener('mouseenter', function () {
-      clearInterval(autoTimer);
-    });
-    root.addEventListener('mouseleave', resetAuto);
-
-    root.addEventListener('focusin', function () {
-      clearInterval(autoTimer);
-    });
-    root.addEventListener('focusout', function (e) {
-      if (!root.contains(e.relatedTarget)) resetAuto();
-    });
-
-    var touchX = 0;
-    var touchY = 0;
-    if (viewport) {
-      viewport.addEventListener(
-        'touchstart',
-        function (e) {
-          touchX = e.changedTouches[0].screenX;
-          touchY = e.changedTouches[0].screenY;
-        },
-        { passive: true }
-      );
-      viewport.addEventListener(
-        'touchend',
-        function (e) {
-          var dx = e.changedTouches[0].screenX - touchX;
-          var dy = e.changedTouches[0].screenY - touchY;
-          if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) {
-            dx < 0 ? go(1) : go(-1);
-            resetAuto();
-          }
-        },
-        { passive: true }
-      );
-    }
-
-    select(0);
-    resetAuto();
-
-    if (typeof window.matchMedia === 'function') {
-      var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-      var onMotionChange = function (ev) {
-        reduceMotion = ev.matches;
-        clearInterval(autoTimer);
-        resetAuto();
-      };
-      if (mq.addEventListener) mq.addEventListener('change', onMotionChange);
-      else if (mq.addListener) mq.addListener(onMotionChange);
-    }
-  })();
-
-  /* -------------------------------------------------------
      Smooth scroll for same-page anchor links (#...)
   ------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -440,6 +269,32 @@
         link.removeAttribute('aria-current');
       }
     });
+  }());
+
+  /* -------------------------------------------------------
+     Contacts — live working-hours status badge
+     Mon–Fri 09:00–18:00 Crimea time (UTC+3)
+  ------------------------------------------------------- */
+  (function () {
+    var badge = document.getElementById('contacts-status');
+    if (!badge) return;
+
+    function update() {
+      var now   = new Date();
+      var utc   = now.getTime() + now.getTimezoneOffset() * 60000;
+      var local = new Date(utc + 3 * 3600000); // UTC+3
+      var day   = local.getDay();   // 0=Sun … 6=Sat
+      var h     = local.getHours();
+      var m     = local.getMinutes();
+      var mins  = h * 60 + m;
+      var open  = day >= 1 && day <= 5 && mins >= 9 * 60 && mins < 18 * 60;
+
+      badge.textContent = open ? 'Сейчас работаем' : 'Закрыто';
+      badge.className   = 'contacts-show__status ' + (open ? 'is-open' : 'is-closed');
+    }
+
+    update();
+    setInterval(update, 60000);
   }());
 
 })();

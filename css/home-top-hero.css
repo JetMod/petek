@@ -337,7 +337,7 @@
    ===================================================== */
 
 .page-home .site-header.site-header--home {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;

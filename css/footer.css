@@ -3,19 +3,19 @@
    ===================================================== */
 
 .site-footer {
-  background-color: var(--dark);
-  color: rgba(255, 255, 255, 0.75);
+  background: #171a21;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9375rem;
-  padding-block: var(--space-2xl) var(--space-lg);
+  padding-block: clamp(2.1rem, 4.4vw, 3rem) clamp(1.1rem, 2.5vw, 1.5rem);
 }
 
 /* ---------- Top row (3 columns) ---------- */
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: var(--space-xl);
-  padding-bottom: var(--space-xl);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  padding-bottom: clamp(1.2rem, 2.6vw, 1.7rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 /* --- Logo + tagline column --- */
@@ -28,14 +28,40 @@
 .site-footer__brand .site-footer__logo img {
   height: 40px;
   width: auto;
-  /* invert to white on dark background */
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
 
 .site-footer__tagline {
-  max-width: 30ch;
+  max-width: 36ch;
+  margin: 0 0 1.2rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.67);
+}
+
+.site-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(193, 162, 107, 0.5);
+  background: rgba(193, 162, 107, 0.14);
+  color: #f5e2b7;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.site-footer__cta:hover,
+.site-footer__cta:focus-visible {
+  background: rgba(193, 162, 107, 0.22);
+  color: #ffeec9;
+  border-color: rgba(193, 162, 107, 0.66);
 }
 
 /* --- Navigation column --- */
@@ -45,54 +71,56 @@
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: var(--gold);
+  color: #d8b26a;
   margin-bottom: var(--space-md);
 }
 
 .site-footer__nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+  display: grid;
+  gap: 0.5rem;
 }
 
 .site-footer__nav a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   transition: color var(--transition);
+  text-decoration: none;
+  line-height: 1.4;
 }
 
 .site-footer__nav a:hover,
 .site-footer__nav a:focus-visible {
-  color: var(--gold);
+  color: #f5e2b7;
 }
 
 /* --- Contacts column --- */
 .site-footer__contacts {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.58rem;
 }
 
 .site-footer__contact-item {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-sm);
-  color: rgba(255, 255, 255, 0.7);
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .site-footer__contact-item svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--gold);
+  color: #d8b26a;
 }
 
 .site-footer__contact-item a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.84);
   transition: color var(--transition);
+  text-decoration: none;
 }
 
 .site-footer__contact-item a:hover,
 .site-footer__contact-item a:focus-visible {
-  color: var(--gold);
+  color: #f6e5be;
 }
 
 /* ---------- Bottom row ---------- */
@@ -100,30 +128,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--space-lg);
+  padding-top: clamp(0.95rem, 2.8vw, 1.3rem);
   gap: var(--space-md);
   flex-wrap: wrap;
 }
 
 .site-footer__copy {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0;
 }
 
 .site-footer__legal {
   display: flex;
-  gap: var(--space-lg);
+  gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .site-footer__legal a {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.58);
   transition: color var(--transition);
+  text-decoration: none;
 }
 
 .site-footer__legal a:hover,
 .site-footer__legal a:focus-visible {
-  color: var(--gold);
+  color: #f6e5be;
 }
 
 /* ---------- Responsive ---------- */
@@ -140,10 +171,7 @@
 @media (max-width: 600px) {
   .site-footer__grid {
     grid-template-columns: 1fr;
-  }
-
-  .site-footer__brand {
-    grid-column: auto;
+    gap: 1.2rem;
   }
 
   .site-footer__bottom {
