@@ -3,61 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Прайс-лист Petek — актуальные цены на распил, кромкование, присадку, покраску фасадов и фурнитуру. Симферополь." />
+  <meta name="description" content="Прайс-лист Petek — распил, присадка, кромление, прочие услуги и покраска МДФ. Фурнитура и ЛДСП — на странице «Материалы». Симферополь." />
   <title>Прайс-лист — Petek, Симферополь</title>
   <link rel="stylesheet" href="css/secondary.css" />
-  <link rel="stylesheet" href="css/prices.css" />
+
 </head>
-<body>
+<body class="page-prices">
 
   <!-- ===================== HEADER ===================== -->
-  <header class="site-header" id="site-header">
+  <header class="site-header site-header--home" id="site-header">
+
+    <!-- Utility strip -->
     <div class="header-util">
       <div class="container header-util__inner">
         <div class="header-util__group">
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/></svg>
-            Симферополь, ул. Генерала Васильева, 32Д, стр.1
-          </span>
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            Пн–Пт: 9:00–18:00
-          </span>
+          <a href="delivery.html" class="header-util__item header-util__item--link">Доставка</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="payment.html" class="header-util__item header-util__item--link">Оплата</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="warranty.html" class="header-util__item header-util__item--link">Возврат и гарантия</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="wholesale.html" class="header-util__item header-util__item--link">Оптовым покупателям</a>
         </div>
         <div class="header-util__group">
+          <span class="header-util__item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Пн–Пт, с 9:00–18:00
+          </span>
           <a href="mailto:zakaz@petek.pro" class="header-util__item header-util__item--link">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             zakaz@petek.pro
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Main header -->
     <div class="header-main">
       <div class="container header-main__inner">
+
         <a href="index.html" class="header-logo" aria-label="Petek — на главную">
-          <img src="img/logo/logo-default.svg" alt="Petek логотип" width="120" height="44" />
+          <img src="img/logo/logo-white.svg" alt="Petek логотип" width="120" height="44" />
         </a>
+
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
-          <a href="raspiil.html"          class="site-nav__link">Распил</a>
-          <a href="pokraska.html"         class="site-nav__link">Покраска</a>
-          <a href="proektirovanie.html"   class="site-nav__link">Проектирование</a>
-          <a href="furnitura.html"        class="site-nav__link">Фурнитура</a>
-          <a href="prices.html"           class="site-nav__link site-nav__link--active">Прайс</a>
-          <a href="gallery.html"          class="site-nav__link">Галерея</a>
-          <a href="contacts.html"         class="site-nav__link">Контакты</a>
+          <div class="site-nav__dropdown">
+            <button type="button" class="site-nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="nav-services-menu" id="nav-services-btn">
+              Услуги
+              <svg class="site-nav__dropdown-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="site-nav__dropdown-panel" id="nav-services-menu" aria-labelledby="nav-services-btn">
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Распил и обработка</p>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
+              </div>
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Изготовление и покраска</p>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Кухни, гардеробные и детская мебель</a>
+                <a href="pokraska.html" class="site-nav__dropdown-link">Покраска МДФ-фасадов</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Проектирование в БАЗИС-Мебельщик</a>
+              </div>
+              <div class="site-nav__dropdown-footer">
+                <a href="services.html" class="site-nav__dropdown-more">Все услуги</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="furnitura.html" class="site-nav__link">Материалы</a>
+          <a href="prices.html" class="site-nav__link">Наши цены</a>
+          <a href="gallery.html" class="site-nav__link">Проекты</a>
+          <a href="contacts.html" class="site-nav__link">О компании</a>
         </nav>
+
         <div class="header-actions">
-          <a href="tel:+79786187313" class="header-phone">
+          <a href="tel:+79786187313" class="header-phone" aria-label="Позвонить +7 978 618-73-13">
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             +7 978 618-73-13
           </a>
-          <a href="contacts.html#order" class="btn btn-primary header-cta">Оставить заявку</a>
+          <a href="#order" class="btn btn-primary header-cta" data-open-quick-modal="true">
+            Оставить заявку
+            <svg class="header-cta__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+
         <button class="site-header__burger" id="burger-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
+
     <div class="site-header__overlay" id="nav-overlay"></div>
   </header>
 
@@ -65,307 +105,446 @@
 
     <!-- ===================== PAGE HERO ===================== -->
     <section class="page-hero" aria-label="Заголовок страницы">
-      <div class="page-hero__bg"></div>
-      <div class="page-hero__overlay"></div>
+      <div class="page-hero__bg" aria-hidden="true"></div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="page-hero__effects" aria-hidden="true">
+        <div class="page-hero__glow page-hero__glow--1"></div>
+        <div class="page-hero__glow page-hero__glow--2"></div>
+        <div class="page-hero__grid"></div>
+        <div class="page-hero__vignette"></div>
+      </div>
+
       <div class="container page-hero__content">
-        <nav class="page-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Прайс-лист</span>
-        </nav>
-        <p class="page-hero__eyebrow">Актуальные цены</p>
-        <h1 class="page-hero__title">Прайс-лист</h1>
-        <p class="page-hero__subtitle">Цены на услуги и материалы. Минимальная сумма заказа — 500 ₽. Скидки при объёме от 100 пог. м.</p>
-        <div class="page-hero__actions">
-          <a href="contacts.html#order" class="btn btn-primary">Оставить заявку</a>
-          <a href="tel:+79786187313" class="btn page-hero__btn-outline">+7 978 618-73-13</a>
+        <div class="page-hero__primary">
+          <nav class="page-hero__breadcrumb" aria-label="Путь навигации">
+            <a href="index.html">Главная</a>
+            <span class="page-hero__breadcrumb-sep" aria-hidden="true">/</span>
+            <span aria-current="page">Прайс-лист</span>
+          </nav>
+
+          <div class="page-hero__eyebrow-wrap">
+            <span class="page-hero__eyebrow-line" aria-hidden="true"></span>
+            <p class="page-hero__eyebrow">Актуальные цены · Симферополь</p>
+          </div>
+
+          <h1 class="page-hero__title">Прайс<span class="page-hero__title-accent">-лист</span></h1>
+          <p class="page-hero__lead">Раскрой, кромка, присадка, покраска и материалы — прозрачные тарифы без скрытых доплат.</p>
+       
+
+          <div class="page-hero__actions">
+            <a href="#order" class="btn btn-primary page-hero__cta-primary" data-open-quick-modal="true">Рассчитать заказ</a>
+            <a href="tel:+79786187313" class="btn page-hero__btn-outline page-hero__cta-phone">
+              <svg class="page-hero__cta-phone-icon" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              +7 978 618-73-13
+            </a>
+          </div>
         </div>
+
+        <div class="page-hero__stats-shell">
+          <div class="page-hero__stats-shell-shine" aria-hidden="true"></div>
+          <div class="page-hero__stats-head">
+            <span class="page-hero__stats-head-line" aria-hidden="true"></span>
+            <p class="page-hero__stats-label">В двух словах</p>
+            <span class="page-hero__stats-head-line" aria-hidden="true"></span>
+          </div>
+          <ul class="page-hero__stats" aria-label="Ключевые условия">
+            <li class="page-hero__stat">
+              <div class="page-hero__stat-top">
+                <span class="page-hero__stat-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M6 19V9l3 6 3-8 3 5 3-7v12"/></svg>
+                </span>
+                <span class="page-hero__stat-num" aria-hidden="true">01</span>
+              </div>
+              <div class="page-hero__stat-body">
+                <span class="page-hero__stat-main">от 28 ₽</span>
+                <span class="page-hero__stat-sub">/ пог. м · прямой распил</span>
+              </div>
+            </li>
+            <li class="page-hero__stat">
+              <div class="page-hero__stat-top">
+                <span class="page-hero__stat-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <span class="page-hero__stat-num" aria-hidden="true">02</span>
+              </div>
+              <div class="page-hero__stat-body">
+                <span class="page-hero__stat-main">от 1 дня</span>
+                <span class="page-hero__stat-sub">стандартный заказ</span>
+              </div>
+            </li>
+            <li class="page-hero__stat page-hero__stat--accent">
+              <div class="page-hero__stat-top">
+                <span class="page-hero__stat-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2"/><circle cx="16" cy="16" r="2"/><path d="m17 7-9 9"/></svg>
+                </span>
+                <span class="page-hero__stat-num" aria-hidden="true">03</span>
+              </div>
+              <div class="page-hero__stat-body">
+                <span class="page-hero__stat-main">до −10%</span>
+                <span class="page-hero__stat-sub">при объёме от 100 пог. м</span>
+              </div>
+            </li>
+            <li class="page-hero__stat">
+              <div class="page-hero__stat-top">
+                <span class="page-hero__stat-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.5 8 20 9l-4 4 .9 5.5L12 15.8 7.1 18.5 8 13 4 9l5.5-1z"/></svg>
+                </span>
+                <span class="page-hero__stat-num" aria-hidden="true">04</span>
+              </div>
+              <div class="page-hero__stat-body">
+                <span class="page-hero__stat-main">с 2010 года</span>
+                <span class="page-hero__stat-sub">производство в Крыму</span>
+              </div>
+            </li>
+          </ul>
+          <p class="page-hero__footnote" role="note">
+            Итоговую сумму согласуем после чертежа и материалов. Нюансы прайса — у менеджера по телефону или почте.
+          </p>
+        </div>
+
+        <a href="#prices-anchor-nav" class="page-hero__scroll-hint">
+          <span class="page-hero__scroll-hint-text">Разделы прайса</span>
+          <span class="page-hero__scroll-hint-mouse" aria-hidden="true">
+            <span class="page-hero__scroll-hint-wheel"></span>
+          </span>
+        </a>
       </div>
     </section>
 
-    <!-- ===================== NOTICE BAR ===================== -->
-    <div class="prices-notice" role="note">
-      <div class="container prices-notice__inner">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M9 8v5M9 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <p>Цены указаны без стоимости материала, если не указано иное. Уточняйте актуальность цен по телефону или электронной почте. Действует НДС.</p>
+    <nav class="prices-anchor-nav" id="prices-anchor-nav" aria-label="Разделы прайс-листа">
+      <div class="container prices-anchor-nav__track">
+        <ul class="prices-anchor-nav__list">
+          <li><a href="#price-raskroy">Раскрой</a></li>
+          <li><a href="#price-prisadka">Присадка</a></li>
+          <li><a href="#price-kromka">Кромка</a></li>
+          <li><a href="#price-pokraska">Покраска</a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
-    <!-- ===================== SECTION 1: УСЛУГИ ===================== -->
-    <section class="section prices-section" id="uslugi" aria-labelledby="uslugi-heading">
+    <!-- ===================== SECTION 01: РАСКРОЙ ===================== -->
+    <section class="section price-cat" id="price-raskroy" aria-labelledby="cat-raskroy">
       <div class="container">
-
-        <div class="prices-section__header">
-          <h2 class="prices-section__title" id="uslugi-heading">Стоимость услуг</h2>
-          <p class="prices-section__sub">Обработка плитных материалов, присадка, кромкование, покраска и монтаж</p>
-        </div>
-
-        <!-- Раскрой -->
-        <div class="price-block" id="raspiil">
-          <div class="price-table-wrap">
-            <table class="price-table" aria-label="Цены на раскрой">
-              <thead>
-                <tr>
-                  <th>Услуга</th>
-                  <th>Единица</th>
-                  <th>Цена, ₽</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="price-table__group-header">
-                  <td colspan="3">Раскрой</td>
-                </tr>
-                <tr>
-                  <td>Раскрой ЛДСП / МДФ / ДСП (прямолинейный)</td>
-                  <td>1 пог. м реза</td>
-                  <td>от 30</td>
-                </tr>
-                <tr>
-                  <td>Раскрой постформинга</td>
-                  <td>1 пог. м реза</td>
-                  <td>от 45</td>
-                </tr>
-                <tr>
-                  <td>Раскрой фанеры и OSB</td>
-                  <td>1 пог. м реза</td>
-                  <td>от 35</td>
-                </tr>
-                <tr>
-                  <td>Составление карты раскроя</td>
-                  <td>заказ</td>
-                  <td>от 200</td>
-                </tr>
-                <tr>
-                  <td>Срочный раскрой (день в день)</td>
-                  <td>надбавка</td>
-                  <td>+30%</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Присадка и фрезеровка</td>
-                </tr>
-                <tr>
-                  <td>Присадка под петли (Blum / Samet, стандарт)</td>
-                  <td>1 отверстие</td>
-                  <td>от 15</td>
-                </tr>
-                <tr>
-                  <td>Присадка под конфирмат / минификс</td>
-                  <td>1 отверстие</td>
-                  <td>от 10</td>
-                </tr>
-                <tr>
-                  <td>Присадка под полкодержатели</td>
-                  <td>1 отверстие</td>
-                  <td>от 8</td>
-                </tr>
-                <tr>
-                  <td>Фрезеровка паза (прямолинейного)</td>
-                  <td>1 пог. м</td>
-                  <td>от 40</td>
-                </tr>
-                <tr>
-                  <td>Фрезеровка радиусного профиля</td>
-                  <td>1 пог. м</td>
-                  <td>от 65</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Кромка</td>
-                </tr>
-                <tr>
-                  <td>Кромка ПВХ 0,4 мм (одна сторона)</td>
-                  <td>1 пог. м</td>
-                  <td>от 25</td>
-                </tr>
-                <tr>
-                  <td>Кромка ПВХ 2 мм (одна сторона)</td>
-                  <td>1 пог. м</td>
-                  <td>от 45</td>
-                </tr>
-                <tr>
-                  <td>Кромка ABS скруглённая (softforming)</td>
-                  <td>1 пог. м</td>
-                  <td>от 60</td>
-                </tr>
-                <tr>
-                  <td>Кромка меламиновая</td>
-                  <td>1 пог. м</td>
-                  <td>от 18</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Прочие услуги</td>
-                </tr>
-                <tr>
-                  <td>Покраска МДФ-фасада (один цвет RAL)</td>
-                  <td>1 м²</td>
-                  <td>от 850</td>
-                </tr>
-                <tr>
-                  <td>Покраска МДФ-фасада (двусторонняя)</td>
-                  <td>1 м²</td>
-                  <td>от 1 400</td>
-                </tr>
-                <tr>
-                  <td>Шлифовка и грунтовка фасада</td>
-                  <td>1 м²</td>
-                  <td>от 300</td>
-                </tr>
-                <tr>
-                  <td>Проектирование (конструктивный чертёж)</td>
-                  <td>изделие</td>
-                  <td>от 1 000</td>
-                </tr>
-                <tr>
-                  <td>Сборка фурнитуры Blum / Samet на месте</td>
-                  <td>петля</td>
-                  <td>от 60</td>
-                </tr>
-              </tbody>
-            </table>
+        <header class="price-cat__header">
+          <p class="price-cat__eyebrow">01 / Раскрой</p>
+          <h2 class="price-cat__title" id="cat-raskroy">Раскрой и распил</h2>
+          <div class="price-cat__intro">
+            <span class="price-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="1.6"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+            </span>
+            <p class="price-cat__desc">Распил плитного материала, столешниц и радиусов по актуальному прайсу. Уточняйте состав работ по телефону или по чертежу.</p>
           </div>
-          <p class="price-table__note">Минимальная сумма заказа — 500 ₽. Скидки при объёме: от 50 пог. м реза — 5%, от 100 пог. м — 10%. Цены без стоимости материала.</p>
-        </div>
+        </header>
 
+        <ul class="price-grid" aria-label="Цены на раскрой">
+          <li class="price-card">
+            <p class="price-card__name">Распил плитного материала по прямой</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">28</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Распил ДСП под углом</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">55</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Распил столешницы / фальш-панели</p>
+            <p class="price-card__unit">1 рез</p>
+            <p class="price-card__amount"><span class="price-card__num">70</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Распил столешницы под углом</p>
+            <p class="price-card__unit">1 рез</p>
+            <p class="price-card__amount"><span class="price-card__num">130</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Радиусный пил ДСП 16 мм</p>
+            <p class="price-card__unit">1 рез · R до 150 мм / свыше</p>
+            <p class="price-card__amount"><span class="price-card__num">200 / 260</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Радиусный пил столешницы 25–38 мм</p>
+            <p class="price-card__unit">1 рез · R до 150 мм / свыше</p>
+            <p class="price-card__amount"><span class="price-card__num">310 / 460</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Упиливание склейки</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">40</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Распил плитного материала заказчика</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">35</span><span class="price-card__currency">₽</span></p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===================== SECTION 2: МАТЕРИАЛЫ ===================== -->
-    <section class="section section--gray prices-section" id="materialy" aria-labelledby="mat-heading">
+    <!-- ===================== SECTION 02: ПРИСАДКА И ФРЕЗЕРОВКА ===================== -->
+    <section class="section section--gray price-cat" id="price-prisadka" aria-labelledby="cat-prisadka">
       <div class="container">
-
-        <div class="prices-section__header">
-          <h2 class="prices-section__title" id="mat-heading">Материалы</h2>
-          <p class="prices-section__sub">Фурнитура и плитные материалы — наличие на складе в Симферополе</p>
-        </div>
-
-        <!-- Blum -->
-        <div class="price-block">
-          <div class="price-table-wrap">
-            <table class="price-table" aria-label="Цены на фурнитуру Blum">
-              <thead>
-                <tr>
-                  <th>Наименование</th>
-                  <th>Артикул / тип</th>
-                  <th>Цена, ₽</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="price-table__group-header">
-                  <td colspan="3">Blum — петли и доводчики</td>
-                </tr>
-                <tr>
-                  <td>Петля Blum Clip top (без доводчика)</td>
-                  <td>71B3550</td>
-                  <td>от 85</td>
-                </tr>
-                <tr>
-                  <td>Петля Blum Clip top Blumotion (с доводчиком)</td>
-                  <td>71B3550B</td>
-                  <td>от 165</td>
-                </tr>
-                <tr>
-                  <td>Монтажная планка Blum (прямая)</td>
-                  <td>175H7100</td>
-                  <td>от 55</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Blum — направляющие</td>
-                </tr>
-                <tr>
-                  <td>Направляющие Blum Metabox (пара)</td>
-                  <td>300 / 400 / 500 мм</td>
-                  <td>от 420</td>
-                </tr>
-                <tr>
-                  <td>Направляющие Blum Tandem (полного выдвижения, пара)</td>
-                  <td>400 / 450 / 500 мм</td>
-                  <td>от 1 100</td>
-                </tr>
-                <tr>
-                  <td>Направляющие Blum Tandem с Blumotion (пара)</td>
-                  <td>400 / 450 / 500 мм</td>
-                  <td>от 1 450</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Samet — петли</td>
-                </tr>
-                <tr>
-                  <td>Петля Samet Cameo (без доводчика)</td>
-                  <td>110°, 35 мм чашка</td>
-                  <td>от 55</td>
-                </tr>
-                <tr>
-                  <td>Петля Samet Cameo Soft (с доводчиком)</td>
-                  <td>110°, 35 мм чашка</td>
-                  <td>от 90</td>
-                </tr>
-                <tr>
-                  <td>Петля Samet угловая 45°</td>
-                  <td>45°, 35 мм чашка</td>
-                  <td>от 75</td>
-                </tr>
-                <tr>
-                  <td>Монтажная планка Samet</td>
-                  <td>прямая / смещённая</td>
-                  <td>от 40</td>
-                </tr>
-
-                <tr class="price-table__group-header">
-                  <td colspan="3">Кроношпан (Kronospan) — плиты ЛДСП</td>
-                </tr>
-                <tr>
-                  <td>ЛДСП Кроношпан 16 мм (лист 2800×2070)</td>
-                  <td>однотонные декоры</td>
-                  <td>от 2 100</td>
-                </tr>
-                <tr>
-                  <td>ЛДСП Кроношпан 16 мм (лист 2800×2070)</td>
-                  <td>древесные декоры</td>
-                  <td>от 2 400</td>
-                </tr>
-                <tr>
-                  <td>ЛДСП Кроношпан 18 мм (лист 2800×2070)</td>
-                  <td>все декоры</td>
-                  <td>от 2 700</td>
-                </tr>
-                <tr>
-                  <td>МДФ гладкий 16 мм (лист 2800×2070)</td>
-                  <td>под покраску</td>
-                  <td>от 3 200</td>
-                </tr>
-                <tr>
-                  <td>МДФ гладкий 19 мм (лист 2800×2070)</td>
-                  <td>под покраску</td>
-                  <td>от 3 900</td>
-                </tr>
-              </tbody>
-            </table>
+        <header class="price-cat__header">
+          <p class="price-cat__eyebrow">02 / Присадка и фрезеровка</p>
+          <h2 class="price-cat__title" id="cat-prisadka">Присадка и фрезеровка</h2>
+          <div class="price-cat__intro">
+            <span class="price-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><path d="M3 6h18M3 18h18"/></svg>
+            </span>
+            <p class="price-cat__desc">Присадка панелей, пазы, торцы, вырезы под технику; ручная и станочная фрезеровка. Точные суммы — по объёму и чертежу.</p>
           </div>
-          <p class="price-table__note">Цены на материалы могут меняться в зависимости от курса и наличия. Уточняйте на складе. Возможен заказ под конкретный декор.</p>
-        </div>
+        </header>
 
+        <ul class="price-grid" aria-label="Цены на присадку и фрезеровку">
+          <li class="price-card">
+            <p class="price-card__name">Шлифовка торца</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Присадка 1 панели</p>
+            <p class="price-card__unit">1 шт.</p>
+            <p class="price-card__amount"><span class="price-card__num">100</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Паз под профиль Gola</p>
+            <p class="price-card__unit">1 шт.</p>
+            <p class="price-card__amount"><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Фрезеровка ручная</p>
+            <p class="price-card__unit">1 час</p>
+            <p class="price-card__amount"><span class="price-card__num">2 000</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Торцевой паз</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Торцевой скос 1°–45°</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Вырез под мойку / варочную поверхность</p>
+            <p class="price-card__unit">1 шт.</p>
+            <p class="price-card__amount"><span class="price-card__num">800</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Шлифование по пласти</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__num">500</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Снятие фаски R2–R3</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Ручная фрезеровка столешницы</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">350</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Фрезеровка торца</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 03: КРОМКА ===================== -->
+    <section class="section price-cat" id="price-kromka" aria-labelledby="cat-kromka">
+      <div class="container">
+        <header class="price-cat__header">
+          <p class="price-cat__eyebrow">03 / Кромка</p>
+          <h2 class="price-cat__title" id="cat-kromka">Кромкование</h2>
+          <div class="price-cat__intro">
+            <span class="price-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1"/><path d="M3 11h18M3 14h18"/></svg>
+            </span>
+            <p class="price-cat__desc">Прямолинейное и криволинейное кромление, PUR, торцы столешниц — по утверждённому прайсу.</p>
+          </div>
+        </header>
+
+        <ul class="price-grid" aria-label="Цены на кромкование">
+          <li class="price-card">
+            <p class="price-card__name">Кромление прямолинейное 0,8–1 мм</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">28</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Поклейка кромки изделий заказчика</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">35</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Поклейка кромки PUR клеем</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">70</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Кромление торца столешницы кромкой</p>
+            <p class="price-card__unit">1 шт.</p>
+            <p class="price-card__amount"><span class="price-card__num">120</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Криволинейное кромление ПВХ 0,8–1 мм (16–24 мм)</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">150</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Криволинейное кромление ПВХ 2 мм (25–38 мм)</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 04: ПОКРАСКА И ПРОЧЕЕ ===================== -->
+    <section class="section section--gray price-cat" id="price-pokraska" aria-labelledby="cat-pokraska">
+      <div class="container">
+        <header class="price-cat__header">
+          <p class="price-cat__eyebrow">04 / Прочее и покраска</p>
+          <h2 class="price-cat__title" id="cat-pokraska">Прочие услуги и покраска</h2>
+          <div class="price-cat__intro">
+            <span class="price-cat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5l6 6-9 9H5v-6.5z"/><path d="M14.5 3.5l3-1 3.5 3.5-1 3"/><path d="M9 14l1.5 1.5"/></svg>
+            </span>
+            <p class="price-cat__desc">Склейка, упаковка, работа с моделями заказчика, покраска МДФ — по прайсу и по согласованию.</p>
+          </div>
+        </header>
+
+        <h3 class="price-subcat">Прочие услуги</h3>
+        <ul class="price-grid" aria-label="Прочие услуги">
+          <li class="price-card">
+            <p class="price-card__name">Склейка плит</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Сращивание деталей</p>
+            <p class="price-card__unit">1 шт.</p>
+            <p class="price-card__amount"><span class="price-card__num">500</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Упаковка в стрейч-плёнку</p>
+            <p class="price-card__unit">1 лист</p>
+            <p class="price-card__amount"><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Разгрузка материала из машины клиента</p>
+            <p class="price-card__unit">1 лист</p>
+            <p class="price-card__amount"><span class="price-card__num">100</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Погрузка заказа в машину клиента</p>
+            <p class="price-card__unit">1 лист</p>
+            <p class="price-card__amount"><span class="price-card__num">100</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Проект по эскизам заказчика</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__num">350</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Проверка и корректировка модели заказчика</p>
+            <p class="price-card__unit">1 пог. м</p>
+            <p class="price-card__amount"><span class="price-card__from">от</span><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Сборочный чертёж</p>
+            <p class="price-card__unit">1 лист</p>
+            <p class="price-card__amount"><span class="price-card__num">80</span><span class="price-card__currency">₽</span></p>
+          </li>
+        </ul>
+
+        <h3 class="price-subcat">Покраска МДФ</h3>
+        <ul class="price-grid" aria-label="Цены на покраску МДФ">
+          <li class="price-card">
+            <p class="price-card__name">Покраска МДФ-фасада (один цвет RAL)</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__from">от</span><span class="price-card__num">850</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Покраска МДФ-фасада (двусторонняя)</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__from">от</span><span class="price-card__num">1 400</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Шлифовка и грунтовка фасада</p>
+            <p class="price-card__unit">1 м²</p>
+            <p class="price-card__amount"><span class="price-card__from">от</span><span class="price-card__num">300</span><span class="price-card__currency">₽</span></p>
+          </li>
+          <li class="price-card">
+            <p class="price-card__name">Сборка фурнитуры Blum / Samet на месте</p>
+            <p class="price-card__unit">1 петля</p>
+            <p class="price-card__amount"><span class="price-card__from">от</span><span class="price-card__num">60</span><span class="price-card__currency">₽</span></p>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ===================== CTA BANNER ===================== -->
-    <section class="prices-cta" aria-labelledby="cta-heading">
-      <div class="container">
+    <section class="prices-cta process-flow" aria-labelledby="cta-heading">
+      <div class="process-flow__glow process-flow__glow--1" aria-hidden="true"></div>
+      <div class="process-flow__glow process-flow__glow--2" aria-hidden="true"></div>
+      <div class="process-flow__grid-bg" aria-hidden="true"></div>
+      <div class="container prices-cta__container">
         <div class="prices-cta__inner">
+
           <div class="prices-cta__text">
-            <h2 id="cta-heading">Нужен расчёт под ваш проект?</h2>
-            <p>Пришлите чертёж или опишите задачу — рассчитаем стоимость бесплатно и ответим в течение часа в рабочее время.</p>
+            <p class="prices-cta__eyebrow">Бесплатный расчёт</p>
+            <h2 id="cta-heading" class="prices-cta__title">Нужен расчёт под ваш проект?</h2>
+            <p class="prices-cta__lead">Пришлите чертёж или опишите задачу — рассчитаем стоимость бесплатно и ответим в течение часа в рабочее время.</p>
+
+            <ul class="prices-cta__benefits" aria-label="Условия работы">
+              <li class="prices-cta__benefit">
+                <span class="prices-cta__benefit-ico" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 1.75" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="prices-cta__benefit-label">Ответ до часа</span>
+                <span class="prices-cta__benefit-hint">в Пн–Пт, 9:00–18:00</span>
+              </li>
+              <li class="prices-cta__benefit">
+                <span class="prices-cta__benefit-ico" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 3h6.5L15 6.5V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 3v3.5h4M7 10h5M7 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="prices-cta__benefit-label">Расчёт по чертежу</span>
+                <span class="prices-cta__benefit-hint">оценка без оплаты</span>
+              </li>
+            
+            </ul>
           </div>
-          <div class="prices-cta__actions">
-            <a href="contacts.html#order" class="btn btn-primary">Оставить заявку</a>
-            <a href="tel:+79786187313" class="btn btn-outline-white">+7 978 618-73-13</a>
-          </div>
+
+          <aside class="prices-cta__panel" aria-label="Связаться с нами">
+            <span class="prices-cta__panel-corner prices-cta__panel-corner--tl" aria-hidden="true"></span>
+            <span class="prices-cta__panel-corner prices-cta__panel-corner--br" aria-hidden="true"></span>
+
+            <p class="prices-cta__panel-eyebrow">Готовы помочь</p>
+            <p class="prices-cta__panel-title">Свяжитесь с&nbsp;нашим менеджером</p>
+
+            <a href="#" class="btn btn-primary prices-cta__btn" data-open-quick-modal="true">
+              Оставить заявку
+              <svg class="prices-cta__btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <span class="prices-cta__divider" aria-hidden="true"><span>или</span></span>
+
+            <a href="tel:+79786187313" class="prices-cta__phone">
+              <span class="prices-cta__phone-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4h3l1.6 4-2 1.2a10 10 0 0 0 5.2 5.2l1.2-2L16 14v3a1 1 0 0 1-1 1C7 18 2 13 2 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="prices-cta__phone-text">
+                <span class="prices-cta__phone-meta">Позвоните прямо сейчас</span>
+                <span class="prices-cta__phone-num">+7 978 618-73-13</span>
+              </span>
+            </a>
+          </aside>
+
         </div>
       </div>
     </section>
@@ -392,7 +571,7 @@
             <a href="proektirovanie.html">Проектирование</a>
             <a href="furnitura.html">Фурнитура</a>
             <a href="prices.html">Прайс-лист</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Проекты</a>
           </nav>
         </div>
 
@@ -429,6 +608,40 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <button class="quick-call" id="quick-call-btn" type="button" aria-label="Открыть форму заявки">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L15 12l4 1.5v3c0 1-.9 1.7-1.9 1.5C8.3 16.5 3.5 7.7 5 5.9 5.3 4.8 5.9 4 6.5 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="quick-modal" id="quick-modal" hidden>
+    <div class="quick-modal__backdrop" data-close="quick-modal"></div>
+    <section class="quick-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quick-modal-title">
+      <button class="quick-modal__close" type="button" id="quick-modal-close" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <p class="quick-modal__eyebrow">Быстрая заявка</p>
+      <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
+      <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
+
+      <form class="quick-modal__form" id="quick-modal-form" novalidate>
+        <label class="quick-modal__label" for="qm-name">Ваше имя</label>
+        <input class="quick-modal__input" id="qm-name" name="name" type="text" autocomplete="name" minlength="2" required />
+        <p class="quick-modal__error" id="qm-name-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-phone">Телефон</label>
+        <input class="quick-modal__input" id="qm-phone" name="phone" type="tel" inputmode="tel" pattern="[+]?[0-9]{11,15}" maxlength="16" autocomplete="tel" value="+7" required />
+        <p class="quick-modal__error" id="qm-phone-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-comment">Комментарий</label>
+        <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
+
+        <button class="quick-modal__submit" type="submit">Отправить заявку</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/projects-showcase.js" defer></script>
+  <script src="js/index-page.js" defer></script>
+  <script src="js/prices-page.js" defer></script>
 </body>
 </html>

@@ -6,12 +6,33 @@
 @import url("order-studio.css");
 @import url("home-top-hero.css");
 
+/* Accessibility utility for visually hidden content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h3.site-footer__heading {
+  margin: 0 0 var(--space-md);
+}
+
+h3.contacts-show__card-tag {
+  margin: 0;
+}
+
 /* =====================================================
    HEADER — выпадающее меню «Услуги» (только index.html)
    ===================================================== */
 .site-nav__dropdown {
   position: relative;
-  height: 68px;
+  height: 84px;
   display: flex;
   align-items: center;
 }
@@ -20,24 +41,29 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  height: 100%;
-  padding: 0 0.8rem;
-  margin: 0;
+  height: auto;
+  min-height: 46px;
+  padding: 0.5rem 0.95rem;
+  margin-block: auto;
+  border-radius: 10px;
+  border: 1px solid transparent;
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.875rem;
-  color: #5a5a5a;
+  font-size: 1.03rem;
+  letter-spacing: 0.01em;
+  color: var(--hdr-text);
   background: none;
-  border: none;
   cursor: pointer;
   white-space: nowrap;
   position: relative;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .site-nav__dropdown-trigger:hover,
 .site-nav__dropdown-trigger:focus-visible {
-  color: var(--dark);
+  background: var(--hdr-accent-soft);
+  border-color: var(--hdr-accent-soft-strong);
+  color: var(--hdr-text-strong);
 }
 
 .site-nav__dropdown-chevron {
@@ -74,8 +100,11 @@
   position: absolute;
   left: 0;
   top: 100%;
-  min-width: 300px;
-  max-width: min(340px, calc(100vw - 2rem));
+  min-width: 640px;
+  max-width: min(760px, calc(100vw - 2rem));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0.25rem;
   padding: 0.5rem 0 0;
   margin: 0;
   list-style: none;
@@ -138,6 +167,7 @@
 }
 
 .site-nav__dropdown-footer {
+  grid-column: 1 / -1;
   padding: 0.65rem 1.35rem 0.65rem;
   margin-top: 0.15rem;
   border-top: 1px solid #eceae6;
@@ -161,13 +191,13 @@
 
 @media (max-width: 1100px) {
   .site-nav__dropdown-trigger {
-    padding: 0 0.55rem;
-    font-size: 0.8125rem;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.92rem;
   }
 
   .site-nav__dropdown-trigger::after {
-    left: 0.55rem;
-    right: 0.55rem;
+    left: 0.65rem;
+    right: 0.65rem;
   }
 }
 
@@ -194,6 +224,7 @@
 
   .site-nav__dropdown-panel {
     position: static;
+    display: block;
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
@@ -2011,17 +2042,66 @@
   color: #2b220f;
   cursor: pointer;
   background: linear-gradient(140deg, #f2cc69, #d5a747);
+  isolation: isolate;
   box-shadow:
     0 10px 26px rgba(193, 162, 107, 0.44),
     0 2px 8px rgba(20, 23, 31, 0.22);
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-call::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(242, 204, 105, 0.42) 0%, rgba(242, 204, 105, 0) 68%);
+  opacity: 0.68;
+  z-index: -1;
+  animation: quick-call-glow 2.2s ease-in-out infinite;
+}
+
+.quick-call svg {
+  animation: quick-call-bounce 1.4s ease-in-out infinite;
 }
 
 .quick-call:hover,
 .quick-call:focus-visible {
   transform: translateY(calc(-50% - 2px));
   filter: brightness(1.03);
+  box-shadow:
+    0 14px 30px rgba(193, 162, 107, 0.52),
+    0 4px 12px rgba(20, 23, 31, 0.24);
   outline: none;
+}
+
+@keyframes quick-call-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-2px);
+  }
+  55% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes quick-call-glow {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.52;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.86;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quick-call::before,
+  .quick-call svg {
+    animation: none;
+  }
 }
 
 .quick-modal[hidden] {

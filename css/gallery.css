@@ -1,9 +1,9 @@
 /* =====================================================
-   Gallery page — gallery.css
+   Страница проектов (gallery.html) — gallery.css
    ===================================================== */
 
 /* ----------------------------------------------------------
-   Page hero (compact banner, no full-screen background)
+   Баннер страницы
 ---------------------------------------------------------- */
 .gallery-hero {
   background-color: var(--dark);
@@ -56,6 +56,39 @@
 .gallery-section {
   background-color: var(--bg);
   padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.gallery-section__intro {
+  max-width: 52rem;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+}
+
+.gallery-section__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 var(--space-sm);
+  padding-left: 0.22em;
+}
+
+.gallery-section__heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  color: var(--dark);
+  margin: 0 0 var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.gallery-section__lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #5e5e5e;
 }
 
 /* ----------------------------------------------------------
@@ -115,6 +148,36 @@
 .gallery-item:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
+}
+
+.gallery-item__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2rem 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+  text-align: left;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.08) 28%, rgba(0, 0, 0, 0.82) 100%);
+  border-radius: 0 0 var(--radius) var(--radius);
+  pointer-events: none;
+}
+
+.gallery-item__caption-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--white);
+  line-height: 1.25;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-item__caption-sub {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.35;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* ----------------------------------------------------------
@@ -208,20 +271,41 @@
   border-color: var(--gold);
 }
 
-/* Counter badge */
-.lightbox__counter {
+/* Подпись проекта и счётчик */
+.lightbox__bottom {
   position: fixed;
   bottom: 1.25rem;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 1001;
+  pointer-events: none;
+  max-width: min(92vw, 40rem);
+  text-align: center;
+}
+
+.lightbox__project-line {
+  margin: 0;
   font-family: var(--font-heading);
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.35;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
+}
+
+.lightbox__counter {
+  position: static;
+  transform: none;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.65);
   background: rgba(0, 0, 0, 0.45);
   padding: 0.3rem 0.85rem;
   border-radius: 20px;
-  pointer-events: none;
-  z-index: 1001;
 }
 
 /* ----------------------------------------------------------

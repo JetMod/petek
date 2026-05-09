@@ -3,61 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Фурнитура для мебели в Симферополе. Петли и направляющие Blum, Samet. Ручки, замки, соединители в наличии на складе. Подбор под проект. Petek." />
+  <meta name="description" content="Фурнитура Blum и Samet, ЛДСП Kronospan в Симферополе — розничные цены по складу, подбор под проект. Услуги распила и кромления — в прайс-листе. Petek." />
   <title>Фурнитура — Petek, Симферополь</title>
   <link rel="stylesheet" href="css/secondary.css" />
   <link rel="stylesheet" href="css/furnitura.css" />
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header" id="site-header">
+  <header class="site-header site-header--home" id="site-header">
+
+    <!-- Utility strip -->
     <div class="header-util">
       <div class="container header-util__inner">
         <div class="header-util__group">
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/></svg>
-            Симферополь, ул. Генерала Васильева, 32Д, стр.1
-          </span>
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            Пн–Пт: 9:00–18:00
-          </span>
+          <a href="delivery.html" class="header-util__item header-util__item--link">Доставка</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="payment.html" class="header-util__item header-util__item--link">Оплата</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="warranty.html" class="header-util__item header-util__item--link">Возврат и гарантия</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="wholesale.html" class="header-util__item header-util__item--link">Оптовым покупателям</a>
         </div>
         <div class="header-util__group">
+          <span class="header-util__item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Пн–Пт, с 9:00–18:00
+          </span>
           <a href="mailto:zakaz@petek.pro" class="header-util__item header-util__item--link">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             zakaz@petek.pro
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Main header -->
     <div class="header-main">
       <div class="container header-main__inner">
+
         <a href="index.html" class="header-logo" aria-label="Petek — на главную">
-          <img src="img/logo/logo-default.svg" alt="Petek логотип" width="120" height="44" />
+          <img src="img/logo/logo-white.svg" alt="Petek логотип" width="120" height="44" />
         </a>
+
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
-          <a href="raspiil.html"          class="site-nav__link">Распил</a>
-          <a href="pokraska.html"         class="site-nav__link">Покраска</a>
-          <a href="proektirovanie.html"   class="site-nav__link">Проектирование</a>
-          <a href="furnitura.html"        class="site-nav__link site-nav__link--active">Фурнитура</a>
-          <a href="prices.html"           class="site-nav__link">Прайс</a>
-          <a href="gallery.html"          class="site-nav__link">Галерея</a>
-          <a href="contacts.html"         class="site-nav__link">Контакты</a>
+          <div class="site-nav__dropdown">
+            <button type="button" class="site-nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="nav-services-menu" id="nav-services-btn">
+              Услуги
+              <svg class="site-nav__dropdown-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="site-nav__dropdown-panel" id="nav-services-menu" aria-labelledby="nav-services-btn">
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Распил и обработка</p>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
+              </div>
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Изготовление и покраска</p>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Кухни, гардеробные и детская мебель</a>
+                <a href="pokraska.html" class="site-nav__dropdown-link">Покраска МДФ-фасадов</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Проектирование в БАЗИС-Мебельщик</a>
+              </div>
+              <div class="site-nav__dropdown-footer">
+                <a href="services.html" class="site-nav__dropdown-more">Все услуги</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="furnitura.html" class="site-nav__link">Материалы</a>
+          <a href="prices.html" class="site-nav__link">Наши цены</a>
+          <a href="gallery.html" class="site-nav__link">Проекты</a>
+          <a href="contacts.html" class="site-nav__link">О компании</a>
         </nav>
+
         <div class="header-actions">
-          <a href="tel:+79786187313" class="header-phone">
+          <a href="tel:+79786187313" class="header-phone" aria-label="Позвонить +7 978 618-73-13">
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             +7 978 618-73-13
           </a>
-          <a href="contacts.html#order" class="btn btn-primary header-cta">Оставить заявку</a>
+          <a href="#order" class="btn btn-primary header-cta" data-open-quick-modal="true">
+            Оставить заявку
+            <svg class="header-cta__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+
         <button class="site-header__burger" id="burger-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
+
     <div class="site-header__overlay" id="nav-overlay"></div>
   </header>
 
@@ -75,10 +114,11 @@
         </nav>
         <p class="svc-hero__eyebrow">Услуга</p>
         <h1 class="svc-hero__title">Мебельная фурнитура</h1>
-        <p class="svc-hero__subtitle">Петли и направляющие Blum, Samet. Ручки, замки, соединители — в наличии на складе в Симферополе. Подбираем под ваш проект.</p>
+        <p class="svc-hero__subtitle">Петли и направляющие Blum, Samet, плиты Kronospan — в наличии на складе в Симферополе. Подбираем под ваш проект.</p>
         <div class="svc-hero__actions">
-          <a href="contacts.html#order" class="btn btn-primary">Оставить заявку</a>
-          <a href="prices.html" class="btn svc-hero__btn-outline">Смотреть прайс</a>
+          <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
+          <a href="#materialy" class="btn svc-hero__btn-outline">Цены на материалы</a>
+          <a href="prices.html" class="btn svc-hero__btn-outline">Прайс на услуги</a>
         </div>
       </div>
     </section>
@@ -159,83 +199,264 @@
       </div>
     </section>
 
-    <!-- ===================== PRICE FRAGMENT ===================== -->
-    <section class="svc-prices section" aria-labelledby="price-heading">
+    <!-- ===================== MATERIALS — розница со склада ===================== -->
+    <section class="section section--gray prices-section" id="materialy" aria-labelledby="mat-heading">
       <div class="container">
-        <h2 class="section-title" id="price-heading">Стоимость фурнитуры</h2>
-        <p class="svc-prices__subtitle">Розничные цены на основные позиции со склада. Полный прайс — на странице «Прайс-лист».</p>
 
-        <div class="price-table-wrap">
-          <table class="price-table">
-            <thead>
-              <tr>
-                <th>Наименование</th>
-                <th>Ед.</th>
-                <th>Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="price-table__group-header">
-                <td colspan="3">Blum — петли</td>
-              </tr>
-              <tr>
-                <td>Петля CLIP top 110° (накладная)</td>
-                <td>шт.</td>
-                <td>от 120 ₽</td>
-              </tr>
-              <tr>
-                <td>Петля CLIP top 110° (полунакладная)</td>
-                <td>шт.</td>
-                <td>от 130 ₽</td>
-              </tr>
-              <tr>
-                <td>Петля CLIP top BLUMOTION (демпфер)</td>
-                <td>шт.</td>
-                <td>от 160 ₽</td>
-              </tr>
-              <tr>
-                <td>Монтажная планка Blum CLIP</td>
-                <td>шт.</td>
-                <td>от 50 ₽</td>
-              </tr>
-              <tr class="price-table__group-header">
-                <td colspan="3">Samet — петли и направляющие</td>
-              </tr>
-              <tr>
-                <td>Петля Samet 3D (накладная, демпфер)</td>
-                <td>шт.</td>
-                <td>от 95 ₽</td>
-              </tr>
-              <tr>
-                <td>Направляющие Samet шариковые 300 мм</td>
-                <td>пара</td>
-                <td>от 180 ₽</td>
-              </tr>
-              <tr>
-                <td>Направляющие Samet шариковые 450 мм</td>
-                <td>пара</td>
-                <td>от 220 ₽</td>
-              </tr>
-              <tr class="price-table__group-header">
-                <td colspan="3">Соединители и крепёж</td>
-              </tr>
-              <tr>
-                <td>Конфирмат 7×50 (100 шт.)</td>
-                <td>упак.</td>
-                <td>от 120 ₽</td>
-              </tr>
-              <tr>
-                <td>Минификс + заглушка (в комплекте)</td>
-                <td>шт.</td>
-                <td>от 35 ₽</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="prices-section__header">
+          <h2 class="prices-section__title" id="mat-heading">Материалы и фурнитура</h2>
+          <p class="prices-section__sub">Розничные ориентиры по фурнитуре и ДСП (накладная). Остатки и точная цена — по запросу на склад. Распил, кромка и другие услуги — в <a href="prices.html">прайс-листе на услуги</a>.</p>
         </div>
 
-        <p class="price-table__note">Цены розничные. Оптовые скидки от 50 шт. одной позиции — уточняйте у менеджера. Возможен заказ под конкретный проект.</p>
+        <div class="brand-panels">
+
+          <article class="brand-panel" id="price-furnitura" aria-labelledby="brand-blum-title">
+            <header class="brand-panel__header">
+              <h3 class="brand-panel__brand-title" id="brand-blum-title">Blum</h3>
+              <p class="brand-panel__subtitle">Направляющие, петли CLIP top, ножки — по складской накладной</p>
+            </header>
+            <div class="brand-panel__card">
+              <details class="brand-panel__accordion" open>
+                <summary class="brand-panel__accordion-summary">Направляющие Tandem Blumotion</summary>
+                <div class="brand-panel__table-scroll">
+                  <table class="price-table brand-panel__table" aria-label="Blum — направляющие">
+                    <thead>
+                      <tr>
+                        <th>Наименование</th>
+                        <th>Длина</th>
+                        <th>Розница, ₽</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>300 мм</td>
+                        <td>1 360</td>
+                      </tr>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>350 мм</td>
+                        <td>1 360</td>
+                      </tr>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>400 мм</td>
+                        <td>1 376</td>
+                      </tr>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>450 мм</td>
+                        <td>1 392</td>
+                      </tr>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>500 мм</td>
+                        <td>1 424</td>
+                      </tr>
+                      <tr>
+                        <td>Tandem Blumotion, частичное выдвижение, под замок</td>
+                        <td>550 мм</td>
+                        <td>1 616</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="brand-panel__accordion" open>
+                <summary class="brand-panel__accordion-summary">Петли</summary>
+                <div class="brand-panel__table-scroll">
+                  <table class="price-table brand-panel__table" aria-label="Blum — петли">
+                    <thead>
+                      <tr>
+                        <th>Наименование</th>
+                        <th>Тип</th>
+                        <th>Розница, ₽</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Петля стандарт 107° CLIP top BLUMOTION</td>
+                        <td>полунакладная</td>
+                        <td>432</td>
+                      </tr>
+                      <tr>
+                        <td>Петля стандарт 107° CLIP top BLUMOTION</td>
+                        <td>внутренняя</td>
+                        <td>440</td>
+                      </tr>
+                      <tr>
+                        <td>Петля стандарт 107° CLIP с пружиной</td>
+                        <td>внутренняя</td>
+                        <td>240</td>
+                      </tr>
+                      <tr>
+                        <td>Петля стандарт 107° CLIP с пружиной</td>
+                        <td>полунакладная</td>
+                        <td>240</td>
+                      </tr>
+                      <tr>
+                        <td>Петля стандарт 107° CLIP с пружиной</td>
+                        <td>накладная</td>
+                        <td>208</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="brand-panel__accordion" open>
+                <summary class="brand-panel__accordion-summary">Пластиковые ножки</summary>
+                <div class="brand-panel__table-scroll">
+                  <table class="price-table brand-panel__table" aria-label="Blum — ножки">
+                    <thead>
+                      <tr>
+                        <th>Наименование</th>
+                        <th>Высота</th>
+                        <th>Розница, ₽</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ножка регулируемая кухонная, чёрная</td>
+                        <td>L 80 мм</td>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <td>Ножка регулируемая кухонная, чёрная</td>
+                        <td>L 100 мм</td>
+                        <td>32</td>
+                      </tr>
+                      <tr>
+                        <td>Ножка регулируемая кухонная, чёрная</td>
+                        <td>L 120 мм T1</td>
+                        <td>35</td>
+                      </tr>
+                      <tr>
+                        <td>Ножка регулируемая кухонная, чёрная</td>
+                        <td>L 150 мм</td>
+                        <td>40</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="brand-panel" aria-labelledby="brand-samet-title">
+            <header class="brand-panel__header">
+              <h3 class="brand-panel__brand-title" id="brand-samet-title">Samet</h3>
+              <p class="brand-panel__subtitle">Петли MASTER и STAR TRACK — розница по накладной</p>
+            </header>
+            <div class="brand-panel__card brand-panel__card--flat">
+              <div class="brand-panel__table-scroll">
+                <table class="price-table brand-panel__table" aria-label="Samet — петли">
+                  <thead>
+                    <tr>
+                      <th>Наименование</th>
+                      <th>Тип</th>
+                      <th>Розница, ₽</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Samet петля MASTER с доводчиком</td>
+                      <td>внутренняя</td>
+                      <td>150</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK с пружиной</td>
+                      <td>накладная</td>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK с пружиной</td>
+                      <td>внутренняя</td>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK с пружиной</td>
+                      <td>полунакладная</td>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK (push open), без пружины</td>
+                      <td>полунакладная</td>
+                      <td>250</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK (push open), без пружины</td>
+                      <td>накладная</td>
+                      <td>115</td>
+                    </tr>
+                    <tr>
+                      <td>Samet петля STAR TRACK (push open), без пружины</td>
+                      <td>внутренняя</td>
+                      <td>115</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+
+          <article class="brand-panel" id="price-ldsp" aria-labelledby="brand-krono-title">
+            <header class="brand-panel__header">
+              <h3 class="brand-panel__brand-title" id="brand-krono-title">Kronospan</h3>
+              <p class="brand-panel__subtitle">Подбор декоров на складе — уточняйте остатки</p>
+            </header>
+            <div class="brand-panel__card brand-panel__card--flat">
+              <div class="brand-panel__table-scroll">
+                <table class="price-table brand-panel__table" aria-label="Kronospan — ЛДСП и ДСП">
+                  <thead>
+                    <tr>
+                      <th>Наименование</th>
+                      <th>Декор / код</th>
+                      <th>Розница, ₽</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ДСП ламинированное 2-стор., 1 сорт P2 2800×2070×16</td>
+                      <td>Пудровый / супермат</td>
+                      <td>3 300</td>
+                    </tr>
+                    <tr>
+                      <td>ДСП Дуб Барокко Ристретто</td>
+                      <td>k537/rw, 25 мм</td>
+                      <td>4 800</td>
+                    </tr>
+                    <tr>
+                      <td>ДСП Блэквуд Ячменный</td>
+                      <td>k021/sn, 25 мм</td>
+                      <td>4 900</td>
+                    </tr>
+                    <tr>
+                      <td>ДСП Дуб Кастелло Серый</td>
+                      <td>k357/pw, 25 мм</td>
+                      <td>4 900</td>
+                    </tr>
+                    <tr>
+                      <td>ДСП Дуб Эвок Прибрежный</td>
+                      <td>k365/pw, 25 мм</td>
+                      <td>3 875</td>
+                    </tr>
+                    <tr>
+                      <td>ДСП ламинированное 2-стор., 1 сорт P2 2800×2070×16</td>
+                      <td>Ателье светлое / супермат</td>
+                      <td>3 000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="price-table__note brand-panels__note">Цифры ориентировочные (розница по накладной, актуально на 20.04.2026). Остатки, курс и акции уточняйте на складе. Ручки, крепёж и позиции вне таблицы — по запросу.</p>
+
         <div class="svc-prices__cta">
-          <a href="prices.html" class="btn btn-outline">Полный прайс-лист</a>
+          <a href="prices.html" class="btn btn-outline">Прайс на услуги (раскрой, кромка…)</a>
         </div>
       </div>
     </section>
@@ -249,7 +470,7 @@
             <p>Пришлите схему или чертёж — подберём нужные артикулы и скомплектуем заказ со склада в день обращения.</p>
           </div>
           <div class="svc-cta__actions">
-            <a href="contacts.html#order" class="btn btn-primary">Оставить заявку</a>
+            <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
             <a href="tel:+79786187313" class="btn btn-outline-white">+7 978 618-73-13</a>
           </div>
         </div>
@@ -278,7 +499,7 @@
             <a href="proektirovanie.html">Проектирование</a>
             <a href="furnitura.html">Фурнитура</a>
             <a href="prices.html">Прайс-лист</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Проекты</a>
           </nav>
         </div>
 
@@ -314,6 +535,37 @@
       </div>
     </div>
   </footer>
+
+  <button class="quick-call" id="quick-call-btn" type="button" aria-label="Открыть форму заявки">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L15 12l4 1.5v3c0 1-.9 1.7-1.9 1.5C8.3 16.5 3.5 7.7 5 5.9 5.3 4.8 5.9 4 6.5 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="quick-modal" id="quick-modal" hidden>
+    <div class="quick-modal__backdrop" data-close="quick-modal"></div>
+    <section class="quick-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quick-modal-title">
+      <button class="quick-modal__close" type="button" id="quick-modal-close" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <p class="quick-modal__eyebrow">Быстрая заявка</p>
+      <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
+      <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
+
+      <form class="quick-modal__form" id="quick-modal-form" novalidate>
+        <label class="quick-modal__label" for="qm-name">Ваше имя</label>
+        <input class="quick-modal__input" id="qm-name" name="name" type="text" autocomplete="name" minlength="2" required />
+        <p class="quick-modal__error" id="qm-name-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-phone">Телефон</label>
+        <input class="quick-modal__input" id="qm-phone" name="phone" type="tel" inputmode="tel" pattern="[+]?[0-9]{11,15}" maxlength="16" autocomplete="tel" value="+7" required />
+        <p class="quick-modal__error" id="qm-phone-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-comment">Комментарий</label>
+        <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
+
+        <button class="quick-modal__submit" type="submit">Отправить заявку</button>
+      </form>
+    </section>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

@@ -10,54 +10,93 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header" id="site-header">
+  <header class="site-header site-header--home" id="site-header">
+
+    <!-- Utility strip -->
     <div class="header-util">
       <div class="container header-util__inner">
         <div class="header-util__group">
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 0 1 5 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="6" r="1.5" fill="currentColor"/></svg>
-            Симферополь, ул. Генерала Васильева, 32Д, стр.1
-          </span>
-          <span class="header-util__item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            Пн–Пт: 9:00–18:00
-          </span>
+          <a href="delivery.html" class="header-util__item header-util__item--link">Доставка</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="payment.html" class="header-util__item header-util__item--link">Оплата</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="warranty.html" class="header-util__item header-util__item--link">Возврат и гарантия</a>
+          <span class="header-util__sep" aria-hidden="true">|</span>
+          <a href="wholesale.html" class="header-util__item header-util__item--link">Оптовым покупателям</a>
         </div>
         <div class="header-util__group">
+          <span class="header-util__item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Пн–Пт, с 9:00–18:00
+          </span>
           <a href="mailto:zakaz@petek.pro" class="header-util__item header-util__item--link">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             zakaz@petek.pro
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Main header -->
     <div class="header-main">
       <div class="container header-main__inner">
+
         <a href="index.html" class="header-logo" aria-label="Petek — на главную">
-          <img src="img/logo/logo-default.svg" alt="Petek логотип" width="120" height="44" />
+          <img src="img/logo/logo-white.svg" alt="Petek логотип" width="120" height="44" />
         </a>
+
         <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
-          <a href="raspiil.html"          class="site-nav__link">Распил</a>
-          <a href="pokraska.html"         class="site-nav__link">Покраска</a>
-          <a href="proektirovanie.html"   class="site-nav__link">Проектирование</a>
-          <a href="furnitura.html"        class="site-nav__link">Фурнитура</a>
-          <a href="prices.html"           class="site-nav__link">Прайс</a>
-          <a href="gallery.html"          class="site-nav__link">Галерея</a>
-          <a href="contacts.html"         class="site-nav__link site-nav__link--active">Контакты</a>
+          <div class="site-nav__dropdown">
+            <button type="button" class="site-nav__dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="nav-services-menu" id="nav-services-btn">
+              Услуги
+              <svg class="site-nav__dropdown-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="site-nav__dropdown-panel" id="nav-services-menu" aria-labelledby="nav-services-btn">
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Распил и обработка</p>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
+                <a href="raspiil.html" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
+              </div>
+              <div class="site-nav__dropdown-group">
+                <p class="site-nav__dropdown-label">Изготовление и покраска</p>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Кухни, гардеробные и детская мебель</a>
+                <a href="pokraska.html" class="site-nav__dropdown-link">Покраска МДФ-фасадов</a>
+                <a href="proektirovanie.html" class="site-nav__dropdown-link">Проектирование в БАЗИС-Мебельщик</a>
+              </div>
+              <div class="site-nav__dropdown-footer">
+                <a href="services.html" class="site-nav__dropdown-more">Все услуги</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="furnitura.html" class="site-nav__link">Материалы</a>
+          <a href="prices.html" class="site-nav__link">Наши цены</a>
+          <a href="gallery.html" class="site-nav__link">Проекты</a>
+          <a href="contacts.html" class="site-nav__link">О компании</a>
         </nav>
+
         <div class="header-actions">
-          <a href="tel:+79786187313" class="header-phone">
+          <a href="tel:+79786187313" class="header-phone" aria-label="Позвонить +7 978 618-73-13">
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 3h3l1.5 3.5-1.5 1a8 8 0 0 0 3.5 3.5l1-1.5L13 11v3a1 1 0 0 1-1 1C5 14 2 7 2 4a1 1 0 0 1 1-1h-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             +7 978 618-73-13
           </a>
-          <a href="#order" class="btn btn-primary header-cta">Оставить заявку</a>
+          <a href="#order" class="btn btn-primary header-cta" data-open-quick-modal="true">
+            Оставить заявку
+            <svg class="header-cta__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
+
         <button class="site-header__burger" id="burger-btn" aria-controls="site-nav" aria-expanded="false" aria-label="Открыть меню">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
+
     <div class="site-header__overlay" id="nav-overlay"></div>
   </header>
 
@@ -334,7 +373,7 @@
             <a href="proektirovanie.html">Проектирование</a>
             <a href="furnitura.html">Фурнитура</a>
             <a href="prices.html">Прайс-лист</a>
-            <a href="gallery.html">Галерея</a>
+            <a href="gallery.html">Проекты</a>
           </nav>
         </div>
 
@@ -370,6 +409,37 @@
       </div>
     </div>
   </footer>
+
+  <button class="quick-call" id="quick-call-btn" type="button" aria-label="Открыть форму заявки">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 4h3l1.5 4-2 1.5c1 2 2.5 3.5 4.5 4.5L15 12l4 1.5v3c0 1-.9 1.7-1.9 1.5C8.3 16.5 3.5 7.7 5 5.9 5.3 4.8 5.9 4 6.5 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </button>
+
+  <div class="quick-modal" id="quick-modal" hidden>
+    <div class="quick-modal__backdrop" data-close="quick-modal"></div>
+    <section class="quick-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quick-modal-title">
+      <button class="quick-modal__close" type="button" id="quick-modal-close" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <p class="quick-modal__eyebrow">Быстрая заявка</p>
+      <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
+      <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
+
+      <form class="quick-modal__form" id="quick-modal-form" novalidate>
+        <label class="quick-modal__label" for="qm-name">Ваше имя</label>
+        <input class="quick-modal__input" id="qm-name" name="name" type="text" autocomplete="name" minlength="2" required />
+        <p class="quick-modal__error" id="qm-name-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-phone">Телефон</label>
+        <input class="quick-modal__input" id="qm-phone" name="phone" type="tel" inputmode="tel" pattern="[+]?[0-9]{11,15}" maxlength="16" autocomplete="tel" value="+7" required />
+        <p class="quick-modal__error" id="qm-phone-error" aria-live="polite"></p>
+
+        <label class="quick-modal__label" for="qm-comment">Комментарий</label>
+        <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
+
+        <button class="quick-modal__submit" type="submit">Отправить заявку</button>
+      </form>
+    </section>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

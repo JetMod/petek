@@ -63,7 +63,11 @@
     if (!header) return;
     var scrolled = false;
     function onScroll() {
-      var threshold = document.body.classList.contains('page-home') ? 96 : 10;
+      var threshold =
+        document.body.classList.contains('page-home') ||
+        document.body.classList.contains('page-prices')
+          ? 96
+          : 10;
       var shouldScroll = window.scrollY > threshold;
       if (shouldScroll !== scrolled) {
         scrolled = shouldScroll;
@@ -313,7 +317,7 @@
     var phoneEl = document.getElementById('qm-phone');
     var nameErr = document.getElementById('qm-name-error');
     var phoneErr = document.getElementById('qm-phone-error');
-    if (!openBtn || !modal || !closeBtn || !form || !nameEl || !phoneEl || !nameErr || !phoneErr) return;
+    if (!modal || !closeBtn || !form || !nameEl || !phoneEl || !nameErr || !phoneErr) return;
     var phonePrefill = '+7';
     var phoneAutoclearDone = false;
 
@@ -330,16 +334,16 @@
     function closeModal() {
       modal.hidden = true;
       document.body.style.overflow = '';
-      openBtn.focus();
+      if (openBtn) openBtn.focus();
     }
 
-    openBtn.addEventListener('click', openModal);
+    if (openBtn) openBtn.addEventListener('click', openModal);
     closeBtn.addEventListener('click', closeModal);
-    document.querySelectorAll('[data-open-quick-modal="true"]').forEach(function (trigger) {
-      trigger.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
-      });
+    document.addEventListener('click', function (e) {
+      var trigger = e.target.closest('[data-open-quick-modal="true"]');
+      if (!trigger) return;
+      e.preventDefault();
+      openModal();
     });
 
     modal.addEventListener('click', function (e) {

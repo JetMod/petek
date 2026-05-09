@@ -3,7 +3,7 @@
    ===================================================== */
 
 .site-footer {
-  background: #171a21;
+  background: linear-gradient(168deg, #1e1d1b 0%, #252422 42%, #171615 100%);
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9375rem;
   padding-block: clamp(2.1rem, 4.4vw, 3rem) clamp(1.1rem, 2.5vw, 1.5rem);
