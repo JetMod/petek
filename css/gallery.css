@@ -351,6 +351,7 @@
   width: 100%;
   max-width: 420px;
   min-height: 380px;
+  overflow: visible;
 }
 
 .gallery-hero__collage-ring {
@@ -377,9 +378,6 @@
   position: relative;
   width: 100%;
   height: 380px;
-  cursor: pointer;
-  outline: none;
-  border: none;
   background: transparent;
   padding: 0;
   font: inherit;
@@ -387,26 +385,49 @@
   text-align: inherit;
 }
 
-.gallery-hero__stack:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 8px;
-  border-radius: 20px;
-}
-
-.gallery-hero__shot {
+/* Карточки стопки: позиции через data-pos — та же логика, что на странице «Материалы» */
+.gallery-hero__deck-card {
   position: absolute;
-  object-fit: cover;
-  border-radius: 16px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: center;
   box-shadow:
     0 28px 64px rgba(0, 0, 0, 0.55),
     0 8px 20px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.06) inset;
-  transition-property: transform, box-shadow;
-  transition-duration: 0.65s;
-  transition-timing-function: cubic-bezier(0.33, 1, 0.32, 1);
+  border-radius: 16px;
+  overflow: visible;
+  transition:
+    transform 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    box-shadow 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    left 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    right 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    top 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    bottom 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    width 0.65s cubic-bezier(0.33, 1, 0.32, 1),
+    height 0.65s cubic-bezier(0.33, 1, 0.32, 1);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.gallery-hero__shot--slot1 {
+.gallery-hero__deck-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  z-index: 20;
+}
+
+.gallery-hero__deck-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.gallery-hero__deck-card[data-pos="1"] {
   width: 60%;
   height: 80%;
   left: 2%;
@@ -417,7 +438,7 @@
   transform: rotate(-4deg);
 }
 
-.gallery-hero__shot--slot2 {
+.gallery-hero__deck-card[data-pos="2"] {
   width: 52%;
   height: 64%;
   left: auto;
@@ -428,7 +449,7 @@
   transform: rotate(6deg);
 }
 
-.gallery-hero__shot--slot3 {
+.gallery-hero__deck-card[data-pos="3"] {
   width: 48%;
   height: 54%;
   left: auto;
@@ -439,16 +460,114 @@
   transform: rotate(-3deg);
 }
 
-.gallery-hero.is-visible .gallery-hero__shot--slot1 {
+.gallery-hero.is-visible .gallery-hero__deck-card[data-pos="1"] {
   transform: rotate(-2.5deg) translateY(-5px);
 }
 
-.gallery-hero.is-visible .gallery-hero__shot--slot2 {
+.gallery-hero.is-visible .gallery-hero__deck-card[data-pos="2"] {
   transform: rotate(4.5deg) translateY(-3px);
 }
 
-.gallery-hero.is-visible .gallery-hero__shot--slot3 {
+.gallery-hero.is-visible .gallery-hero__deck-card[data-pos="3"] {
   transform: rotate(-3.5deg) translateY(4px);
+}
+
+@keyframes galDeckBreathe {
+  0%, 70%, 100% {
+    transform: rotate(-2.5deg) translateY(-5px);
+    box-shadow:
+      0 28px 64px rgba(0, 0, 0, 0.55),
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  }
+  78% {
+    transform: rotate(-3.5deg) translateY(-9px);
+    box-shadow:
+      0 32px 72px rgba(0, 0, 0, 0.58),
+      0 0 0 1px rgba(193, 162, 107, 0.28) inset,
+      0 0 0 4px rgba(193, 162, 107, 0.06);
+  }
+  88% {
+    transform: rotate(-2deg) translateY(-6px);
+  }
+}
+
+.gallery-hero.is-visible .gallery-hero__stack:not(.is-touched) .gallery-hero__deck-card[data-pos="1"]:not(:hover):not(:focus-visible) {
+  animation: galDeckBreathe 4.2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  animation-delay: 1.2s;
+}
+
+.gallery-hero__deck-card[data-pos="1"]:hover,
+.gallery-hero__deck-card[data-pos="1"]:focus-visible {
+  animation: none;
+  transform: rotate(-1deg) translateY(-8px);
+  box-shadow:
+    0 32px 72px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(193, 162, 107, 0.22) inset;
+}
+
+.gallery-hero__deck-card[data-pos="2"]:hover {
+  transform: rotate(7deg) translateY(-6px);
+  box-shadow:
+    0 32px 72px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(193, 162, 107, 0.22) inset;
+}
+
+.gallery-hero__deck-card[data-pos="3"]:hover {
+  transform: rotate(-4deg) translateY(-5px);
+  box-shadow:
+    0 32px 72px rgba(0, 0, 0, 0.58),
+    0 0 0 1px rgba(193, 162, 107, 0.22) inset;
+}
+
+/* Подсказка как на «Материалы» */
+.gallery-hero__deck-hint {
+  position: absolute;
+  top: -12px;
+  left: 10%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  background: rgba(20, 17, 13, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(193, 162, 107, 0.45);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5f0e8;
+  white-space: nowrap;
+  z-index: 5;
+  pointer-events: none;
+  animation: galHintBob 2.4s ease-in-out infinite;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-hero__deck-hint-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+  animation: galHintTap 1.6s ease-in-out infinite;
+}
+
+@keyframes galHintBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes galHintTap {
+  0%, 60%, 100% { transform: scale(1); }
+  70% { transform: scale(0.78); }
+  80% { transform: scale(1.05); }
+}
+
+.gallery-hero__stack.is-touched .gallery-hero__deck-hint {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.92);
 }
 
 /* ---- Floating badge ---- */
@@ -528,19 +647,28 @@
     animation: none;
   }
 
-  .gallery-hero__shot {
+  .gallery-hero__deck-card {
     transition-duration: 0s;
   }
 
-  .gallery-hero.is-visible .gallery-hero__shot--slot1 {
+  .gallery-hero.is-visible .gallery-hero__stack:not(.is-touched) .gallery-hero__deck-card[data-pos="1"]:not(:hover):not(:focus-visible) {
+    animation: none;
+  }
+
+  .gallery-hero__deck-hint,
+  .gallery-hero__deck-hint-icon {
+    animation: none;
+  }
+
+  .gallery-hero.is-visible .gallery-hero__deck-card[data-pos="1"] {
     transform: rotate(-4deg);
   }
 
-  .gallery-hero.is-visible .gallery-hero__shot--slot2 {
+  .gallery-hero.is-visible .gallery-hero__deck-card[data-pos="2"] {
     transform: rotate(6deg);
   }
 
-  .gallery-hero.is-visible .gallery-hero__shot--slot3 {
+  .gallery-hero.is-visible .gallery-hero__deck-card[data-pos="3"] {
     transform: rotate(-3deg);
   }
 }

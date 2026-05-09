@@ -196,7 +196,7 @@
               Оставить заявку
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#contacts-heading" class="ctc-hero__scroll-link">
+            <a href="#contacts-map" class="ctc-hero__scroll-link">
               <span>Карта проезда</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4.5 9.5 8 13l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -233,56 +233,121 @@
     </section>
 
 
-     <!-- ===================== ABOUT COMPANY ===================== -->
-     <section class="section about-company" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="about-company__grid">
+    <!-- ===================== ABOUT (contacts) ===================== -->
+    <section class="section contacts-about" aria-labelledby="about-heading">
+      <div class="contacts-about__bg" aria-hidden="true"></div>
+      <div class="container contacts-about__wrap">
+        <article class="contacts-about__card">
+          <div class="contacts-about__card-top">
+            <div class="contacts-about__copy">
+              <p class="contacts-about__eyebrow">О компании</p>
+              <h2 class="contacts-about__title" id="about-heading">
+                Petek — производство корпусной мебели <span class="contacts-about__title-line">с 2010 года в Симферополе</span>
+              </h2>
+              <p class="contacts-about__lead">
+                От мастерской по распилу ЛДСП — к цеху с современным оборудованием и с профессиональной командой специалистов.
+              </p>
+              <div class="contacts-about__prose">
+                <p>За 15 лет мы выполнили тысячи заказов для частных мастеров, мебельных компаний, магазинов и крупных объектов Крыма. Ценят нас за точность, честные цены и сроки.</p>
+                <p>
+                  Цех: <strong>ул. Генерала Васильева, 32Д, стр.&nbsp;1</strong>.
+                  <a href="#contacts-map" class="contacts-about__inline-link">Как проехать</a>
+                  — или приезжайте с чертежами, оценим на месте.
+                </p>
+              </div>
+              <ul class="contacts-about__chips" aria-label="Направления работы">
+                <li>Распил · ЧПУ · кромка</li>
+                <li>Корпуса и кухни</li>
+                <li>Покраска МДФ</li>
+              </ul>
+            </div>
 
-          <div class="about-company__photo">
-            <img src="img/building.jpg" alt="Здание Petek — производственный цех" loading="lazy" />
+            <figure class="contacts-about__visual">
+              <span class="contacts-about__visual-deco" aria-hidden="true"></span>
+              <div class="contacts-about__visual-frame">
+                <img src="img/building.jpg" alt="Производственный цех Petek в Симферополе" loading="lazy" width="720" height="540" />
+              </div>
+              <figcaption class="contacts-about__visual-cap">
+                <span class="contacts-about__visual-year">2010</span>
+                <span class="contacts-about__visual-text">год основания</span>
+              </figcaption>
+            </figure>
           </div>
 
-          <div class="about-company__text">
-            <p class="about-company__label">О компании</p>
-            <h2 class="about-company__title" id="about-heading">Petek — производство<br>корпусной мебели с 2010 года</h2>
-            <p>Мы начинали как небольшая мастерская по распилу ЛДСП, а сегодня — это полноценное производство в Симферополе с собственным цехом, современным оборудованием и командой из более чем 15 специалистов.</p>
-            <p>За 15 лет работы мы выполнили тысячи заказов для частных мастеров, мебельных компаний, магазинов и крупных строительных объектов Крыма. Наши клиенты ценят точность, честные цены и оперативность.</p>
-            <p>Производство расположено по адресу: <strong>ул. Генерала Васильева, 32Д, стр. 1</strong>. Приезжайте с чертежами — поможем рассчитать стоимость прямо на месте.</p>
-
-            <div class="about-company__stats">
-              <div class="about-stat">
-                <span class="about-stat__num">15+</span>
-                <span class="about-stat__label">лет на рынке</span>
-              </div>
-              <div class="about-stat">
-                <span class="about-stat__num">5 000+</span>
-                <span class="about-stat__label">выполненных заказов</span>
-              </div>
-              <div class="about-stat">
-                <span class="about-stat__num">15</span>
-                <span class="about-stat__label">специалистов</span>
-              </div>
+          <div class="contacts-about__meter" aria-label="Цифры о компании">
+            <div class="contacts-about__meter-cell">
+              <span class="contacts-about__meter-value">15+</span>
+              <span class="contacts-about__meter-label">лет на рынке</span>
+            </div>
+            <div class="contacts-about__meter-cell">
+              <span class="contacts-about__meter-value">5 000+</span>
+              <span class="contacts-about__meter-label">выполненных заказов</span>
+            </div>
+            <div class="contacts-about__meter-cell">
+              <span class="contacts-about__meter-value">2 000+</span>
+              <span class="contacts-about__meter-label">клиентов и компаний за время работы</span>
             </div>
           </div>
-
-        </div>
+        </article>
       </div>
     </section>
    
 
-    <!-- ===================== MAP ===================== -->
-    <section class="contacts-map" aria-label="Карта проезда">
-      <div class="contacts-map__frame">
-        <iframe
-          title="Карта — Petek, ул. Генерала Васильева 32Д, Симферополь"
-          src="https://yandex.ru/map-widget/v1/?ll=34.066840%2C44.954323&z=16&pt=34.066840%2C44.954323,pm2rdl1&text=%D1%83%D0%BB.%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0%2C%2032%D0%94%2C%20%D0%A1%D0%B8%D0%BC%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C"
-          width="100%"
-          height="480"
-          frameborder="0"
-          allowfullscreen
-          loading="lazy"
-          style="border:0;"
-        ></iframe>
+    <!-- ===================== MAP (конструктор как на главной + оформление страницы контактов) ===================== -->
+    <section class="section contacts-map-page" id="contacts-map" aria-labelledby="contacts-map-heading" role="region">
+      <span class="contacts-map-page__glow" aria-hidden="true"></span>
+      <div class="container contacts-map-page__container">
+        <header class="contacts-map-page__intro">
+          <div class="contacts-map-page__intro-main">
+            <p class="contacts-map-page__eyebrow">Проезд</p>
+            <h2 class="contacts-map-page__title" id="contacts-map-heading">Как добраться до цеха</h2>
+            <p class="contacts-map-page__lead">Метка на карте — у въезда к производству. Звоните заранее — подскажем ворота и встретим на территории.</p>
+          </div>
+          <ul class="contacts-map-page__hints" aria-label="Кратко о визите">
+            <li class="contacts-map-page__hint">
+              <span class="contacts-map-page__hint-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v6l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <span class="contacts-map-page__hint-text"><strong>Пн–Пт</strong> 9:00–18:00</span>
+            </li>
+            <li class="contacts-map-page__hint">
+              <span class="contacts-map-page__hint-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <span class="contacts-map-page__hint-text">Парковка у цеха</span>
+            </li>
+            <li class="contacts-map-page__hint">
+              <span class="contacts-map-page__hint-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h2a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6 6l1.45-1.28a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="contacts-map-page__hint-text"><a href="tel:+79786187313">+7 978 618-73-13</a></span>
+            </li>
+          </ul>
+        </header>
+
+        <div class="contacts-map-page__shell">
+          <div class="contacts-show__map-wrap">
+            <div class="contacts-show__map-pill" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-5.52-7-10a7 7 0 0 1 14 0c0 4.48-7 10-7 10z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+              Симферополь
+            </div>
+            <div class="contacts-show__map-card">
+              <p class="contacts-show__map-card-title">Petek</p>
+              <p class="contacts-show__map-card-text">ул. Генерала Васильева, 32Д, стр.&nbsp;1</p>
+              <a class="contacts-show__map-card-link" href="https://yandex.ru/maps/?text=%D1%83%D0%BB.%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0%2C%2032%D0%94%2C%20%D1%81%D1%82%D1%80.1%2C%20%D0%A1%D0%B8%D0%BC%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах</a>
+            </div>
+            <iframe
+              class="contacts-show__map"
+              title="Яндекс Карта Petek в Симферополе"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A014d2d32e9dc287c5245d753c3d6a790f5bffc4f8f2caa29c5ff8c0fc929b820&amp;source=constructor"
+              width="1440"
+              height="400"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
