@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/secondary.css" />
   <link rel="stylesheet" href="css/furnitura.css" />
 </head>
-<body>
+<body class="page-materials">
 
   <header class="site-header site-header--home" id="site-header">
 
@@ -102,97 +102,220 @@
 
   <main>
 
-    <!-- ===================== SERVICE HERO ===================== -->
-    <section class="svc-hero" aria-label="Баннер страницы">
-      <div class="svc-hero__bg"></div>
-      <div class="svc-hero__overlay"></div>
-      <div class="container svc-hero__content">
-        <nav class="svc-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Фурнитура</span>
-        </nav>
-        <p class="svc-hero__eyebrow">Услуга</p>
-        <h1 class="svc-hero__title">Мебельная фурнитура</h1>
-        <p class="svc-hero__subtitle">Петли и направляющие Blum, Samet, плиты Kronospan — в наличии на складе в Симферополе. Подбираем под ваш проект.</p>
-        <div class="svc-hero__actions">
-          <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
-          <a href="#materialy" class="btn svc-hero__btn-outline">Цены на материалы</a>
-          <a href="prices.html" class="btn svc-hero__btn-outline">Прайс на услуги</a>
+    <!-- ===================== MATERIALS HERO (editorial split) ===================== -->
+    <section class="mat-hero" aria-label="Баннер страницы материалов">
+      <div class="mat-hero__bg" aria-hidden="true">
+        <div class="mat-hero__bg-photo"></div>
+        <div class="mat-hero__bg-overlay"></div>
+        <div class="mat-hero__bg-grid"></div>
+        <div class="mat-hero__bg-glow mat-hero__bg-glow--gold"></div>
+        <div class="mat-hero__bg-glow mat-hero__bg-glow--warm"></div>
+        <div class="mat-hero__bg-noise"></div>
+      </div>
+
+      <div class="container mat-hero__container">
+
+        <div class="mat-hero__inner">
+
+          <div class="mat-hero__primary">
+            <nav class="mat-hero__crumbs" aria-label="Хлебные крошки">
+              <a href="index.html">Главная</a>
+              <span class="mat-hero__crumbs-sep" aria-hidden="true">/</span>
+              <span aria-current="page">Материалы</span>
+            </nav>
+
+            <div class="mat-hero__eyebrow">
+              <span class="mat-hero__eyebrow-line" aria-hidden="true"></span>
+              <span class="mat-hero__eyebrow-text">Розница со склада · Симферополь</span>
+            </div>
+
+            <h1 class="mat-hero__title">
+              <span class="mat-hero__title-1">Материалы</span>
+              <span class="mat-hero__title-2"><em>и</em> фурнитура</span>
+            </h1>
+
+            <p class="mat-hero__lead">
+              Петли и направляющие <strong>Blum</strong> и <strong>Samet</strong>, плиты и декоры
+              <strong>Kronospan</strong>. В наличии на складе. Подбор артикулов под ваш проект.
+            </p>
+
+            <div class="mat-hero__brands" role="list" aria-label="Бренды">
+              <span class="mat-hero__brand" role="listitem">
+                <span class="mat-hero__brand-name">Blum</span>
+                <span class="mat-hero__brand-flag">AT</span>
+              </span>
+              <span class="mat-hero__brand-dot" aria-hidden="true"></span>
+              <span class="mat-hero__brand" role="listitem">
+                <span class="mat-hero__brand-name">Samet</span>
+                <span class="mat-hero__brand-flag">TR</span>
+              </span>
+              <span class="mat-hero__brand-dot" aria-hidden="true"></span>
+              <span class="mat-hero__brand" role="listitem">
+                <span class="mat-hero__brand-name">Kronospan</span>
+                <span class="mat-hero__brand-flag">EU</span>
+              </span>
+            </div>
+
+            <div class="mat-hero__actions">
+              <a href="#" data-open-quick-modal="true" class="btn btn-primary mat-hero__cta-primary">
+                Оставить заявку
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="#materialy" class="mat-hero__cta-ghost">
+                Смотреть цены и наличие
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M7 2v9M3.5 7.5L7 11l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="mat-hero__showcase" aria-label="Образцы материалов">
+            <div class="mat-hero__stack" data-stack>
+
+              <button type="button" class="mat-hero__sample" data-pos="3" aria-label="Показать Samet STAR TRACK">
+                <div class="mat-hero__sample-art">
+                  <img src="img/samet.png" alt="" loading="eager" decoding="async" />
+                </div>
+                <div class="mat-hero__sample-meta">
+                  <span class="mat-hero__sample-brand">Samet</span>
+                  <span class="mat-hero__sample-name">STAR TRACK · push-open</span>
+                </div>
+              </button>
+
+              <button type="button" class="mat-hero__sample" data-pos="2" aria-label="Показать Kronospan Дуб Барокко Ристретто">
+                <div class="mat-hero__sample-art">
+                  <img src="img/dub.png" alt="" loading="eager" decoding="async" />
+                </div>
+                <div class="mat-hero__sample-meta">
+                  <span class="mat-hero__sample-brand">Kronospan</span>
+                  <span class="mat-hero__sample-name">Дуб Барокко Ристретто</span>
+                </div>
+              </button>
+
+              <button type="button" class="mat-hero__sample" data-pos="1" aria-label="Показать Blum CLIP top BLUMOTION 107°">
+                <span class="mat-hero__sample-badge">Хит</span>
+                <span class="mat-hero__hint" aria-hidden="true">
+                  <svg class="mat-hero__hint-ico" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M8 11V6a2 2 0 0 1 4 0v6m0-2a2 2 0 0 1 4 0v3m0-1a2 2 0 0 1 4 0v3c0 4-2 7-6 7s-6-2-7-5l-2-5a2 2 0 0 1 3-2l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Нажмите · перелистать</span>
+                </span>
+                <div class="mat-hero__sample-art">
+                  <img src="img/blum.png" alt="" loading="eager" decoding="async" />
+                </div>
+                <div class="mat-hero__sample-meta">
+                  <span class="mat-hero__sample-brand">Blum</span>
+                  <span class="mat-hero__sample-name">CLIP top BLUMOTION 107°</span>
+                </div>
+              </button>
+
+            </div>
+
+            <div class="mat-hero__chip">
+              <span class="mat-hero__chip-num">120+</span>
+              <span class="mat-hero__chip-text">позиций<br>в наличии</span>
+            </div>
+          </aside>
         </div>
+
+        <ul class="mat-hero__strip" aria-label="Ключевые факты">
+          <li class="mat-hero__strip-item">
+            <svg class="mat-hero__strip-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l9-4 9 4M3 7v10l9 4 9-4V7M3 7l9 4 9-4M12 11v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>В наличии</strong><br>на складе</span>
+          </li>
+          <li class="mat-hero__strip-item">
+            <svg class="mat-hero__strip-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5l3 3 5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Подбор</strong><br>под проект</span>
+          </li>
+          <li class="mat-hero__strip-item">
+            <svg class="mat-hero__strip-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11h18M8 6V4h8v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span><strong>Опт</strong><br>для мастеров</span>
+          </li>
+          <li class="mat-hero__strip-item">
+            <svg class="mat-hero__strip-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 21V8l7-5 7 5v13M9 21v-7h6v7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            <span><strong>С 2010</strong><br>в Симферополе</span>
+          </li>
+        </ul>
+
       </div>
     </section>
 
-    <!-- ===================== ABOUT ===================== -->
-    <section class="svc-about section" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="svc-about__grid svc-about__grid--reversed">
-          <div class="svc-about__text">
-            <p class="svc-about__label">О услуге</p>
-            <h2 class="svc-about__title" id="about-heading">Надёжная фурнитура<br>ведущих производителей</h2>
-            <p>Мы работаем с проверенными брендами: Blum (Австрия) и Samet (Турция). Это петли, направляющие, подъёмные механизмы и системы мягкого закрытия, которые обеспечивают плавную работу дверей и ящиков на протяжении десятков тысяч циклов.</p>
-            <p>На складе в Симферополе постоянно есть наиболее востребованные позиции — не нужно ждать недели доставки. При комплексном заказе (раскрой + фурнитура) подбираем артикулы под ваш проект и согласовываем схему присадки.</p>
-            <p>Также предлагаем ручки, замки, конфирматы, минификсы, соединители и другие мелкие комплектующие. Возможна оптовая отгрузка для производителей мебели.</p>
-          </div>
-          <div class="svc-about__photo">
-            <img src="img/DSC00056.jpg" alt="Мебельная фурнитура Blum и Samet" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ===================== STORY (designer about) ===================== -->
+    <section class="mat-story" aria-labelledby="story-heading">
+      <div class="mat-story__bg" aria-hidden="true"></div>
+      <div class="container mat-story__container">
 
-    <!-- ===================== ADVANTAGES ===================== -->
-    <section class="svc-advantages" aria-labelledby="adv-heading">
-      <div class="container">
-        <h2 class="section-title" id="adv-heading">Наши преимущества</h2>
-        <div class="svc-advantages__grid">
+        <div class="mat-story__grid">
 
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="13" cy="20" r="7" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity=".1"/><circle cx="13" cy="20" r="3" fill="currentColor" opacity=".4"/><path d="M20 20h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M28 15l4 5-4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="mat-story__visual">
+            <span class="mat-story__corner mat-story__corner--tl" aria-hidden="true"></span>
+            <span class="mat-story__corner mat-story__corner--br" aria-hidden="true"></span>
+
+            <figure class="mat-story__photo">
+              <img src="img/sklad1.png" alt="Мебельная фурнитура Blum и Samet на складе Petek" loading="lazy" />
+              <figcaption class="mat-story__caption">Шоурум · Симферополь</figcaption>
+            </figure>
+
+            <div class="mat-story__badge" role="list" aria-label="Бренды и год основания">
+              <p class="mat-story__badge-title">На складе работаем с</p>
+              <div class="mat-story__badge-row" role="listitem">
+                <span class="mat-story__badge-name">Blum</span>
+                <span class="mat-story__badge-meta">Австрия</span>
+              </div>
+              <div class="mat-story__badge-row" role="listitem">
+                <span class="mat-story__badge-name">Samet</span>
+                <span class="mat-story__badge-meta">Турция</span>
+              </div>
+              <div class="mat-story__badge-row" role="listitem">
+                <span class="mat-story__badge-name">Kronospan</span>
+                <span class="mat-story__badge-meta">EU</span>
+              </div>
             </div>
-            <h3 class="adv-card__title">Петли Blum</h3>
-            <p class="adv-card__desc">Оригинальные петли Blum CLIP top с системой мягкого закрытия BLUMOTION. Ресурс 100 000+ циклов.</p>
           </div>
 
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 10h20v4H8z" stroke="currentColor" stroke-width="1.5" rx="1" fill="currentColor" opacity=".1"/><path d="M8 22h20v4H8z" stroke="currentColor" stroke-width="1.5" rx="1" fill="currentColor" opacity=".1"/><path d="M14 12v10M22 12v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="mat-story__text">
+            <div class="mat-story__eyebrow">
+              <span class="mat-story__eyebrow-line" aria-hidden="true"></span>
+              <span>О материалах</span>
             </div>
-            <h3 class="adv-card__title">Направляющие Samet</h3>
-            <p class="adv-card__desc">Телескопические и шариковые направляющие Samet — плавный ход, полное выдвижение, нагрузка до 45 кг.</p>
-          </div>
 
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4v28M4 18h28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity=".1"/></svg>
-            </div>
-            <h3 class="adv-card__title">Склад в Симферополе</h3>
-            <p class="adv-card__desc">Основные позиции всегда в наличии — выдаём в день обращения без ожидания поставки.</p>
-          </div>
+            <h2 class="mat-story__title" id="story-heading">
+              Надёжная фурнитура<br>
+              <em>ведущих</em> производителей
+            </h2>
 
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="5" y="5" width="26" height="26" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity=".1"/><path d="M5 13h26M13 5v26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <h3 class="adv-card__title">Подбор под проект</h3>
-            <p class="adv-card__desc">Подбираем артикулы фурнитуры с учётом размеров деталей, нагрузки и способа крепления.</p>
-          </div>
+            <p class="mat-story__lead">
+              Работаем с проверенными брендами — <strong>Blum</strong>, <strong>Samet</strong> и
+              <strong>Kronospan</strong>. Петли, направляющие, плиты и декоры, которые служат годами
+              без потери плавности хода и внешнего вида.
+            </p>
 
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M10 18h6l2-6 4 12 2-6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 class="adv-card__title">Сертифицированный товар</h3>
-            <p class="adv-card__desc">Только оригинальная фурнитура с сертификатами — исключаем контрафакт и некачественные аналоги.</p>
-          </div>
-
-          <div class="adv-card">
-            <div class="adv-card__icon" aria-hidden="true">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 28l4-12 6 8 4-6 6 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M6 28h24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <h3 class="adv-card__title">Оптовые цены для мастеров</h3>
-            <p class="adv-card__desc">При регулярных закупках — индивидуальные условия. Работаем с мебельными мастерскими и производствами.</p>
+            <ol class="mat-story__points">
+              <li class="mat-story__point">
+                <span class="mat-story__point-num">01</span>
+                <div class="mat-story__point-body">
+                  <h3 class="mat-story__point-title">Оригинальная фурнитура</h3>
+                  <p class="mat-story__point-desc">Системы мягкого закрытия, подъёмные механизмы — десятки тысяч циклов без потери плавности.</p>
+                </div>
+              </li>
+              <li class="mat-story__point">
+                <span class="mat-story__point-num">02</span>
+                <div class="mat-story__point-body">
+                  <h3 class="mat-story__point-title">Склад в Симферополе</h3>
+                  <p class="mat-story__point-desc">Востребованные позиции в наличии — выдаём в день обращения. Подбираем артикулы под проект и схему присадки.</p>
+                </div>
+              </li>
+              <li class="mat-story__point">
+                <span class="mat-story__point-num">03</span>
+                <div class="mat-story__point-body">
+                  <h3 class="mat-story__point-title">Опт для мастерских</h3>
+                  <p class="mat-story__point-desc">Ручки, замки, конфирматы, минификсы, соединители — отгрузка партиями для производств мебели.</p>
+                </div>
+              </li>
+            </ol>
           </div>
 
         </div>
@@ -461,21 +584,134 @@
       </div>
     </section>
 
-    <!-- ===================== CTA BANNER ===================== -->
-    <section class="svc-cta" aria-labelledby="cta-heading">
-      <div class="container">
-        <div class="svc-cta__inner">
-          <div class="svc-cta__text">
-            <h2 id="cta-heading">Нужна фурнитура для проекта?</h2>
-            <p>Пришлите схему или чертёж — подберём нужные артикулы и скомплектуем заказ со склада в день обращения.</p>
-          </div>
-          <div class="svc-cta__actions">
-            <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
-            <a href="tel:+79786187313" class="btn btn-outline-white">+7 978 618-73-13</a>
+
+       <!-- ===================== PERKS (compact modern grid) ===================== -->
+       <section class="mat-perks" aria-labelledby="perks-heading">
+        <div class="container mat-perks__container">
+  
+          <header class="mat-perks__header">
+            <div class="mat-perks__eyebrow">
+              <span class="mat-perks__eyebrow-line" aria-hidden="true"></span>
+              <span>Преимущества</span>
+            </div>
+            <h2 class="mat-perks__title" id="perks-heading">Всё для удобной комплектации</h2>
+          </header>
+  
+          <div class="mat-perks__grid">
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 4h3v16H7zM10 8h7a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="13.5" cy="12" r="1.2" fill="currentColor"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Петли Blum</h3>
+              <p class="mat-perks__desc">CLIP top с BLUMOTION. Ресурс 100 000+ циклов.</p>
+            </div>
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="4" rx="0.6" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="4" rx="0.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 8v0M14 16v0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Направляющие Samet</h3>
+              <p class="mat-perks__desc">Плавный ход, полное выдвижение, нагрузка до 45 кг.</p>
+            </div>
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 10l9-6 9 6v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Склад в Симферополе</h3>
+              <p class="mat-perks__desc">Основные позиции в наличии — выдаём в день обращения.</p>
+            </div>
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l3 3 5-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Подбор под проект</h3>
+              <p class="mat-perks__desc">Артикулы под размеры, нагрузку и способ крепления.</p>
+            </div>
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Сертифицированный товар</h3>
+              <p class="mat-perks__desc">Только оригиналы — без контрафакта и аналогов.</p>
+            </div>
+  
+            <div class="mat-perks__item">
+              <span class="mat-perks__ico" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <h3 class="mat-perks__name">Опт для мастеров</h3>
+              <p class="mat-perks__desc">Индивидуальные условия для мастерских и производств.</p>
+            </div>
+  
           </div>
         </div>
+      </section>
+
+ 
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="prices-cta process-flow" aria-labelledby="cta-heading">
+    <div class="process-flow__glow process-flow__glow--1" aria-hidden="true"></div>
+    <div class="process-flow__glow process-flow__glow--2" aria-hidden="true"></div>
+    <div class="process-flow__grid-bg" aria-hidden="true"></div>
+    <div class="container prices-cta__container">
+      <div class="prices-cta__inner">
+
+        <div class="prices-cta__text">
+          <p class="prices-cta__eyebrow">Бесплатный расчёт</p>
+          <h2 id="cta-heading" class="prices-cta__title">Нужен расчёт под ваш проект?</h2>
+          <p class="prices-cta__lead">Пришлите чертёж или опишите задачу — рассчитаем стоимость бесплатно и ответим в течение часа в рабочее время.</p>
+
+          <ul class="prices-cta__benefits" aria-label="Условия работы">
+            <li class="prices-cta__benefit">
+              <span class="prices-cta__benefit-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 1.75" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="prices-cta__benefit-label">Ответ до часа</span>
+              <span class="prices-cta__benefit-hint">в Пн–Пт, 9:00–18:00</span>
+            </li>
+            <li class="prices-cta__benefit">
+              <span class="prices-cta__benefit-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 3h6.5L15 6.5V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 3v3.5h4M7 10h5M7 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="prices-cta__benefit-label">Расчёт по чертежу</span>
+              <span class="prices-cta__benefit-hint">оценка без оплаты</span>
+            </li>
+          
+          </ul>
+        </div>
+
+        <aside class="prices-cta__panel" aria-label="Связаться с нами">
+          <span class="prices-cta__panel-corner prices-cta__panel-corner--tl" aria-hidden="true"></span>
+          <span class="prices-cta__panel-corner prices-cta__panel-corner--br" aria-hidden="true"></span>
+
+          <p class="prices-cta__panel-eyebrow">Готовы помочь</p>
+          <p class="prices-cta__panel-title">Свяжитесь с&nbsp;нашим менеджером</p>
+
+          <a href="#" class="btn btn-primary prices-cta__btn" data-open-quick-modal="true">
+            Оставить заявку
+            <svg class="prices-cta__btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <span class="prices-cta__divider" aria-hidden="true"><span>или</span></span>
+
+          <a href="tel:+79786187313" class="prices-cta__phone">
+            <span class="prices-cta__phone-ico" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4h3l1.6 4-2 1.2a10 10 0 0 0 5.2 5.2l1.2-2L16 14v3a1 1 0 0 1-1 1C7 18 2 13 2 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="prices-cta__phone-text">
+              <span class="prices-cta__phone-meta">Позвоните прямо сейчас</span>
+              <span class="prices-cta__phone-num">+7 978 618-73-13</span>
+            </span>
+          </a>
+        </aside>
+
       </div>
-    </section>
+    </div>
+  </section>
 
   </main>
 

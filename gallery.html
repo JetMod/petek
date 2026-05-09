@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Готовые проекты Petek — кухни, корпусная мебель, шкафы и другие работы из нашего производства в Симферополе. Фото реализованных объектов." />
+  <meta name="description" content="Портфолио Petek — кухни, шкафы, встроенная мебель: подборка фото работ с производства в Симферополе. Полноэкранный просмотр." />
   <title>Проекты — готовые работы Petek, Симферополь</title>
+  <link rel="preload" as="image" href="img/DSC00038.jpg" />
+  <link rel="preload" as="image" href="img/DSC00056.jpg" />
   <link rel="stylesheet" href="css/secondary.css" />
   <link rel="stylesheet" href="css/gallery.css" />
 </head>
-<body>
+<body class="page-gallery">
 
   <header class="site-header site-header--home" id="site-header">
 
@@ -102,29 +104,122 @@
 
   <main>
 
-    <!-- ===================== PAGE HERO ===================== -->
-    <section class="gallery-hero" aria-label="Заголовок раздела">
-      <div class="container gallery-hero__content">
-        <nav class="gallery-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Проекты</span>
-        </nav>
-        <h1 class="gallery-hero__title">Наши проекты</h1>
-        <p class="gallery-hero__sub">Фото готовых работ с производства в Симферополе: кухни, корпусная мебель, шкафы и другие объекты. Раздел будем пополнять новыми кейсами.</p>
+    <!-- ===================== PAGE HERO (светлый сплит + коллаж) ===================== -->
+    <section class="gallery-hero" aria-label="Баннер страницы проектов">
+      <div class="gallery-hero__ambient" aria-hidden="true">
+        <span class="gallery-hero__blob gallery-hero__blob--1"></span>
+        <span class="gallery-hero__blob gallery-hero__blob--2"></span>
+        <span class="gallery-hero__mesh"></span>
+      </div>
+      <div class="container gallery-hero__inner">
+        <div class="gallery-hero__copy">
+          <nav class="gallery-hero__crumbs" aria-label="Путь навигации">
+            <a href="index.html">Главная</a>
+            <span class="gallery-hero__crumbs-sep" aria-hidden="true">/</span>
+            <span aria-current="page">Проекты</span>
+          </nav>
+          <div class="gallery-hero__eyebrow">
+            <span class="gallery-hero__eyebrow-line" aria-hidden="true"></span>
+            <span class="gallery-hero__eyebrow-text">Портфолио · Симферополь</span>
+          </div>
+          <h1 class="gallery-hero__title">Работы, которые <em>мы собираем сами</em></h1>
+          <p class="gallery-hero__lead">Кухни, корпус и встройка с нашего производства — ниже сетка без лишнего текста: просто смотрите и открывайте снимки на весь экран.</p>
+          <div class="gallery-hero__actions">
+            <a href="#projects-heading" class="btn btn-primary">К галерее</a>
+            <a href="#" class="btn btn-outline gallery-hero__btn-outline" data-open-quick-modal="true">Запросить расчёт</a>
+          </div>
+        </div>
+        <div class="gallery-hero__collage">
+          <div class="gallery-hero__collage-ring" aria-hidden="true"></div>
+          <div
+            class="gallery-hero__stack"
+            id="gallery-hero-stack"
+            role="button"
+            tabindex="0"
+            aria-label="Поменять расположение фотографий местами"
+          >
+            <img src="img/DSC00038.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot1" width="440" height="560" decoding="async" />
+            <img src="img/DSC00056.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot2" width="400" height="480" decoding="async" />
+            <img src="img/DSC00021.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot3" width="380" height="420" decoding="async" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== PROJECTS GRID ===================== -->
+    <!-- ===================== PROJECTS GALLERY ===================== -->
     <section class="section gallery-section" aria-labelledby="projects-heading">
       <div class="container">
         <header class="gallery-section__intro">
-          <p class="gallery-section__eyebrow">Портфолио</p>
+          <p class="gallery-section__eyebrow">Подборка</p>
           <h2 class="gallery-section__heading" id="projects-heading">Реализованные объекты</h2>
-          <p class="gallery-section__lead">Нажмите на фото, чтобы открыть крупный просмотр и листать снимки. Название и подпись к каждой работе задаются в этом же файле — массив проектов в конце страницы.</p>
+          <p class="gallery-section__lead">Фото с производства и после монтажа — нажмите кадр для просмотра во весь экран.</p>
         </header>
-        <div class="gallery-masonry" id="gallery-grid" role="list">
-          <!-- populated by JS below -->
+
+        <div class="gallery-wall">
+          <div class="gallery-wall__frame">
+            <div class="gallery-wall__grid" id="gallery-grid" role="list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BANNER ===================== -->
+    <section class="prices-cta process-flow" aria-labelledby="cta-heading">
+      <div class="process-flow__glow process-flow__glow--1" aria-hidden="true"></div>
+      <div class="process-flow__glow process-flow__glow--2" aria-hidden="true"></div>
+      <div class="process-flow__grid-bg" aria-hidden="true"></div>
+      <div class="container prices-cta__container">
+        <div class="prices-cta__inner">
+
+          <div class="prices-cta__text">
+            <p class="prices-cta__eyebrow">Бесплатный расчёт</p>
+            <h2 id="cta-heading" class="prices-cta__title">Нужен расчёт под ваш проект?</h2>
+            <p class="prices-cta__lead">Пришлите чертёж или опишите задачу — рассчитаем стоимость бесплатно и ответим в течение часа в рабочее время.</p>
+
+            <ul class="prices-cta__benefits" aria-label="Условия работы">
+              <li class="prices-cta__benefit">
+                <span class="prices-cta__benefit-ico" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 1.75" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="prices-cta__benefit-label">Ответ до часа</span>
+                <span class="prices-cta__benefit-hint">в Пн–Пт, 9:00–18:00</span>
+              </li>
+              <li class="prices-cta__benefit">
+                <span class="prices-cta__benefit-ico" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M5 3h6.5L15 6.5V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 3v3.5h4M7 10h5M7 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="prices-cta__benefit-label">Расчёт по чертежу</span>
+                <span class="prices-cta__benefit-hint">оценка без оплаты</span>
+              </li>
+            
+            </ul>
+          </div>
+
+          <aside class="prices-cta__panel" aria-label="Связаться с нами">
+            <span class="prices-cta__panel-corner prices-cta__panel-corner--tl" aria-hidden="true"></span>
+            <span class="prices-cta__panel-corner prices-cta__panel-corner--br" aria-hidden="true"></span>
+
+            <p class="prices-cta__panel-eyebrow">Готовы помочь</p>
+            <p class="prices-cta__panel-title">Свяжитесь с&nbsp;нашим менеджером</p>
+
+            <a href="#" class="btn btn-primary prices-cta__btn" data-open-quick-modal="true">
+              Оставить заявку
+              <svg class="prices-cta__btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <span class="prices-cta__divider" aria-hidden="true"><span>или</span></span>
+
+            <a href="tel:+79786187313" class="prices-cta__phone">
+              <span class="prices-cta__phone-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4h3l1.6 4-2 1.2a10 10 0 0 0 5.2 5.2l1.2-2L16 14v3a1 1 0 0 1-1 1C7 18 2 13 2 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="prices-cta__phone-text">
+                <span class="prices-cta__phone-meta">Позвоните прямо сейчас</span>
+                <span class="prices-cta__phone-num">+7 978 618-73-13</span>
+              </span>
+            </a>
+          </aside>
+
         </div>
       </div>
     </section>
@@ -132,7 +227,7 @@
   </main>
 
   <!-- ===================== LIGHTBOX ===================== -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр проекта" hidden>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото" hidden>
     <button class="lightbox__close" id="lightbox-close" aria-label="Закрыть">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -152,7 +247,6 @@
       </svg>
     </button>
     <div class="lightbox__bottom" id="lightbox-bottom">
-      <p class="lightbox__project-line" id="lightbox-project-line" hidden></p>
       <div class="lightbox__counter" id="lightbox-counter" aria-live="polite"></div>
     </div>
   </div>
@@ -249,166 +343,6 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script>
-    (function () {
-      'use strict';
-
-      /* ----------------------------------------------------------
-         Готовые проекты: файл в img/, заголовок и подпись (можно пустые)
-      ---------------------------------------------------------- */
-      var PROJECTS = [
-        { file: 'DSC00003.jpg', title: '', caption: '' },
-        { file: 'DSC00005.jpg', title: '', caption: '' },
-        { file: 'DSC00007.jpg', title: '', caption: '' },
-        { file: 'DSC00008.jpg', title: '', caption: '' },
-        { file: 'DSC00015.jpg', title: '', caption: '' },
-        { file: 'DSC00019.jpg', title: '', caption: '' },
-        { file: 'DSC00021.jpg', title: '', caption: '' },
-        { file: 'DSC00025.jpg', title: '', caption: '' },
-        { file: 'DSC00036.jpg', title: '', caption: '' },
-        { file: 'DSC00038.jpg', title: '', caption: '' },
-        { file: 'DSC00045.jpg', title: '', caption: '' },
-        { file: 'DSC00053.jpg', title: '', caption: '' },
-        { file: 'DSC00056.jpg', title: '', caption: '' },
-        { file: 'DSC00057.jpg', title: '', caption: '' },
-        { file: 'DSC00062.jpg', title: '', caption: '' }
-      ];
-
-      function projectTitle(p, index) {
-        var t = (p.title || '').trim();
-        return t || ('Проект ' + (index + 1));
-      }
-
-      function projectAlt(p, index) {
-        var c = (p.caption || '').trim();
-        var base = projectTitle(p, index);
-        return c ? base + ' — ' + c : base + ' — готовая работа Petek';
-      }
-
-      /* ----------------------------------------------------------
-         Сетка карточек
-      ---------------------------------------------------------- */
-      var grid = document.getElementById('gallery-grid');
-
-      PROJECTS.forEach(function (p, idx) {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'gallery-item';
-        btn.setAttribute('role', 'listitem');
-        btn.setAttribute('aria-label', 'Открыть: ' + projectTitle(p, idx));
-        btn.dataset.index = String(idx);
-
-        var img = document.createElement('img');
-        img.src = 'img/' + p.file;
-        img.alt = projectAlt(p, idx);
-        img.loading = 'lazy';
-        img.decoding = 'async';
-
-        var cap = document.createElement('span');
-        cap.className = 'gallery-item__caption';
-        var ti = (p.title || '').trim();
-        var capLine = document.createElement('span');
-        capLine.className = 'gallery-item__caption-title';
-        capLine.textContent = ti || ('Проект ' + (idx + 1));
-        cap.appendChild(capLine);
-        var capSub = (p.caption || '').trim();
-        if (capSub) {
-          var sub = document.createElement('span');
-          sub.className = 'gallery-item__caption-sub';
-          sub.textContent = capSub;
-          cap.appendChild(sub);
-        }
-
-        btn.appendChild(img);
-        btn.appendChild(cap);
-        grid.appendChild(btn);
-      });
-
-      /* ----------------------------------------------------------
-         Лайтбокс
-      ---------------------------------------------------------- */
-      var lightbox  = document.getElementById('lightbox');
-      var lbImg     = document.getElementById('lightbox-img');
-      var lbCounter = document.getElementById('lightbox-counter');
-      var lbLine    = document.getElementById('lightbox-project-line');
-      var lbClose   = document.getElementById('lightbox-close');
-      var lbPrev    = document.getElementById('lightbox-prev');
-      var lbNext    = document.getElementById('lightbox-next');
-      var current   = 0;
-      var total     = PROJECTS.length;
-
-      function syncLightboxMeta() {
-        var p = PROJECTS[current];
-        var title = projectTitle(p, current);
-        var cap = (p.caption || '').trim();
-        lbImg.src = 'img/' + p.file;
-        lbImg.alt = projectAlt(p, current);
-        lbCounter.textContent = (current + 1) + ' / ' + total;
-        if (cap) {
-          lbLine.textContent = title + ' — ' + cap;
-          lbLine.hidden = false;
-        } else {
-          lbLine.textContent = title;
-          lbLine.hidden = false;
-        }
-      }
-
-      function openLightbox(idx) {
-        current = idx;
-        syncLightboxMeta();
-        lightbox.hidden = false;
-        document.body.style.overflow = 'hidden';
-        lbClose.focus();
-      }
-
-      function closeLightbox() {
-        lightbox.hidden = true;
-        document.body.style.overflow = '';
-        var trigger = grid.querySelector('[data-index="' + current + '"]');
-        if (trigger) trigger.focus();
-      }
-
-      function showPrev() {
-        current = (current - 1 + total) % total;
-        syncLightboxMeta();
-      }
-
-      function showNext() {
-        current = (current + 1) % total;
-        syncLightboxMeta();
-      }
-
-      grid.addEventListener('click', function (e) {
-        var btn = e.target.closest('.gallery-item');
-        if (btn) openLightbox(parseInt(btn.dataset.index, 10));
-      });
-
-      lbClose.addEventListener('click', closeLightbox);
-      lbPrev.addEventListener('click', showPrev);
-      lbNext.addEventListener('click', showNext);
-
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (lightbox.hidden) return;
-        if (e.key === 'Escape')      closeLightbox();
-        if (e.key === 'ArrowLeft')   showPrev();
-        if (e.key === 'ArrowRight')  showNext();
-      });
-
-      /* swipe support on touch devices */
-      var touchStartX = 0;
-      lightbox.addEventListener('touchstart', function (e) {
-        touchStartX = e.changedTouches[0].clientX;
-      }, { passive: true });
-      lightbox.addEventListener('touchend', function (e) {
-        var dx = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(dx) > 50) dx < 0 ? showNext() : showPrev();
-      }, { passive: true });
-
-    }());
-  </script>
+  <script src="js/gallery-page.js"></script>
 </body>
 </html>

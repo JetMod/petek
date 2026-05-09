@@ -65,7 +65,8 @@
     function onScroll() {
       var threshold =
         document.body.classList.contains('page-home') ||
-        document.body.classList.contains('page-prices')
+        document.body.classList.contains('page-prices') ||
+        document.body.classList.contains('page-materials')
           ? 96
           : 10;
       var shouldScroll = window.scrollY > threshold;
@@ -437,6 +438,52 @@
         }
         closeModal();
       }, 1200);
+    });
+  }());
+
+  /* -------------------------------------------------------
+     Materials hero — click-to-promote sample stack
+  ------------------------------------------------------- */
+  (function () {
+    const stack = document.querySelector('[data-stack]');
+    if (!stack) return;
+
+    const cards = Array.from(stack.querySelectorAll('.mat-hero__sample'));
+    if (cards.length < 2) return;
+
+    const total = cards.length;
+
+    function promote(clickedCard) {
+      const clickedPos = parseInt(clickedCard.dataset.pos, 10);
+      if (!clickedPos) return;
+
+      if (clickedPos === 1) {
+        // top card → cycle whole deck: top goes to the bottom, rest shift up
+        cards.forEach(function (card) {
+          const pos = parseInt(card.dataset.pos, 10);
+          card.dataset.pos = pos === 1 ? String(total) : String(pos - 1);
+        });
+        return;
+      }
+
+      // any other card → promote to top, cards above it shift down by 1
+      cards.forEach(function (card) {
+        const pos = parseInt(card.dataset.pos, 10);
+        if (card === clickedCard) {
+          card.dataset.pos = '1';
+        } else if (pos < clickedPos) {
+          card.dataset.pos = String(pos + 1);
+        }
+      });
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        promote(card);
+        if (!stack.classList.contains('is-touched')) {
+          stack.classList.add('is-touched');
+        }
+      });
     });
   }());
 
