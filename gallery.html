@@ -104,12 +104,13 @@
 
   <main>
 
-    <!-- ===================== PAGE HERO (светлый сплит + коллаж) ===================== -->
+    <!-- ===================== PAGE HERO (dark cinematic) ===================== -->
     <section class="gallery-hero" aria-label="Баннер страницы проектов">
       <div class="gallery-hero__ambient" aria-hidden="true">
         <span class="gallery-hero__blob gallery-hero__blob--1"></span>
         <span class="gallery-hero__blob gallery-hero__blob--2"></span>
-        <span class="gallery-hero__mesh"></span>
+        <span class="gallery-hero__blob gallery-hero__blob--3"></span>
+        <span class="gallery-hero__grid-bg"></span>
       </div>
       <div class="container gallery-hero__inner">
         <div class="gallery-hero__copy">
@@ -119,14 +120,33 @@
             <span aria-current="page">Проекты</span>
           </nav>
           <div class="gallery-hero__eyebrow">
-            <span class="gallery-hero__eyebrow-line" aria-hidden="true"></span>
+            <span class="gallery-hero__eyebrow-dot" aria-hidden="true"></span>
             <span class="gallery-hero__eyebrow-text">Портфолио · Симферополь</span>
           </div>
           <h1 class="gallery-hero__title">Работы, которые <em>мы собираем сами</em></h1>
           <p class="gallery-hero__lead">Кухни, корпус и встройка с нашего производства — ниже сетка без лишнего текста: просто смотрите и открывайте снимки на весь экран.</p>
           <div class="gallery-hero__actions">
-            <a href="#projects-heading" class="btn btn-primary">К галерее</a>
+            <a href="#projects-heading" class="btn btn-primary gallery-hero__btn-primary">
+              К галерее
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 2.5v9M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
             <a href="#" class="btn btn-outline gallery-hero__btn-outline" data-open-quick-modal="true">Запросить расчёт</a>
+          </div>
+          <div class="gallery-hero__stats" aria-label="Статистика компании">
+            <div class="gallery-hero__stat">
+              <span class="gallery-hero__stat-num">15+</span>
+              <span class="gallery-hero__stat-label">лет работы</span>
+            </div>
+            <span class="gallery-hero__stat-divider" aria-hidden="true"></span>
+            <div class="gallery-hero__stat">
+              <span class="gallery-hero__stat-num">500+</span>
+              <span class="gallery-hero__stat-label">проектов</span>
+            </div>
+            <span class="gallery-hero__stat-divider" aria-hidden="true"></span>
+            <div class="gallery-hero__stat">
+              <span class="gallery-hero__stat-num">100%</span>
+              <span class="gallery-hero__stat-label">своё производство</span>
+            </div>
           </div>
         </div>
         <div class="gallery-hero__collage">
@@ -141,7 +161,40 @@
             <img src="img/DSC00038.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot1" width="440" height="560" decoding="async" />
             <img src="img/DSC00056.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot2" width="400" height="480" decoding="async" />
             <img src="img/DSC00021.jpg" alt="" class="gallery-hero__shot gallery-hero__shot--slot3" width="380" height="420" decoding="async" />
+            <div class="gallery-hero__badge" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l2.5 5h5.5l-4.5 4 1.7 5.5L10 13.5 4.8 16.5 6.5 11 2 7h5.5z" fill="currentColor"/></svg>
+              <span>500+ работ</span>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="gallery-hero__ticker" aria-hidden="true">
+        <div class="gallery-hero__ticker-track">
+          <span>Кухни</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Шкафы-купе</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Встроенная мебель</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Гардеробные</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Детская мебель</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Столешницы</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>МДФ-фасады</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Корпуса</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Распил ЛДСП</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Кромление</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Присадка</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Покраска фасадов</span><span class="gallery-hero__ticker-dot">·</span>
+          <!-- set 2 -->
+          <span>Кухни</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Шкафы-купе</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Встроенная мебель</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Гардеробные</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Детская мебель</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Столешницы</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>МДФ-фасады</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Корпуса</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Распил ЛДСП</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Кромление</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Присадка</span><span class="gallery-hero__ticker-dot">·</span>
+          <span>Покраска фасадов</span><span class="gallery-hero__ticker-dot">·</span>
         </div>
       </div>
     </section>

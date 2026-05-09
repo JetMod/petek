@@ -356,7 +356,7 @@
    PAGE HOME / PRICES — шапка поверх полноэкранного hero (.site-header--home)
    ===================================================== */
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home {
   position: absolute;
   top: 0;
   left: 0;
@@ -364,106 +364,106 @@
   z-index: 100;
 }
 
-body:is(.page-home, .page-prices, .page-materials) {
+body:is(.page-home, .page-prices, .page-materials, .page-contacts) {
   scroll-padding-top: clamp(108px, 22vw, 148px);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) {
   box-shadow: none;
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util {
   background: rgba(12, 10, 8, 0.44);
   border-bottom-color: rgba(255, 255, 255, 0.09);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-main {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-main {
   background: rgba(12, 10, 8, 0.38);
   border-bottom-color: rgba(255, 255, 255, 0.06);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home.is-scrolled .header-util {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home.is-scrolled .header-util {
   background: var(--hdr-bg);
   border-bottom: 1px solid var(--hdr-border);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home.is-scrolled .header-main {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home.is-scrolled .header-main {
   background: var(--hdr-bg-soft);
   border-bottom: 1px solid var(--hdr-border);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util__sep {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util__sep {
   color: rgba(255, 255, 255, 0.28);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util__item {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util__item {
   color: rgba(255, 255, 255, 0.78);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util__item svg {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util__item svg {
   color: var(--gold);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:hover,
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:focus-visible {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:hover,
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:focus-visible {
   color: var(--white);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__link {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__link {
   color: rgba(255, 255, 255, 0.88);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__link:hover,
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__link:focus-visible {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__link:hover,
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__link:focus-visible {
   background: rgba(255, 255, 255, 0.1);
   color: var(--white);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__link--active {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__link--active {
   color: var(--white);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown-trigger {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown-trigger {
   color: rgba(255, 255, 255, 0.9);
   border-color: transparent;
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:hover .site-nav__dropdown-trigger,
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:focus-within .site-nav__dropdown-trigger {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:hover .site-nav__dropdown-trigger,
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:focus-within .site-nav__dropdown-trigger {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.18);
   color: var(--white);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-phone {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-phone {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.22);
   color: rgba(255, 255, 255, 0.95);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-phone svg {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-phone svg {
   color: var(--gold);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-phone:hover,
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-phone:focus-visible {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-phone:hover,
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-phone:focus-visible {
   background: rgba(255, 255, 255, 0.18);
   border-color: rgba(255, 255, 255, 0.36);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .site-header__burger span {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .site-header__burger span {
   background: var(--white);
 }
 
-:is(.page-home, .page-prices, .page-materials) .site-header.site-header--home:not(.is-scrolled) .header-logo img {
+:is(.page-home, .page-prices, .page-materials, .page-contacts) .site-header.site-header--home:not(.is-scrolled) .header-logo img {
   filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.48));
 }
 

@@ -6,99 +6,626 @@
    ===================================================== */
 
 /* =====================================================
-   PAGE HERO
+   CONTACTS HERO — ctc-hero
+   Уникальный split-layout: тёмная редакция слева + фото справа.
+   Полностью независим от .page-hero (prices.css).
    ===================================================== */
-.page-hero {
+
+/* ── Обёртка ── */
+.ctc-hero {
   position: relative;
-  min-height: 44vh;
-  display: flex;
-  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #0c0a08;
+  color: #fff;
   overflow: hidden;
-  color: var(--white);
+  display: flex;
+  flex-direction: column;
 }
 
-.page-hero__bg {
+/* ── Декоративный призрачный текст ── */
+.ctc-hero__ghost {
+  position: absolute;
+  bottom: -0.12em;
+  left: -0.03em;
+  font-family: var(--font-heading);
+  font-size: clamp(9rem, 22vw, 20rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(193, 162, 107, 0.07);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── Тёплое свечение ── */
+.ctc-hero__glow {
+  position: absolute;
+  width: min(700px, 80vw);
+  height: min(700px, 80vw);
+  bottom: -25%;
+  left: -12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(193, 162, 107, 0.13) 0%, transparent 62%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Тонкие диагональные линии (фон) ── */
+.ctc-hero__lines {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-  transform: scale(1.04);
-  transition: transform 8s ease-out;
+  background-image:
+    repeating-linear-gradient(
+      -48deg,
+      transparent,
+      transparent 80px,
+      rgba(255, 255, 255, 0.018) 80px,
+      rgba(255, 255, 255, 0.018) 81px
+    );
+  pointer-events: none;
+  z-index: 0;
 }
 
-.page-hero.is-visible .page-hero__bg {
-  transform: scale(1);
+/* ── Основная сетка (left / right) ── */
+.ctc-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 56fr 44fr;
+  flex: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-.page-hero__overlay {
+/* ────────────────── LEFT ────────────────── */
+.ctc-hero__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding:
+    calc(clamp(108px, 22vw, 185px) + 0.35rem)
+    clamp(2rem, 5vw, 4.5rem)
+    clamp(2rem, 5vh, 3rem)
+    clamp(1.25rem, 4vw, 3rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Крошки в потоке — сразу под шапкой, без «дыры» над eyebrow */
+.ctc-hero__crumbs {
+  position: relative;
+  margin: 0 0 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.ctc-hero__crumbs a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.ctc-hero__crumbs a:hover { color: var(--gold); }
+
+.ctc-hero__crumbs-sep { color: rgba(193, 162, 107, 0.3); }
+
+/* ── Eyebrow ── */
+.ctc-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 0.65rem;
+}
+
+.ctc-hero__eyebrow-line {
+  display: inline-block;
+  width: 36px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(193, 162, 107, 0.2));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Заголовок ── */
+.ctc-hero__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(3.25rem, 8.5vw, 6rem);
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  color: #fff;
+  margin: 0 0 1rem;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ctc-hero__title em {
+  font-style: normal;
+  color: #fff;
+}
+
+/* ── Lead ── */
+.ctc-hero__lead {
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  line-height: 1.7;
+  color: #fff;
+  max-width: 34ch;
+  margin: 0 0 2rem;
+}
+
+/* ────────────────── CONTACT ROWS — сетка 2 столбца ────────────────── */
+.ctc-hero__rows {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  align-items: stretch;
+}
+
+.ctc-hero__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid rgba(255, 255, 255, 0.06);
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+  cursor: default;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.ctc-hero__row--link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ctc-hero__row--link:hover {
+  border-left-color: var(--gold);
+  border-color: rgba(193, 162, 107, 0.35);
+  background: rgba(193, 162, 107, 0.06);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Иконка */
+.ctc-hero__row-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(193, 162, 107, 0.09);
+  color: #fff;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  transition: background 0.2s;
+}
+
+.ctc-hero__row--link:hover .ctc-hero__row-ico {
+  background: rgba(193, 162, 107, 0.16);
+}
+
+/* Тело строки */
+.ctc-hero__row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ctc-hero__row-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.ctc-hero__row-val {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+a.ctc-hero__row-val:hover { color: var(--gold); }
+
+/* Стрелка */
+.ctc-hero__row-arr {
+  color: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-self: center;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.ctc-hero__row--link:hover .ctc-hero__row-arr {
+  color: var(--gold);
+  transform: translateX(3px);
+}
+
+/* ── Статус (открыто/закрыто) ── */
+.ctc-hero__row-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  flex-shrink: 0;
+  align-self: center;
+  border: 1px solid transparent;
+}
+
+.ctc-hero__row-status--open {
+  background: rgba(74, 160, 74, 0.12);
+  color: #fff;
+  border-color: rgba(74, 160, 74, 0.22);
+}
+
+.ctc-hero__row-status--closed {
+  background: rgba(200, 80, 80, 0.1);
+  color: #fff;
+  border-color: rgba(200, 80, 80, 0.2);
+}
+
+.ctc-hero__row-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+  animation: ctc-dot-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes ctc-dot-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+/* ── Actions ── */
+.ctc-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ctc-hero__btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.ctc-hero__btn-cta svg {
+  transition: transform 0.25s;
+}
+
+.ctc-hero__btn-cta:hover svg {
+  transform: translateX(3px);
+}
+
+.ctc-hero__scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.ctc-hero__scroll-link:hover {
+  color: var(--gold);
+}
+
+/* ────────────────── RIGHT (фото) ────────────────── */
+.ctc-hero__right {
+  position: relative;
+  overflow: hidden;
+  background: #111009;
+}
+
+.ctc-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(0.7) brightness(0.75) contrast(1.05);
+  transition: transform 10s ease-out;
+}
+
+.ctc-hero:hover .ctc-hero__photo {
+  transform: scale(1.02);
+}
+
+/* Градиент — слева, чтобы фото плавно уходило в тёмный фон */
+.ctc-hero__photo-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #0c0a08 0%,
+    rgba(12, 10, 8, 0.55) 22%,
+    rgba(12, 10, 8, 0.1) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Виньетка снизу */
+.ctc-hero__photo-vignette {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(20, 16, 10, 0.82) 0%,
-    rgba(20, 16, 10, 0.52) 55%,
-    rgba(20, 16, 10, 0.28) 100%
+    rgba(0, 0, 0, 0.55) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* ── Координаты (плавающий тег сверху) ──
+   Ниже высоты шапки (≈130px), иначе перекрывается absolute-header с z-index:100 */
+.ctc-hero__coords {
+  position: absolute;
+  top: calc(clamp(108px, 22vw, 148px) + 0.75rem);
+  right: clamp(1.5rem, 4vw, 2.5rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: rgba(18, 15, 12, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(193, 162, 107, 0.28);
+  padding: 0.45rem 0.85rem;
+  border-radius: 99px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.ctc-hero__coords svg {
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ── Бейдж «15+ лет» ── */
+.ctc-hero__badge {
+  position: absolute;
+  bottom: clamp(2.5rem, 7vh, 5rem);
+  right: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+}
+
+.ctc-hero__badge-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(193, 162, 107, 0.35);
+  animation: ctc-badge-spin 16s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    rgba(193, 162, 107, 0.25) 0%,
+    transparent 35%,
+    transparent 100%
   );
 }
 
-.page-hero__content {
+@keyframes ctc-badge-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ctc-hero__badge-inner {
   position: relative;
-  z-index: 1;
-  padding-block: 3.5rem 3.5rem;
-  width: 100%;
-}
-
-.page-hero__breadcrumb {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: var(--space-md);
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(12, 10, 8, 0.72);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(193, 162, 107, 0.28);
+  text-align: center;
+}
+
+.ctc-hero__badge-num {
   font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
 }
 
-.page-hero__breadcrumb a {
-  color: rgba(255, 255, 255, 0.65);
-  transition: color var(--transition);
+.ctc-hero__badge-label {
+  font-size: 0.5625rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #fff;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
 }
 
-.page-hero__breadcrumb a:hover {
-  color: var(--gold);
+/* ── Вертикальная надпись ── */
+.ctc-hero__vert-label {
+  position: absolute;
+  bottom: clamp(2.5rem, 7vh, 5rem);
+  left: clamp(1rem, 3vw, 2rem);
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
 }
 
-.page-hero__breadcrumb span[aria-hidden] {
-  color: rgba(255, 255, 255, 0.35);
+/* ── Анимация входа ── */
+.ctc-hero__top,
+.ctc-hero__rows,
+.ctc-hero__actions {
+  animation: ctc-fade-up 0.7s cubic-bezier(0.33, 1, 0.32, 1) both;
 }
 
-.page-hero__title {
-  color: var(--white);
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.15;
-  margin-bottom: var(--space-md);
-}
+.ctc-hero__rows { animation-delay: 0.1s; }
+.ctc-hero__actions { animation-delay: 0.2s; }
 
-.page-hero__subtitle {
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 52ch;
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .page-hero {
-    min-height: 36vh;
+@keyframes ctc-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-
-  .page-hero__content {
-    padding-block: 2.5rem 2.5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.ctc-hero__badge,
+.ctc-hero__coords {
+  animation: ctc-fade-in 0.9s ease both;
+  animation-delay: 0.35s;
+}
+
+@keyframes ctc-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-hero__bg {
-    transform: none !important;
+  .ctc-hero__top,
+  .ctc-hero__rows,
+  .ctc-hero__actions,
+  .ctc-hero__badge,
+  .ctc-hero__coords {
+    animation: none;
+  }
+
+  .ctc-hero__badge-ring {
+    animation: none;
+  }
+
+  .ctc-hero__row-dot {
+    animation: none;
+    opacity: 0.8;
+  }
+
+  .ctc-hero__photo {
+    transition: none;
+  }
+}
+
+/* ── Адаптив ── */
+@media (max-width: 1100px) {
+  .ctc-hero__inner {
+    grid-template-columns: 60fr 40fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .ctc-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ctc-hero__right {
+    display: none;
+  }
+
+  .ctc-hero__left {
+    border-right: none;
+    padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .ctc-hero__title {
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .ctc-hero__ghost {
+    font-size: clamp(7rem, 32vw, 14rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .ctc-hero__rows {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .ctc-hero__left {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .ctc-hero__row-val {
+    font-size: 0.875rem;
+  }
+
+  .ctc-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/secondary.css" />
   <link rel="stylesheet" href="css/contacts.css" />
 </head>
-<body>
+<body class="page-contacts">
 
   <header class="site-header site-header--home" id="site-header">
 
@@ -102,115 +102,139 @@
 
   <main>
 
-    <!-- ===================== PAGE HERO ===================== -->
-    <section class="page-hero" aria-label="Заголовок страницы">
-      <div class="page-hero__bg" style="background-image: url('img/building.jpg');"></div>
-      <div class="page-hero__overlay"></div>
-      <div class="container page-hero__content">
-        <nav class="page-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Контакты</span>
-        </nav>
-        <h1 class="page-hero__title">Контакты</h1>
-        <p class="page-hero__subtitle">Производство в Симферополе — приезжайте, звоните или пишите</p>
-      </div>
-    </section>
+    <!-- ===================== CONTACTS HERO ===================== -->
+    <section class="ctc-hero" aria-label="Заголовок страницы Контакты">
 
-    <!-- ===================== CONTACT CARDS ===================== -->
-    <section class="section contacts-info" aria-labelledby="contacts-heading">
-      <div class="container">
-        <h2 class="section-title" id="contacts-heading">Как нас найти</h2>
+      <!-- decorative ghost word -->
+      <span class="ctc-hero__ghost" aria-hidden="true">PETEK</span>
 
-        <div class="contacts-cards">
+      <!-- warm glow -->
+      <div class="ctc-hero__glow" aria-hidden="true"></div>
 
-          <div class="contact-card">
-            <div class="contact-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" fill="var(--gold)" opacity=".12"/>
-                <path d="M16 4a8 8 0 0 1 8 8c0 6-8 16-8 16S8 18 8 12a8 8 0 0 1 8-8z" stroke="var(--gold)" stroke-width="1.6" stroke-linejoin="round"/>
-                <circle cx="16" cy="12" r="2.5" fill="var(--gold)"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Адрес</h3>
-            <address class="contact-card__body" style="font-style:normal;">
-              ул. Генерала Васильева, 32Д, стр.1<br>
-              Симферополь, Республика Крым
-            </address>
+      <!-- subtle diagonal lines -->
+      <div class="ctc-hero__lines" aria-hidden="true"></div>
+
+      <div class="ctc-hero__inner">
+
+        <!-- ===== LEFT COLUMN ===== -->
+        <div class="ctc-hero__left">
+
+          <nav class="ctc-hero__crumbs" aria-label="Путь навигации">
+            <a href="index.html">Главная</a>
+            <span class="ctc-hero__crumbs-sep" aria-hidden="true">/</span>
+            <span aria-current="page">Контакты</span>
+          </nav>
+
+          <div class="ctc-hero__top">
+            <p class="ctc-hero__eyebrow">
+              <span class="ctc-hero__eyebrow-line" aria-hidden="true"></span>
+              Производство · Симферополь · с 2010
+            </p>
+            <h1 class="ctc-hero__title">Кон<em>такты</em></h1>
           </div>
 
-          <div class="contact-card">
-            <div class="contact-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" fill="var(--gold)" opacity=".12"/>
-                <path d="M6 9h5l2.5 5.5L11 16.5a13 13 0 0 0 4.5 4.5l2-2.5L23 21v4a1.5 1.5 0 0 1-1.5 1.5C10 25.5 6.5 14 6.5 10.5A1.5 1.5 0 0 1 8 9H6z" stroke="var(--gold)" stroke-width="1.6" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Телефон</h3>
-            <div class="contact-card__body">
-              <a href="tel:+79786187313" class="contact-card__link">+7 978 618-73-13</a>
-              <p class="contact-card__note">Звоните в рабочее время</p>
-            </div>
-          </div>
+          <!-- contact directory rows -->
+          <ul class="ctc-hero__rows" aria-label="Контактная информация">
 
-          <div class="contact-card">
-            <div class="contact-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" fill="var(--gold)" opacity=".12"/>
-                <rect x="6" y="10" width="20" height="13" rx="2" stroke="var(--gold)" stroke-width="1.6"/>
-                <path d="M6 11.5l10 7 10-7" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Email</h3>
-            <div class="contact-card__body">
-              <a href="mailto:zakaz@petek.pro" class="contact-card__link">zakaz@petek.pro</a>
-              <p class="contact-card__note">Для заявок и вопросов</p>
-            </div>
-          </div>
+            <li class="ctc-hero__row">
+              <span class="ctc-hero__row-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+              </span>
+              <div class="ctc-hero__row-body">
+                <span class="ctc-hero__row-label">Адрес производства</span>
+                <address class="ctc-hero__row-val" style="font-style:normal;">ул. Генерала Васильева, 32Д, стр.&nbsp;1, Симферополь</address>
+              </div>
+              <span class="ctc-hero__row-arr" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </li>
 
-          <div class="contact-card">
-            <div class="contact-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" fill="var(--gold)" opacity=".12"/>
-                <circle cx="16" cy="16" r="8" stroke="var(--gold)" stroke-width="1.6"/>
-                <path d="M16 10v6.5l4 2.5" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3 class="contact-card__title">Режим работы</h3>
-            <div class="contact-card__body">
-              <p class="contact-card__hours">
-                <span class="contact-card__day">Пн–Пт</span>
-                <span class="contact-card__time">9:00 – 18:00</span>
-              </p>
-              <p class="contact-card__hours">
-                <span class="contact-card__day">Сб–Вс</span>
-                <span class="contact-card__time contact-card__time--closed">Выходные</span>
-              </p>
-            </div>
+            <li class="ctc-hero__row ctc-hero__row--link">
+              <span class="ctc-hero__row-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h2a2 2 0 0 1 2 1.72c.127.96.333 1.9.61 2.81a2 2 0 0 1-.45 2.11L7 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.277 1.85.483 2.81.61A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <div class="ctc-hero__row-body">
+                <span class="ctc-hero__row-label">Телефон</span>
+                <a href="tel:+79786187313" class="ctc-hero__row-val">+7&nbsp;978&nbsp;618-73-13</a>
+              </div>
+              <span class="ctc-hero__row-arr" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </li>
+
+            <li class="ctc-hero__row ctc-hero__row--link">
+              <span class="ctc-hero__row-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <div class="ctc-hero__row-body">
+                <span class="ctc-hero__row-label">Электронная почта</span>
+                <a href="mailto:zakaz@petek.pro" class="ctc-hero__row-val">zakaz@petek.pro</a>
+              </div>
+              <span class="ctc-hero__row-arr" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </li>
+
+            <li class="ctc-hero__row">
+              <span class="ctc-hero__row-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div class="ctc-hero__row-body">
+                <span class="ctc-hero__row-label">Режим работы</span>
+                <span class="ctc-hero__row-val">Пн–Пт, 9:00 — 18:00 · Сб–Вс выходной</span>
+              </div>
+              <span class="ctc-hero__row-status" id="ctc-status" aria-live="polite">
+                <span class="ctc-hero__row-dot"></span>
+                <span class="ctc-hero__row-status-text">Пн–Пт</span>
+              </span>
+            </li>
+
+          </ul>
+
+          <div class="ctc-hero__actions">
+            <a href="#order" class="btn btn-primary ctc-hero__btn-cta" data-open-quick-modal="true">
+              Оставить заявку
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contacts-heading" class="ctc-hero__scroll-link">
+              <span>Карта проезда</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4.5 9.5 8 13l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
 
         </div>
+
+        <!-- ===== RIGHT COLUMN (photo) ===== -->
+        <div class="ctc-hero__right" aria-hidden="true">
+          <img src="img/building.jpg" alt="" class="ctc-hero__photo" />
+          <div class="ctc-hero__photo-fade"></div>
+          <div class="ctc-hero__photo-vignette"></div>
+
+          <!-- floating coords tag -->
+          <div class="ctc-hero__coords">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+            44.954° N · 34.067° E
+          </div>
+
+          <!-- floating stat badge -->
+          <div class="ctc-hero__badge">
+            <div class="ctc-hero__badge-ring" aria-hidden="true"></div>
+            <div class="ctc-hero__badge-inner">
+              <span class="ctc-hero__badge-num">15+</span>
+              <span class="ctc-hero__badge-label">лет<br>в Крыму</span>
+            </div>
+          </div>
+
+          <!-- vertical label -->
+          <span class="ctc-hero__vert-label">Производственный цех · Симферополь</span>
+        </div>
+
       </div>
     </section>
 
-    <!-- ===================== MAP ===================== -->
-    <section class="contacts-map" aria-label="Карта проезда">
-      <div class="contacts-map__frame">
-        <iframe
-          title="Карта — Petek, ул. Генерала Васильева 32Д, Симферополь"
-          src="https://yandex.ru/map-widget/v1/?ll=34.066840%2C44.954323&z=16&pt=34.066840%2C44.954323,pm2rdl1&text=%D1%83%D0%BB.%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0%2C%2032%D0%94%2C%20%D0%A1%D0%B8%D0%BC%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C"
-          width="100%"
-          height="480"
-          frameborder="0"
-          allowfullscreen
-          loading="lazy"
-          style="border:0;"
-        ></iframe>
-      </div>
-    </section>
 
-    <!-- ===================== ABOUT COMPANY ===================== -->
-    <section class="section about-company" aria-labelledby="about-heading">
+     <!-- ===================== ABOUT COMPANY ===================== -->
+     <section class="section about-company" aria-labelledby="about-heading">
       <div class="container">
         <div class="about-company__grid">
 
@@ -244,6 +268,25 @@
         </div>
       </div>
     </section>
+   
+
+    <!-- ===================== MAP ===================== -->
+    <section class="contacts-map" aria-label="Карта проезда">
+      <div class="contacts-map__frame">
+        <iframe
+          title="Карта — Petek, ул. Генерала Васильева 32Д, Симферополь"
+          src="https://yandex.ru/map-widget/v1/?ll=34.066840%2C44.954323&z=16&pt=34.066840%2C44.954323,pm2rdl1&text=%D1%83%D0%BB.%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%B0%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B0%2C%2032%D0%94%2C%20%D0%A1%D0%B8%D0%BC%D1%84%D0%B5%D1%80%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C"
+          width="100%"
+          height="480"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          style="border:0;"
+        ></iframe>
+      </div>
+    </section>
+
+   
 
     <!-- ===================== ORDER FORM ===================== -->
     <section class="section order order--studio" id="order">
@@ -442,5 +485,19 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    /* live open/closed status for ctc-hero */
+    (function () {
+      var el = document.getElementById('ctc-status');
+      if (!el) return;
+      var d = new Date();
+      var day = d.getDay();
+      var h = d.getHours();
+      var isOpen = day >= 1 && day <= 5 && h >= 9 && h < 18;
+      el.classList.add(isOpen ? 'ctc-hero__row-status--open' : 'ctc-hero__row-status--closed');
+      var txt = el.querySelector('.ctc-hero__row-status-text');
+      if (txt) txt.textContent = isOpen ? 'Открыто' : 'Закрыто';
+    }());
+  </script>
 </body>
 </html>

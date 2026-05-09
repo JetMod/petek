@@ -66,7 +66,8 @@
       var threshold =
         document.body.classList.contains('page-home') ||
         document.body.classList.contains('page-prices') ||
-        document.body.classList.contains('page-materials')
+        document.body.classList.contains('page-materials') ||
+        document.body.classList.contains('page-contacts')
           ? 96
           : 10;
       var shouldScroll = window.scrollY > threshold;
