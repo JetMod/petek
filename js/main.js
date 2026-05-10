@@ -145,17 +145,23 @@
   /* -------------------------------------------------------
      File input — update label text
   ------------------------------------------------------- */
+  var fileUploadDefaultLabel = 'Выбрать файлы — можно несколько фото (pdf, dwg, jpg…)';
+
   const fileInput   = document.getElementById('f-file');
   const fileDisplay = document.getElementById('file-name-display');
 
   if (fileInput && fileDisplay) {
     fileInput.addEventListener('change', function () {
-      if (fileInput.files.length > 0) {
-        fileDisplay.textContent = Array.from(fileInput.files)
-          .map(function (f) { return f.name; })
-          .join(', ');
+      var list = fileInput.files ? Array.from(fileInput.files) : [];
+      var n = list.length;
+      if (n === 0) {
+        fileDisplay.textContent = fileUploadDefaultLabel;
+      } else if (n === 1) {
+        fileDisplay.textContent = list[0].name;
+      } else if (n <= 4) {
+        fileDisplay.textContent = list.map(function (f) { return f.name; }).join(', ');
       } else {
-        fileDisplay.textContent = 'Выбрать файл (pdf, dwg, jpg…)';
+        fileDisplay.textContent = 'Выбрано файлов: ' + n;
       }
     });
   }
@@ -220,7 +226,7 @@
           submitBtn.disabled = false;
           submitBtn.textContent = 'Отправить заявку';
           orderForm.reset();
-          if (fileDisplay) fileDisplay.textContent = 'Выбрать файл (pdf, dwg, jpg…)';
+          if (fileDisplay) fileDisplay.textContent = fileUploadDefaultLabel;
         }, 3000);
       }
     });
@@ -319,6 +325,8 @@
     var phoneEl = document.getElementById('qm-phone');
     var nameErr = document.getElementById('qm-name-error');
     var phoneErr = document.getElementById('qm-phone-error');
+    var filesEl = document.getElementById('qm-files');
+    var filesMeta = document.getElementById('qm-files-meta');
     if (!modal || !closeBtn || !form || !nameEl || !phoneEl || !nameErr || !phoneErr) return;
     var phonePrefill = '+7';
     var phoneAutoclearDone = false;
@@ -405,6 +413,16 @@
       }
     });
 
+    function updateFilesMeta() {
+      if (!filesEl || !filesMeta) return;
+      var n = filesEl.files ? filesEl.files.length : 0;
+      if (n === 0) filesMeta.textContent = '';
+      else if (n === 1) filesMeta.textContent = 'Выбран 1 файл';
+      else filesMeta.textContent = 'Выбрано файлов: ' + n;
+    }
+
+    if (filesEl) filesEl.addEventListener('change', updateFilesMeta);
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var ok = true;
@@ -433,6 +451,7 @@
         form.reset();
         phoneEl.value = phonePrefill;
         phoneAutoclearDone = false;
+        if (filesMeta) filesMeta.textContent = '';
         if (submit) {
           submit.disabled = false;
           submit.textContent = 'Отправить заявку';

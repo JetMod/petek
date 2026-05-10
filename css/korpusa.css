@@ -1,0 +1,7 @@
+/* korpusa.css — Корпуса для кухни и шкафов-купе */
+@import url("service.css");
+
+.svc-hero__bg {
+  background-image: url("../img/building1.jpg");
+  background-position: center 55%;
+}

@@ -5,3 +5,7 @@
   background-image: url("../img/building1.jpg");
   background-position: center 60%;
 }
+
+#stoleshnitsy {
+  scroll-margin-top: clamp(5rem, 14vw, 7.5rem);
+}

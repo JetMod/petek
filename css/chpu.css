@@ -1,0 +1,7 @@
+/* chpu.css — Распил на ЧПУ */
+@import url("service.css");
+
+.svc-hero__bg {
+  background-image: url("../img/DSC00003.jpg");
+  background-position: center 48%;
+}

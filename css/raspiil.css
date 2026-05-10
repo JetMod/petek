@@ -5,3 +5,17 @@
   background-image: url("../img/DSC00003.jpg");
   background-position: center 55%;
 }
+
+/* Якоря из меню «Услуги» — учёт фиксированной шапки */
+#kromka,
+#prisadka,
+#frezka {
+  scroll-margin-top: clamp(5rem, 14vw, 7.5rem);
+}
+
+.svc-about--anchor .svc-about__text p a:not(.btn) {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

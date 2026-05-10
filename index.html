@@ -94,15 +94,15 @@
               <div class="site-nav__dropdown-group">
                 <p class="site-nav__dropdown-label">Распил и обработка</p>
                 <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП, ДСП и МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
+                <a href="raspiil.html#kromka" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html#prisadka" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
+                <a href="chpu.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
+                <a href="raspiil.html#frezka" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
               </div>
               <div class="site-nav__dropdown-group">
                 <p class="site-nav__dropdown-label">Изготовление и покраска</p>
-                <a href="proektirovanie.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
-                <a href="proektirovanie.html" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
+                <a href="korpusa.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
+                <a href="proektirovanie.html#stoleshnitsy" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
                 <a href="proektirovanie.html" class="site-nav__dropdown-link">Кухни, гардеробные и детская мебель</a>
                 <a href="pokraska.html" class="site-nav__dropdown-link">Покраска МДФ-фасадов</a>
                 <a href="proektirovanie.html" class="site-nav__dropdown-link">Проектирование в БАЗИС-Мебельщик</a>
@@ -495,7 +495,7 @@
             <div class="order__panel">
               <span class="order__panel-tag" aria-hidden="true">Форма заявки</span>
 
-              <form class="order__form" id="order-form" novalidate aria-labelledby="order-heading">
+              <form class="order__form" id="order-form" novalidate enctype="multipart/form-data" aria-labelledby="order-heading">
                 <div class="form-group">
                   <label class="form-label" for="f-name">Ваше имя <span aria-hidden="true">*</span></label>
                   <input class="form-control" type="text" id="f-name" name="name" placeholder="Иван Иванов" autocomplete="name" required />
@@ -510,9 +510,9 @@
                   <label class="form-label" for="f-file">Чертёж или эскиз</label>
                   <label class="file-upload" for="f-file" id="file-upload-label">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M11 14V4M7 8l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    <span id="file-name-display">Выбрать файл (pdf, dwg, jpg…)</span>
+                    <span id="file-name-display">Выбрать файлы — можно несколько фото (pdf, dwg, jpg…)</span>
                   </label>
-                  <input class="form-control--file" type="file" id="f-file" name="file" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.zip" />
+                  <input class="form-control--file" type="file" id="f-file" name="attachments[]" multiple accept="image/*,.pdf,.dwg,.dxf,.jpg,.jpeg,.png,.webp,.zip,application/pdf" />
                 </div>
 
                 <div class="form-group">
@@ -541,97 +541,61 @@
       </div>
     </section>
 
-    <!-- ===================== PROJECTS — static showcase ===================== -->
+    <!-- ===================== PROJECTS — редакторская сетка (6 фото) ===================== -->
     <section class="section section--gray proj-wall" id="projects-showcase" aria-labelledby="proj-heading">
       <div class="container">
-        <header class="proj-wall__head">
-          <p class="proj-wall__eyebrow">Наши работы</p>
-          <h2 class="proj-wall__title" id="proj-heading">Реальные проекты нашего производства</h2>
-        </header>
+        <div class="proj-wall__shell">
+          <header class="proj-wall__intro">
+            <p class="proj-wall__eyebrow">Наши работы</p>
+            <h2 class="proj-wall__title" id="proj-heading">Фото с производства</h2>
+            <p class="proj-wall__lead">Шесть кадров из цеха — остальное смотрите в портфолио.</p>
+          </header>
 
-        <div class="proj-show" id="projects-work-showcase">
-          <div class="proj-show__tabs" role="tablist" aria-label="Направления работ">
-            <button type="button" class="proj-show__tab is-active" role="tab" aria-selected="true" data-filter="all">Все</button>
-            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="raspil">Распил</button>
-            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="kromlenie">Кромление</button>
-            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="prisadka">Присадка</button>
-            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="contract">Контрактное производство мебели</button>
-            <button type="button" class="proj-show__tab" role="tab" aria-selected="false" data-filter="commercial">Коммерческий распил</button>
+          <div class="proj-wall__gallery-wrap">
+            <div class="proj-show proj-show--editorial">
+              <div class="proj-show-gallery" id="proj-show-gallery" aria-label="Примеры выполненных проектов">
+                <div class="proj-editorial">
+                  <figure class="proj-editorial__cell proj-editorial__cell--hero">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: подача заготовки на станок для распила">
+                      <img src="img/DSC00056.jpg" alt="Подача заготовки на станок для распила" width="1200" height="900" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure class="proj-editorial__cell proj-editorial__cell--a">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: распил листовых материалов">
+                      <img src="img/DSC00100.jpg" alt="Распил листовых материалов в производстве" width="900" height="675" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure class="proj-editorial__cell proj-editorial__cell--b">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: точная обработка узлов и кромок">
+                      <img src="img/DSC00183.jpg" alt="Точная обработка узлов и кромок на производстве" width="900" height="675" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure class="proj-editorial__cell proj-editorial__cell--c">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: покраска фасадов">
+                      <img src="img/pokraska.png" alt="Покраска МДФ-фасадов и финишная отделка" width="900" height="600" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure class="proj-editorial__cell proj-editorial__cell--d">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: кромление деталей">
+                      <img src="img/kromka.png" alt="Кромление мебельных деталей на производстве" width="900" height="600" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure class="proj-editorial__cell proj-editorial__cell--e">
+                    <button type="button" class="proj-collage__open" aria-label="Открыть фото крупно: производственный участок">
+                      <img src="img/DSC02245.jpg" alt="Производственный участок: подготовка заказов" width="900" height="600" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-wall__cta">
+              <a href="gallery.html" class="btn btn-outline proj-wall__cta-btn">
+                Смотреть все проекты
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
           </div>
-
-          <div class="proj-show__masonry" aria-label="Примеры выполненных проектов">
-            <article class="proj-show__tile proj-show__tile--sm" data-cats="raspil,commercial">
-              <img src="img/DSC00100.jpg" alt="Распил листовых материалов в производстве" loading="lazy" />
-              <span class="proj-show__tile-tag">Распил</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="raspil,commercial">
-              <img src="img/DSC00025.jpg" alt="Дисковая пила и точный раскрой" loading="lazy" />
-              <span class="proj-show__tile-tag">Коммерческий распил</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--wide" data-cats="kromlenie,contract">
-              <img src="img/DSC00193.jpg" alt="Заготовки мебельных деталей на производстве" loading="lazy" />
-              <span class="proj-show__tile-tag">Кромление</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--xl" data-cats="contract,raspil">
-              <img src="img/DSC00056.jpg" alt="Подача заготовки на станок для распила" loading="lazy" />
-              <span class="proj-show__tile-tag">Контрактное производство</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="prisadka,kromlenie">
-              <img src="img/DSC00203.jpg" alt="Фрезеровка и обработка кромки" loading="lazy" />
-              <span class="proj-show__tile-tag">Присадка</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--sm" data-cats="prisadka,contract">
-              <img src="img/DSC01213.jpg" alt="Финишная обработка поверхности детали" loading="lazy" />
-              <span class="proj-show__tile-tag">Финишная обработка</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--wide" data-cats="kromlenie,commercial">
-              <img src="img/DSC00083.jpg" alt="Подготовка деталей перед кромкованием" loading="lazy" />
-              <span class="proj-show__tile-tag">Кромление</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="raspil,contract">
-              <img src="img/DSC00105.jpg" alt="Работа с крупными листовыми материалами" loading="lazy" />
-              <span class="proj-show__tile-tag">Распил</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--sm" data-cats="kromlenie,prisadka">
-              <img src="img/DSC00183.jpg" alt="Точная обработка узлов и кромок" loading="lazy" />
-              <span class="proj-show__tile-tag">Присадка и кромка</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--xl" data-cats="commercial,raspil">
-              <img src="img/DSC02245.jpg" alt="Производственный участок коммерческого распила" loading="lazy" />
-              <span class="proj-show__tile-tag">Коммерческий распил</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="contract,prisadka">
-              <img src="img/DSC00003.jpg" alt="Готовые мебельные элементы после обработки" loading="lazy" />
-              <span class="proj-show__tile-tag">Контрактное производство</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--sm" data-cats="kromlenie,contract">
-              <img src="img/DSC00045.jpg" alt="Качество фасадов и точность геометрии" loading="lazy" />
-              <span class="proj-show__tile-tag">Качество фасадов</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--wide" data-cats="prisadka,commercial">
-              <img src="img/raspil.png" alt="Подготовка деталей к присадке и серийному раскрою" loading="lazy" />
-              <span class="proj-show__tile-tag">Серийный раскрой</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="kromlenie,contract">
-              <img src="img/kromka.png" alt="Кромление мебельных деталей на производстве" loading="lazy" />
-              <span class="proj-show__tile-tag">Кромление ПВХ</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--sm" data-cats="contract,commercial">
-              <img src="img/proektirovanie.png" alt="Проектирование и подготовка карт раскроя" loading="lazy" />
-              <span class="proj-show__tile-tag">Проектирование</span>
-            </article>
-            <article class="proj-show__tile proj-show__tile--md" data-cats="prisadka,kromlenie">
-              <img src="img/pokraska.png" alt="Финишная обработка и покраска мебельных фасадов" loading="lazy" />
-              <span class="proj-show__tile-tag">Финиш и покраска</span>
-            </article>
-          </div>
-        </div>
-
-        <div class="proj-wall__cta">
-          <a href="gallery.html" class="btn btn-outline proj-wall__cta-btn">
-            Смотреть все проекты
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
         </div>
       </div>
     </section>
@@ -742,6 +706,7 @@
         <div class="site-footer__col">
           <h3 class="site-footer__heading">Услуги</h3>
           <nav class="site-footer__nav" aria-label="Услуги">
+            <a href="services.html">Все услуги</a>
             <a href="raspiil.html">Распил и раскрой</a>
             <a href="pokraska.html">Покраска фасадов</a>
             <a href="proektirovanie.html">Проектирование</a>
@@ -800,7 +765,7 @@
       <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
       <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
 
-      <form class="quick-modal__form" id="quick-modal-form" novalidate>
+      <form class="quick-modal__form" id="quick-modal-form" novalidate enctype="multipart/form-data">
         <label class="quick-modal__label" for="qm-name">Ваше имя</label>
         <input class="quick-modal__input" id="qm-name" name="name" type="text" autocomplete="name" minlength="2" required />
         <p class="quick-modal__error" id="qm-name-error" aria-live="polite"></p>
@@ -812,13 +777,44 @@
         <label class="quick-modal__label" for="qm-comment">Комментарий</label>
         <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
 
+        <label class="quick-modal__label" for="qm-files">Файлы <span class="quick-modal__optional">необязательно</span></label>
+        <p class="quick-modal__hint" id="qm-files-hint">Можно выбрать несколько файлов: фото, PDF, чертежи.</p>
+        <input class="quick-modal__input quick-modal__input--file" id="qm-files" name="attachments[]" type="file" multiple accept="image/*,.pdf,.dwg,.dxf" />
+        <p class="quick-modal__files-meta" id="qm-files-meta" aria-live="polite"></p>
+
         <button class="quick-modal__submit" type="submit">Отправить заявку</button>
       </form>
     </section>
   </div>
 
+  <!-- Лайтбокс подборки «Наши работы» (главная) -->
+  <div class="proj-lightbox" id="proj-lightbox" role="dialog" aria-modal="true" aria-labelledby="proj-lightbox-caption" hidden>
+    <button type="button" class="proj-lightbox__close" id="proj-lightbox-close" aria-label="Закрыть просмотр">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button type="button" class="proj-lightbox__nav proj-lightbox__nav--prev" id="proj-lightbox-prev" aria-label="Предыдущее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="proj-lightbox__stage" id="proj-lightbox-stage">
+      <img class="proj-lightbox__img" id="proj-lightbox-img" src="" alt="" width="1600" height="1200" decoding="async" />
+    </div>
+    <button type="button" class="proj-lightbox__nav proj-lightbox__nav--next" id="proj-lightbox-next" aria-label="Следующее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="proj-lightbox__bottom">
+      <p class="proj-lightbox__caption" id="proj-lightbox-caption"></p>
+      <div class="proj-lightbox__counter" id="proj-lightbox-counter" aria-live="polite"></div>
+    </div>
+  </div>
+
   <script src="js/main.js" defer></script>
-  <script src="js/projects-showcase.js" defer></script>
   <script src="js/index-page.js" defer></script>
+  <script src="js/proj-showcase-lightbox.js" defer></script>
 </body>
 </html>

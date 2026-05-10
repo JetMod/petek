@@ -55,15 +55,15 @@
               <div class="site-nav__dropdown-group">
                 <p class="site-nav__dropdown-label">Распил и обработка</p>
                 <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП, ДСП и МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
-                <a href="raspiil.html" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
+                <a href="raspiil.html#kromka" class="site-nav__dropdown-link">Кромление ЛДСП, ДСП и МДФ</a>
+                <a href="raspiil.html#prisadka" class="site-nav__dropdown-link">Присадка ЛДСП / ДСП / МДФ</a>
+                <a href="chpu.html" class="site-nav__dropdown-link">Распил ЛДСП на ЧПУ</a>
+                <a href="raspiil.html#frezka" class="site-nav__dropdown-link">Фрезеровка и эскизные детали</a>
               </div>
               <div class="site-nav__dropdown-group">
                 <p class="site-nav__dropdown-label">Изготовление и покраска</p>
-                <a href="proektirovanie.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
-                <a href="proektirovanie.html" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
+                <a href="korpusa.html" class="site-nav__dropdown-link">Корпуса для кухни и шкафов-купе</a>
+                <a href="proektirovanie.html#stoleshnitsy" class="site-nav__dropdown-link">Изготовление столешниц и подоконников</a>
                 <a href="proektirovanie.html" class="site-nav__dropdown-link">Кухни, гардеробные и детская мебель</a>
                 <a href="pokraska.html" class="site-nav__dropdown-link">Покраска МДФ-фасадов</a>
                 <a href="proektirovanie.html" class="site-nav__dropdown-link">Проектирование в БАЗИС-Мебельщик</a>
@@ -730,6 +730,7 @@
         <div>
           <p class="site-footer__heading">Услуги</p>
           <nav class="site-footer__nav" aria-label="Услуги">
+            <a href="services.html">Все услуги</a>
             <a href="raspiil.html">Распил и раскрой</a>
             <a href="pokraska.html">Покраска фасадов</a>
             <a href="proektirovanie.html">Проектирование</a>
@@ -786,7 +787,7 @@
       <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
       <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
 
-      <form class="quick-modal__form" id="quick-modal-form" novalidate>
+      <form class="quick-modal__form" id="quick-modal-form" novalidate enctype="multipart/form-data">
         <label class="quick-modal__label" for="qm-name">Ваше имя</label>
         <input class="quick-modal__input" id="qm-name" name="name" type="text" autocomplete="name" minlength="2" required />
         <p class="quick-modal__error" id="qm-name-error" aria-live="polite"></p>
@@ -797,6 +798,11 @@
 
         <label class="quick-modal__label" for="qm-comment">Комментарий</label>
         <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
+
+        <label class="quick-modal__label" for="qm-files">Файлы <span class="quick-modal__optional">необязательно</span></label>
+        <p class="quick-modal__hint" id="qm-files-hint">Можно выбрать несколько файлов: фото, PDF, чертежи.</p>
+        <input class="quick-modal__input quick-modal__input--file" id="qm-files" name="attachments[]" type="file" multiple accept="image/*,.pdf,.dwg,.dxf" />
+        <p class="quick-modal__files-meta" id="qm-files-meta" aria-live="polite"></p>
 
         <button class="quick-modal__submit" type="submit">Отправить заявку</button>
       </form>
