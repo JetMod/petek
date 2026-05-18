@@ -67,7 +67,9 @@
         document.body.classList.contains('page-home') ||
         document.body.classList.contains('page-prices') ||
         document.body.classList.contains('page-materials') ||
-        document.body.classList.contains('page-contacts')
+        document.body.classList.contains('page-contacts') ||
+        document.body.classList.contains('page-raspiil') ||
+        document.body.classList.contains('page-chpu')
           ? 96
           : 10;
       var shouldScroll = window.scrollY > threshold;
@@ -327,6 +329,11 @@
     var phoneErr = document.getElementById('qm-phone-error');
     var filesEl = document.getElementById('qm-files');
     var filesMeta = document.getElementById('qm-files-meta');
+    var commentEl = document.getElementById('qm-comment');
+    var commentPlaceholderDefault =
+      commentEl && commentEl.getAttribute('placeholder')
+        ? commentEl.getAttribute('placeholder')
+        : 'Что нужно рассчитать?';
     if (!modal || !closeBtn || !form || !nameEl || !phoneEl || !nameErr || !phoneErr) return;
     var phonePrefill = '+7';
     var phoneAutoclearDone = false;
@@ -338,6 +345,14 @@
       clearFieldError(phoneEl, phoneErr);
       phoneEl.value = phonePrefill;
       phoneAutoclearDone = false;
+      if (commentEl) {
+        var path = window.location.pathname || '';
+        var base = (path.split('/').pop() || '').split('?')[0];
+        var isPokraska = base === 'pokraska.html';
+        commentEl.placeholder = isPokraska
+          ? 'Площадь или количество фасадов, RAL или образец, мат / полумат / глянец, одно- или двусторонне, срок…'
+          : commentPlaceholderDefault;
+      }
       nameEl.focus();
     }
 

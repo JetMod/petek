@@ -1,6 +1,7 @@
 /* =====================================================
    service.css — Shared styles for all service pages
-   (raspiil, pokraska, proektirovanie, furnitura)
+   (raspiil, pokraska, proektirovanie, furnitura, gallery, services)
+   Includes: hero, about, advantages, price table fragment, subnav, FAQ, CTA
    Requires: secondary.css loaded before this file
    ===================================================== */
 
@@ -276,15 +277,51 @@
 
 .price-table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  max-width: 100%;
+  scrollbar-color: rgba(31, 43, 62, 0.35) rgba(239, 239, 239, 0.9);
+  scrollbar-width: thin;
+  box-shadow:
+    var(--shadow),
+    inset 14px 0 12px -12px rgba(14, 18, 28, 0.06),
+    inset -14px 0 12px -12px rgba(14, 18, 28, 0.06);
+}
+
+.price-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.price-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(31, 43, 62, 0.28);
+  border-radius: 999px;
+}
+
+.price-table-wrap::-webkit-scrollbar-track {
+  background: rgba(239, 239, 239, 0.85);
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 
 .price-table {
   width: 100%;
+  min-width: 28rem;
   border-collapse: collapse;
   font-size: 0.9375rem;
   background-color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .price-table {
+    min-width: 22rem;
+    font-size: 0.875rem;
+  }
+
+  .price-table thead th,
+  .price-table td {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
 }
 
 .price-table thead th {
@@ -361,6 +398,185 @@
 }
 
 /* =====================================================
+   In-page section nav (услуги: покраска, корпуса и т.д.)
+   ===================================================== */
+.svc-page-subnav {
+  position: relative;
+  border-top: 1px solid rgba(14, 18, 28, 0.08);
+  border-bottom: 1px solid rgba(14, 18, 28, 0.08);
+  background: rgba(251, 252, 254, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.svc-page-subnav__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.68rem 0;
+  scrollbar-width: thin;
+}
+
+.svc-page-subnav__inner::-webkit-scrollbar {
+  height: 5px;
+}
+
+.svc-page-subnav__inner::-webkit-scrollbar-thumb {
+  background: rgba(31, 43, 62, 0.28);
+  border-radius: 999px;
+}
+
+.svc-page-subnav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.5rem 0.92rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: rgba(20, 30, 47, 0.7);
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.svc-page-subnav__link:hover {
+  color: rgba(20, 30, 47, 0.95);
+  border-color: rgba(14, 18, 28, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.svc-page-subnav__link.is-active,
+.svc-page-subnav__link[aria-current="true"] {
+  color: #fff;
+  border-color: rgba(18, 24, 38, 0.86);
+  background: rgba(18, 24, 38, 0.94);
+}
+
+/* =====================================================
+   FAQ (аккордеон)
+   ===================================================== */
+.faq-section {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef3f9 100%);
+  border-top: 1px solid rgba(20, 33, 51, 0.08);
+  border-bottom: 1px solid rgba(20, 33, 51, 0.08);
+}
+
+.faq-section__head {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 52rem;
+  margin-bottom: 1.25rem;
+}
+
+.faq-section__eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(18, 30, 48, 0.62);
+}
+
+.faq-section__title {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #101d31;
+}
+
+.faq-section__lead {
+  margin: 0;
+  max-width: 64ch;
+  font-size: 0.98rem;
+  line-height: 1.62;
+  color: rgba(19, 31, 49, 0.82);
+}
+
+.faq-accordion {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  border: 1px solid rgba(20, 33, 51, 0.12);
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.88);
+  overflow: clip;
+  box-shadow: 0 12px 24px rgba(11, 20, 35, 0.06);
+}
+
+.faq-item summary {
+  list-style: none;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 1rem 3rem 1rem 1rem;
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #12203a;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 32, 58, 0.22);
+  color: #12203a;
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item[open] {
+  background: #ffffff;
+  border-color: rgba(18, 32, 58, 0.2);
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid rgba(20, 33, 51, 0.1);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+  transform: translateY(-50%) rotate(180deg);
+  background: rgba(201, 166, 99, 0.14);
+  border-color: rgba(201, 166, 99, 0.45);
+}
+
+.faq-item__content {
+  padding: 0.86rem 1rem 1rem;
+}
+
+.faq-item__content p {
+  margin: 0;
+  max-width: 70ch;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: rgba(21, 34, 54, 0.84);
+}
+
+/* =====================================================
    CTA BANNER
    ===================================================== */
 .svc-cta {
@@ -422,6 +638,35 @@
 }
 
 @media (max-width: 768px) {
+  .svc-page-subnav__inner {
+    padding-top: 0.62rem;
+    padding-bottom: 0.62rem;
+  }
+
+  .svc-page-subnav__link {
+    font-size: 0.76rem;
+  }
+
+  .faq-section__head {
+    margin-bottom: 1rem;
+  }
+
+  .faq-item summary {
+    padding: 0.88rem 2.75rem 0.88rem 0.9rem;
+    font-size: 0.93rem;
+  }
+
+  .faq-item summary::after {
+    right: 0.88rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    font-size: 0.95rem;
+  }
+
+  .faq-item__content {
+    padding: 0.78rem 0.9rem 0.92rem;
+  }
+
   .svc-cta__inner {
     flex-direction: column;
     text-align: center;

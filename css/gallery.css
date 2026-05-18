@@ -349,15 +349,15 @@
   position: relative;
   justify-self: end;
   width: 100%;
-  max-width: 420px;
-  min-height: 380px;
+  max-width: 500px;
+  min-height: 460px;
   overflow: visible;
 }
 
 .gallery-hero__collage-ring {
   position: absolute;
-  width: min(110%, 488px);
-  height: min(110%, 488px);
+  width: min(116%, 570px);
+  height: min(116%, 570px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -377,7 +377,7 @@
 .gallery-hero__stack {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 460px;
   background: transparent;
   padding: 0;
   font: inherit;
@@ -395,8 +395,8 @@
   cursor: pointer;
   transform-origin: center;
   box-shadow:
-    0 28px 64px rgba(0, 0, 0, 0.55),
-    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 36px 78px rgba(0, 0, 0, 0.58),
+    0 10px 24px rgba(0, 0, 0, 0.34),
     0 0 0 1px rgba(255, 255, 255, 0.06) inset;
   border-radius: 16px;
   overflow: visible;
@@ -428,36 +428,36 @@
 }
 
 .gallery-hero__deck-card[data-pos="1"] {
-  width: 60%;
-  height: 80%;
-  left: 2%;
-  top: 6%;
+  width: 64%;
+  height: 84%;
+  left: 0;
+  top: 4%;
   right: auto;
   bottom: auto;
   z-index: 3;
-  transform: rotate(-4deg);
+  transform: rotate(-3.7deg);
 }
 
 .gallery-hero__deck-card[data-pos="2"] {
-  width: 52%;
-  height: 64%;
+  width: 56%;
+  height: 67%;
   left: auto;
   bottom: auto;
-  right: 2%;
+  right: -1%;
   top: 0;
   z-index: 2;
-  transform: rotate(6deg);
+  transform: rotate(6.4deg);
 }
 
 .gallery-hero__deck-card[data-pos="3"] {
-  width: 48%;
-  height: 54%;
+  width: 51%;
+  height: 58%;
   left: auto;
   top: auto;
-  right: 10%;
-  bottom: 2%;
+  right: 8%;
+  bottom: 1%;
   z-index: 1;
-  transform: rotate(-3deg);
+  transform: rotate(-2.8deg);
 }
 
 .gallery-hero.is-visible .gallery-hero__deck-card[data-pos="1"] {
@@ -523,12 +523,12 @@
 /* Подсказка как на «Материалы» */
 .gallery-hero__deck-hint {
   position: absolute;
-  top: -12px;
-  left: 10%;
+  top: -14px;
+  left: 8%;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.7rem;
+  padding: 0.45rem 0.82rem;
   background: rgba(20, 17, 13, 0.9);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -536,7 +536,7 @@
   border-radius: 999px;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.5625rem;
+  font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #f5f0e8;
@@ -573,8 +573,8 @@
 /* ---- Floating badge ---- */
 .gallery-hero__badge {
   position: absolute;
-  bottom: 16%;
-  left: -6%;
+  bottom: 15%;
+  left: -8%;
   z-index: 10;
   display: inline-flex;
   align-items: center;
@@ -583,10 +583,10 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(193, 162, 107, 0.28);
-  border-radius: 40px;
-  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  border-radius: 44px;
+  padding: 0.56rem 1.08rem 0.56rem 0.82rem;
   font-family: var(--font-heading);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #f5f0e8;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
@@ -709,7 +709,7 @@
 
   .gallery-hero__collage {
     justify-self: center;
-    max-width: 380px;
+    max-width: 420px;
     margin-top: 0.5rem;
   }
 
@@ -728,7 +728,7 @@
 /* ---- Mobile ---- */
 @media (max-width: 480px) {
   .gallery-hero__stack {
-    height: 300px;
+    height: 340px;
   }
 
   .gallery-hero__collage-ring {
