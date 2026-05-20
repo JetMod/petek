@@ -62,17 +62,41 @@
     const header = document.getElementById('site-header');
     if (!header) return;
     var scrolled = false;
+    function getScrollThreshold() {
+      var body = document.body;
+      var hero =
+        document.querySelector('.pokr-hero') ||
+        document.querySelector('.korpusa-hero') ||
+        document.querySelector('.raspiil-hero') ||
+        document.querySelector('.chpu-hero') ||
+        document.querySelector('.gallery-hero') ||
+        document.querySelector('.proekt-hero') ||
+        document.querySelector('.home-top-hero') ||
+        document.querySelector('.svc-hero');
+
+      if (hero) {
+        var headerH = header.offsetHeight || 110;
+        return Math.max(hero.offsetHeight - headerH - 32, 96);
+      }
+
+      if (
+        body.classList.contains('page-home') ||
+        body.classList.contains('page-prices') ||
+        body.classList.contains('page-materials') ||
+        body.classList.contains('page-contacts') ||
+        body.classList.contains('page-raspiil') ||
+        body.classList.contains('page-chpu') ||
+        body.classList.contains('page-korpusa') ||
+        body.classList.contains('page-pokraska')
+      ) {
+        return 96;
+      }
+
+      return 10;
+    }
+
     function onScroll() {
-      var threshold =
-        document.body.classList.contains('page-home') ||
-        document.body.classList.contains('page-prices') ||
-        document.body.classList.contains('page-materials') ||
-        document.body.classList.contains('page-contacts') ||
-        document.body.classList.contains('page-raspiil') ||
-        document.body.classList.contains('page-chpu') ||
-        document.body.classList.contains('page-korpusa')
-          ? 96
-          : 10;
+      var threshold = getScrollThreshold();
       var shouldScroll = window.scrollY > threshold;
       if (shouldScroll !== scrolled) {
         scrolled = shouldScroll;
@@ -80,6 +104,7 @@
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }());
 
