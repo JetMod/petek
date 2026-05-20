@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/secondary.css" />
   <link rel="stylesheet" href="css/korpusa.css" />
 </head>
-<body>
+<body class="page-korpusa">
 
   <header class="site-header site-header--home" id="site-header">
     <div class="header-util">
@@ -97,23 +97,149 @@
 
   <main>
 
-    <section class="svc-hero" aria-label="Баннер страницы">
-      <div class="svc-hero__bg"></div>
-      <div class="svc-hero__overlay"></div>
-      <div class="container svc-hero__content">
-        <nav class="svc-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Корпуса кухни и шкафов</span>
-        </nav>
-        <p class="svc-hero__eyebrow">Изготовление</p>
-        <h1 class="svc-hero__title">Корпуса для кухни и шкафов-купе</h1>
-        <p class="svc-hero__subtitle">Комплекты деталей по проекту: раскрой, кромление и присадка на нашем оборудовании в Симферополе. Фасады — отдельно: ЛДСП, МДФ или покраска.</p>
-        <div class="svc-hero__actions">
-          <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
-          <a href="proektirovanie.html" class="btn svc-hero__btn-outline">Проектирование</a>
+    <section class="svc-hero korpusa-hero" aria-label="Баннер страницы">
+      <div class="svc-hero__bg" aria-hidden="true"></div>
+      <div class="svc-hero__overlay" aria-hidden="true"></div>
+
+      <!-- Декоративный слой: ghost-текст + сетка -->
+      <div class="korpusa-hero__deco" aria-hidden="true">
+        <span class="korpusa-hero__deco-word">КОРПУСА</span>
+        <div class="korpusa-hero__deco-grid"></div>
+      </div>
+
+      <div class="svc-hero__grain" aria-hidden="true"></div>
+
+      <div class="container svc-hero__content korpusa-hero__grid">
+
+        <!-- Левая колонка: текстовый блок -->
+        <div class="korpusa-hero__main">
+          <nav class="svc-hero__breadcrumb" aria-label="Путь навигации">
+            <a href="index.html">Главная</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Корпуса для кухни и шкафов-купе</span>
+          </nav>
+
+          <div class="korpusa-hero__badge-wrap">
+            <span class="korpusa-hero__badge">
+              <span class="korpusa-hero__badge-dot" aria-hidden="true"></span>
+              Производство в Симферополе
+            </span>
+          </div>
+
+          <h1 class="svc-hero__title">
+            Корпуса для<br>кухни и<br>шкафов-купе
+          </h1>
+
+          <div class="korpusa-hero__sep" aria-hidden="true">
+            <span></span>
+            <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><rect x="0.85" y="0.85" width="8.3" height="8.3" rx="1.2" stroke="rgba(193,162,107,0.65)" stroke-width="1.1" transform="rotate(45 5 5)"/></svg>
+            <span></span>
+          </div>
+
+          <p class="svc-hero__subtitle">Полный цикл: раскрой, кромление ПВХ и присадка под фурнитуру на нашем оборудовании. Работаем от вашего проекта или файла — без передачи на сторону.</p>
+
+          <ul class="korpusa-hero__chips" aria-label="Ключевые преимущества">
+            <li class="korpusa-hero__chip">
+              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Раскрой, кромка и присадка в одном цеху
+            </li>
+            <li class="korpusa-hero__chip">
+              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              DXF, PDF или БАЗИС-файл
+            </li>
+            <li class="korpusa-hero__chip">
+              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Маркировка и комплектация
+            </li>
+          </ul>
+
+          <div class="svc-hero__actions">
+            <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
+            <a href="proektirovanie.html" class="btn korpusa-hero__btn-ghost">Проектирование</a>
+          </div>
+        </div>
+
+        <!-- Правая колонка: карточка производственного цикла -->
+        <aside class="korpusa-hero__aside" aria-label="Производственный цикл">
+          <div class="korpusa-hero__card">
+
+            <div class="korpusa-hero__card-header">
+              <p class="korpusa-hero__card-label">Полный цикл</p>
+              <p class="korpusa-hero__card-caption">от файла до готового комплекта</p>
+            </div>
+
+            <ol class="korpusa-hero__steps" aria-label="Этапы производства">
+              <li class="korpusa-hero__step">
+                <span class="korpusa-hero__step-num" aria-hidden="true">1</span>
+                <div class="korpusa-hero__step-body">
+                  <strong>Получаем проект</strong>
+                  <span>DXF, PDF или БАЗИС-файл</span>
+                </div>
+              </li>
+              <li class="korpusa-hero__step">
+                <span class="korpusa-hero__step-num" aria-hidden="true">2</span>
+                <div class="korpusa-hero__step-body">
+                  <strong>Раскрой на ЧПУ</strong>
+                  <span>ЛДСП, МДФ, ДСП — точно по чертежу</span>
+                </div>
+              </li>
+              <li class="korpusa-hero__step">
+                <span class="korpusa-hero__step-num" aria-hidden="true">3</span>
+                <div class="korpusa-hero__step-body">
+                  <strong>Кромление ПВХ</strong>
+                  <span>0,4–2 мм, все нужные стороны</span>
+                </div>
+              </li>
+              <li class="korpusa-hero__step">
+                <span class="korpusa-hero__step-num" aria-hidden="true">4</span>
+                <div class="korpusa-hero__step-body">
+                  <strong>Присадка</strong>
+                  <span>под Blum, Samet и другую фурнитуру</span>
+                </div>
+              </li>
+              <li class="korpusa-hero__step korpusa-hero__step--last">
+                <span class="korpusa-hero__step-num korpusa-hero__step-num--done" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3.5 3.5L11.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="korpusa-hero__step-body">
+                  <strong>Маркировка и выдача</strong>
+                  <span>комплект готов к сборке</span>
+                </div>
+              </li>
+            </ol>
+
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Stat-bar -->
+      <div class="korpusa-hero__statsbar" aria-label="Ключевые показатели">
+        <div class="container">
+          <div class="korpusa-hero__statsbar-inner">
+            <div class="korpusa-hero__stat">
+              <span class="korpusa-hero__stat-num">5</span>
+              <span class="korpusa-hero__stat-label">этапов в одном цеху</span>
+            </div>
+            <div class="korpusa-hero__stat-sep" aria-hidden="true"></div>
+            <div class="korpusa-hero__stat">
+              <span class="korpusa-hero__stat-num">Blum</span>
+              <span class="korpusa-hero__stat-label">Samet, Hettich и другие</span>
+            </div>
+            <div class="korpusa-hero__stat-sep" aria-hidden="true"></div>
+            <div class="korpusa-hero__stat">
+              <span class="korpusa-hero__stat-num">DXF · PDF</span>
+              <span class="korpusa-hero__stat-label">принимаем любой формат</span>
+            </div>
+            <div class="korpusa-hero__stat-sep" aria-hidden="true"></div>
+            <div class="korpusa-hero__stat">
+              <span class="korpusa-hero__stat-num">с 2010</span>
+              <span class="korpusa-hero__stat-label">года в Симферополе</span>
+            </div>
+          </div>
         </div>
       </div>
+
     </section>
 
     <section class="svc-about section" aria-labelledby="korpusa-about-heading">

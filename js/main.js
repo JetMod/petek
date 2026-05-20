@@ -69,7 +69,8 @@
         document.body.classList.contains('page-materials') ||
         document.body.classList.contains('page-contacts') ||
         document.body.classList.contains('page-raspiil') ||
-        document.body.classList.contains('page-chpu')
+        document.body.classList.contains('page-chpu') ||
+        document.body.classList.contains('page-korpusa')
           ? 96
           : 10;
       var shouldScroll = window.scrollY > threshold;

@@ -157,7 +157,11 @@
 </head>
 <body class="page-pokraska">
 
-  <header class="site-header site-header--home" id="site-header">
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="pokr-hero" aria-label="Баннер страницы">
+      <header class="site-header site-header--home" id="site-header">
 
     <!-- Utility strip -->
     <div class="header-util">
@@ -245,36 +249,171 @@
     </div>
 
     <div class="site-header__overlay" id="nav-overlay"></div>
-  </header>
+    </header>
 
-  <main>
+      <div class="pokr-hero__bg" aria-hidden="true"></div>
+      <div class="pokr-hero__overlay" aria-hidden="true"></div>
+      <div class="pokr-hero__grain" aria-hidden="true"></div>
 
-    <!-- ===================== SERVICE HERO ===================== -->
-    <section class="svc-hero" aria-label="Баннер страницы">
-      <div class="svc-hero__bg"></div>
-      <div class="svc-hero__overlay"></div>
-      <div class="container svc-hero__content">
-        <nav class="svc-hero__breadcrumb" aria-label="Путь навигации">
-          <a href="index.html">Главная</a>
-          <span aria-hidden="true">›</span>
-          <a href="services.html">Услуги</a>
-          <span aria-hidden="true">›</span>
-          <span aria-current="page">Покраска МДФ-фасадов</span>
-        </nav>
-        <p class="svc-hero__eyebrow">Услуга</p>
-        <h1 class="svc-hero__title">Покраска МДФ-фасадов</h1>
-        <p class="svc-hero__subtitle">Любой цвет по каталогу RAL — матовый, полуматовый или глянцевый финиш. Стойкое покрытие, устойчивое к влаге и механическим повреждениям.</p>
-        <ul class="pokraska-hero-spec" aria-label="Кратко о покраске">
-          <li>RAL Classic и Design</li>
-          <li>Мат · полумат · глянец</li>
-          <li>Окраска в камере</li>
-          <li>Минимум — 1 фасад</li>
-        </ul>
-        <div class="svc-hero__actions">
-          <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
-          <a href="prices.html#price-pokraska" class="btn svc-hero__btn-outline">Смотреть прайс</a>
+      <div class="pokr-hero__deco" aria-hidden="true">
+        <span class="pokr-hero__ghost">ПОКРАСКА</span>
+        <div class="pokr-hero__spectrum"></div>
+        <div class="pokr-hero__mist pokr-hero__mist--1"></div>
+        <div class="pokr-hero__mist pokr-hero__mist--2"></div>
+        <div class="pokr-hero__mist pokr-hero__mist--3"></div>
+      </div>
+
+      <div class="pokr-hero__stage">
+        <div class="container pokr-hero__inner">
+
+          <div class="pokr-hero__text">
+            <nav class="pokr-hero__breadcrumb" aria-label="Путь навигации">
+              <a href="index.html">Главная</a>
+              <span aria-hidden="true">›</span>
+              <a href="services.html">Услуги</a>
+              <span aria-hidden="true">›</span>
+              <span aria-current="page">Покраска МДФ-фасадов</span>
+            </nav>
+
+            <div class="pokr-hero__eyebrow">
+              <span class="pokr-hero__eyebrow-rule" aria-hidden="true"></span>
+              <span class="pokr-hero__eyebrow-label">Услуга</span>
+            </div>
+
+            <h1 class="pokr-hero__h1">
+              Покраска
+              <span class="pokr-hero__h1-sub">МДФ-фасадов</span>
+            </h1>
+
+            <p class="pokr-hero__lead">
+              Любой цвет по каталогу RAL — матовый, полуматовый или глянцевый финиш. Стойкое покрытие в закрытой камере, устойчивое к влаге и механическим повреждениям.
+            </p>
+
+            <ul class="pokr-hero__tags" aria-label="Кратко о покраске">
+              <li>RAL Classic и Design</li>
+              <li>Мат · полумат · глянец</li>
+              <li>Окраска в камере</li>
+              <li>Минимум — 1 фасад</li>
+            </ul>
+
+            <div class="pokr-hero__cta">
+              <a href="#" data-open-quick-modal="true" class="btn btn-primary">Оставить заявку</a>
+              <a href="prices.html#price-pokraska" class="pokr-hero__cta-outline">
+                Смотреть прайс
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pokr-hero__panel" aria-hidden="true">
+            <div class="pokr-hero__panel-inner">
+
+              <div class="pokr-hero__panel-topbar">
+                <div class="pokr-hero__panel-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="pokr-hero__panel-title">Покрасочная камера · Petek</span>
+                <span class="pokr-hero__panel-tag">RAL</span>
+              </div>
+
+              <div class="pokr-hero__visual">
+                <div class="pokr-hero__ral">
+                  <p class="pokr-hero__ral-hd">Палитра RAL</p>
+                  <div class="pokr-hero__swatches">
+                    <span class="pokr-hero__swatch" style="--sw: #2f3b4c" title="RAL 7016"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #e8e4dc" title="RAL 9003"></span>
+                    <span class="pokr-hero__swatch pokr-hero__swatch--active" style="--sw: #4a5d4f" title="RAL 6005"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #8b3a3a" title="RAL 3005"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #1a2744" title="RAL 5003"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #c4a574" title="RAL 1011"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #3d3d3d" title="RAL 7021"></span>
+                    <span class="pokr-hero__swatch" style="--sw: #d4cfc4" title="RAL 7035"></span>
+                  </div>
+                  <p class="pokr-hero__ral-code">RAL 6005 · Moss green</p>
+                </div>
+
+                <div class="pokr-hero__finishes">
+                  <div class="pokr-hero__finish pokr-hero__finish--mat">
+                    <div class="pokr-hero__finish-panel"></div>
+                    <span class="pokr-hero__finish-label">Мат</span>
+                    <span class="pokr-hero__finish-gloss">10–20</span>
+                  </div>
+                  <div class="pokr-hero__finish pokr-hero__finish--semi">
+                    <div class="pokr-hero__finish-panel"></div>
+                    <span class="pokr-hero__finish-label">Полумат</span>
+                    <span class="pokr-hero__finish-gloss">40–60</span>
+                  </div>
+                  <div class="pokr-hero__finish pokr-hero__finish--gloss">
+                    <div class="pokr-hero__finish-panel"></div>
+                    <span class="pokr-hero__finish-label">Глянец</span>
+                    <span class="pokr-hero__finish-gloss">80+</span>
+                  </div>
+                </div>
+
+                <svg class="pokr-hero__spray" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+                  <path d="M8 72 Q40 20 72 28 T112 8" stroke="rgba(184,148,79,0.35)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <circle cx="112" cy="8" r="4" fill="rgba(184,148,79,0.5)"/>
+                  <circle cx="112" cy="8" r="8" stroke="rgba(184,148,79,0.2)" stroke-width="0.75" fill="none"/>
+                </svg>
+              </div>
+
+              <div class="pokr-hero__stats">
+                <div class="pokr-hero__stat">
+                  <span class="pokr-hero__stat-n">от 850 ₽</span>
+                  <span class="pokr-hero__stat-l">за м²</span>
+                </div>
+                <div class="pokr-hero__stat-sep"></div>
+                <div class="pokr-hero__stat">
+                  <span class="pokr-hero__stat-n">7</span>
+                  <span class="pokr-hero__stat-l">этапов</span>
+                </div>
+                <div class="pokr-hero__stat-sep"></div>
+                <div class="pokr-hero__stat">
+                  <span class="pokr-hero__stat-n">ПУ · акрил</span>
+                  <span class="pokr-hero__stat-l">эмали</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pokr-hero__corner pokr-hero__corner--tl"></div>
+            <div class="pokr-hero__corner pokr-hero__corner--tr"></div>
+            <div class="pokr-hero__corner pokr-hero__corner--bl"></div>
+            <div class="pokr-hero__corner pokr-hero__corner--br"></div>
+          </div>
+
         </div>
       </div>
+
+      <div class="pokr-hero__outputs">
+        <div class="container pokr-hero__outputs-row">
+          <span class="pokr-hero__outputs-hd">ТЕХНОЛОГИЯ ПОКРЫТИЯ</span>
+          <div class="pokr-hero__output-list">
+            <div class="pokr-hero__output">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M3 14l4-8 4 5 4-9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Шлифовка и грунт</span>
+            </div>
+            <div class="pokr-hero__output-sep" aria-hidden="true"></div>
+            <div class="pokr-hero__output">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M5 8h8M5 11h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span>Окраска в камере</span>
+            </div>
+            <div class="pokr-hero__output-sep" aria-hidden="true"></div>
+            <div class="pokr-hero__output">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M6 9l2 2 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Контроль и упаковка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <nav class="svc-page-subnav" aria-label="Навигация по разделам страницы">

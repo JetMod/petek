@@ -180,25 +180,39 @@ body.page-chpu {
   z-index: 1;
   display: flex;
   flex-direction: column;
+  gap: 0;
   min-height: 0;
   max-width: min(46rem, 100%);
-  padding: clamp(1.15rem, 2.5vw, 2rem) clamp(1.1rem, 2.8vw, 2.25rem) clamp(1.15rem, 2.5vw, 2rem) clamp(1.35rem, 3.2vw, 2.6rem);
-  border-radius: 0 22px 22px 0;
+  padding: clamp(1.35rem, 2.8vw, 2.25rem) clamp(1.25rem, 3vw, 2.5rem) clamp(1.35rem, 2.8vw, 2.25rem) clamp(1.5rem, 3.5vw, 2.85rem);
+  border-radius: 0 24px 24px 0;
   background: linear-gradient(
-    105deg,
-    rgba(14, 11, 9, 0.68) 0%,
-    rgba(14, 11, 9, 0.42) 55%,
-    rgba(14, 11, 9, 0.12) 88%,
+    112deg,
+    rgba(14, 11, 9, 0.76) 0%,
+    rgba(14, 11, 9, 0.52) 48%,
+    rgba(14, 11, 9, 0.18) 78%,
     transparent 100%
   );
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-left: none;
   box-shadow:
-    inset 4px 0 0 0 rgba(193, 162, 107, 0.88),
-    0 28px 64px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+    inset 5px 0 0 0 rgba(193, 162, 107, 0.92),
+    inset 5px 0 24px 0 rgba(193, 162, 107, 0.12),
+    0 32px 72px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.raspil-hero__chpu-main::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: -60px;
+  width: 320px;
+  height: 260px;
+  background: radial-gradient(ellipse at center, rgba(193, 162, 107, 0.09) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .raspil-hero__chpu-aside {
@@ -269,13 +283,16 @@ body.page-chpu {
 .raspil-hero__eyebrow--chpu {
   position: relative;
   z-index: 1;
-  margin: 0.55rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.6rem 0 0;
   padding: 0;
   width: auto;
   font-family: var(--font-heading, "Montserrat", sans-serif);
   font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(232, 212, 176, 0.98);
   background: none;
@@ -285,6 +302,16 @@ body.page-chpu {
   -webkit-backdrop-filter: none;
 }
 
+.raspil-hero__eyebrow--chpu::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 22px;
+  height: 1.5px;
+  background: linear-gradient(90deg, rgba(193, 162, 107, 0.9), rgba(193, 162, 107, 0.35));
+  border-radius: 2px;
+}
+
 .raspil-hero__title--chpu {
   position: relative;
   z-index: 1;
@@ -292,16 +319,18 @@ body.page-chpu {
   flex-direction: column;
   gap: 0.55rem;
   max-width: none;
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
   font-family: var(--font-heading, "Montserrat", sans-serif);
   font-size: clamp(2rem, 5vw, 3.65rem);
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.03em;
-  color: #fdfcfa;
-  text-shadow:
-    0 2px 32px rgba(0, 0, 0, 0.35),
-    0 1px 0 rgba(255, 255, 255, 0.04);
+  background: linear-gradient(160deg, #ffffff 0%, #fdfcfa 45%, rgba(232, 220, 200, 0.92) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 24px rgba(0, 0, 0, 0.32));
 }
 
 .raspil-hero__chpu-title-line {
@@ -313,32 +342,36 @@ body.page-chpu {
   display: block;
   max-width: 28ch;
   margin-top: 0.35rem;
-  padding: 0.55rem 0 0;
+  padding: 0.65rem 0 0;
   border: none;
-  border-top: 1px solid rgba(193, 162, 107, 0.38);
+  border-top: 1px solid rgba(193, 162, 107, 0.45);
   font-size: clamp(1.05rem, 2.15vw, 1.38rem);
   font-weight: 600;
   line-height: 1.38;
   letter-spacing: -0.012em;
+  -webkit-text-fill-color: rgba(252, 248, 238, 0.94);
   color: rgba(252, 248, 238, 0.94);
   text-wrap: balance;
+  text-shadow: 0 0 32px rgba(193, 162, 107, 0.18);
 }
 
 .raspil-hero__lead--chpu {
   position: relative;
   z-index: 1;
   flex: 1 1 auto;
-  margin-top: 1.25rem;
+  margin-top: 1.35rem;
   max-width: 48ch;
-  padding: 1.05rem 1.2rem 1.15rem 1.35rem;
+  padding: 1.1rem 1.25rem 1.2rem 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgba(193, 162, 107, 0.82);
+  border-left: 3px solid rgba(193, 162, 107, 0.85);
   border-radius: 0 14px 14px 0;
-  /* background: rgba(6, 5, 4, 0.42); */
+  background: rgba(6, 5, 4, 0.38);
   font-size: clamp(1.02rem, 1.75vw, 1.2rem);
-  line-height: 1.72;
+  line-height: 1.74;
   color: rgba(242, 236, 224, 0.9);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
 .raspil-hero__chpu-spec {
@@ -509,7 +542,11 @@ body.page-chpu {
     max-width: 100%;
     border-radius: 18px;
     padding: clamp(1rem, 3vw, 1.45rem);
-    background: linear-gradient(165deg, rgba(14, 11, 9, 0.65) 0%, rgba(14, 11, 9, 0.48) 100%);
+    background: linear-gradient(165deg, rgba(14, 11, 9, 0.72) 0%, rgba(14, 11, 9, 0.5) 100%);
+  }
+
+  .raspil-hero__chpu-main::after {
+    display: none;
   }
 
   .raspil-hero__chpu-aside {

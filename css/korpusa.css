@@ -1,7 +1,742 @@
 /* korpusa.css — Корпуса для кухни и шкафов-купе */
 @import url("service.css");
 
-.svc-hero__bg {
+/* ============================================================
+   Body scroll padding
+   ============================================================ */
+body.page-korpusa {
+  scroll-padding-top: clamp(108px, 22vw, 148px);
+}
+
+/* ============================================================
+   Хедер поверх hero — абсолютный, glassmorphism
+   ============================================================ */
+.page-korpusa .site-header.site-header--home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) {
+  box-shadow: none;
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util {
+  background: rgba(12, 10, 8, 0.44);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-main {
+  background: rgba(12, 10, 8, 0.36);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.page-korpusa .site-header.site-header--home.is-scrolled .header-util {
+  background: var(--hdr-bg);
+  border-bottom: 1px solid var(--hdr-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.page-korpusa .site-header.site-header--home.is-scrolled .header-main {
+  background: var(--hdr-bg-soft);
+  border-bottom: 1px solid var(--hdr-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util__sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util__item {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util__item svg,
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-phone svg {
+  color: var(--gold);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:hover,
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-util__item--link:focus-visible {
+  color: var(--white);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__link {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__link:hover,
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__link:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown-trigger {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:hover .site-nav__dropdown-trigger,
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-nav__dropdown:focus-within .site-nav__dropdown-trigger {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-phone {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-phone:hover,
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-phone:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.36);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-header__burger {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .site-header__burger span {
+  background: var(--white);
+}
+
+.page-korpusa .site-header.site-header--home:not(.is-scrolled) .header-logo img {
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.48));
+}
+
+/* ============================================================
+   Hero — базовые переопределения .svc-hero
+   ============================================================ */
+.page-korpusa .svc-hero {
+  min-height: 100vh;
+  color: #f2f0ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.page-korpusa .svc-hero__bg {
   background-image: url("../img/building1.jpg");
   background-position: center 55%;
+  transform: scale(1.02);
+  filter: saturate(0.78) contrast(1.1) brightness(0.88);
+}
+
+/* Асимметричный overlay — очень тёмный слева, светлее справа */
+.page-korpusa .svc-hero__overlay {
+  background:
+    linear-gradient(
+      110deg,
+      rgba(5, 4, 3, 0.97) 0%,
+      rgba(8, 6, 5, 0.9) 24%,
+      rgba(10, 8, 7, 0.62) 46%,
+      rgba(8, 7, 6, 0.34) 66%,
+      rgba(10, 9, 8, 0.44) 100%
+    ),
+    linear-gradient(180deg, rgba(5, 4, 3, 0.6) 0%, transparent 22%, transparent 62%, rgba(5, 4, 3, 0.78) 100%);
+}
+
+/* Grain */
+.page-korpusa .svc-hero__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 2px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.03) 0 1px, transparent 1px 3px);
+}
+
+/* ============================================================
+   Декоративный слой
+   ============================================================ */
+.korpusa-hero__deco {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Огромный ghost-текст */
+.korpusa-hero__deco-word {
+  position: absolute;
+  right: -1.5%;
+  bottom: 7%;
+  font-size: clamp(7rem, 19vw, 25rem);
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(193, 162, 107, 0.1);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Сетка, видимая через маску в правой части */
+.korpusa-hero__deco-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(193, 162, 107, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(193, 162, 107, 0.045) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse 58% 70% at 80% 46%, rgba(0, 0, 0, 0.75) 0%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse 58% 70% at 80% 46%, rgba(0, 0, 0, 0.75) 0%, transparent 65%);
+}
+
+/* ============================================================
+   Hero — двухколоночный grid
+   ============================================================ */
+.page-korpusa .svc-hero__content.korpusa-hero__grid {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(272px, 380px);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  box-sizing: border-box;
+  padding-top: calc(120px + clamp(1rem, 3vh, 2rem));
+  padding-bottom: clamp(4rem, 7vh, 5.5rem);
+}
+
+/* ============================================================
+   Левая колонка
+   ============================================================ */
+.korpusa-hero__main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-width: min(52rem, 100%);
+}
+
+/* Breadcrumb */
+.page-korpusa .svc-hero__breadcrumb {
+  margin-bottom: 1.5rem;
+  color: rgba(242, 240, 236, 0.48);
+}
+
+.page-korpusa .svc-hero__breadcrumb a {
+  color: rgba(242, 240, 236, 0.48);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.page-korpusa .svc-hero__breadcrumb a:hover {
+  color: rgba(255, 252, 248, 0.85);
+  border-bottom-color: rgba(193, 162, 107, 0.4);
+}
+
+.page-korpusa .svc-hero__breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+/* Badge (eyebrow) */
+.korpusa-hero__badge-wrap {
+  margin-bottom: 1.35rem;
+}
+
+.korpusa-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.42rem 1.05rem 0.42rem 0.8rem;
+  border-radius: 50px;
+  border: 1px solid rgba(193, 162, 107, 0.32);
+  background: rgba(193, 162, 107, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(230, 210, 174, 0.88);
+  line-height: 1;
+}
+
+.korpusa-hero__badge-dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(193, 162, 107, 0.82);
+  animation: korpusa-badge-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes korpusa-badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.48; transform: scale(0.76); }
+}
+
+/* Title */
+.page-korpusa .svc-hero__title {
+  margin-bottom: 0;
+  font-size: clamp(2.6rem, 5.6vw, 4.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  background: linear-gradient(152deg, #ffffff 0%, #fdfcfa 40%, rgba(228, 216, 193, 0.88) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 26px rgba(0, 0, 0, 0.32));
+}
+
+/* Декоративный разделитель */
+.korpusa-hero__sep {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.1rem 0 1.3rem;
+}
+
+.korpusa-hero__sep span {
+  display: block;
+  height: 1px;
+}
+
+.korpusa-hero__sep span:first-child {
+  width: 68px;
+  background: linear-gradient(90deg, rgba(193, 162, 107, 0.65), rgba(193, 162, 107, 0.12));
+}
+
+.korpusa-hero__sep span:last-child {
+  width: 26px;
+  background: linear-gradient(90deg, rgba(193, 162, 107, 0.12), transparent);
+}
+
+/* Subtitle — чистый текст, без box */
+.page-korpusa .svc-hero__subtitle {
+  max-width: 48ch;
+  margin-bottom: 1.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: clamp(0.93rem, 1.55vw, 1.05rem);
+  line-height: 1.76;
+  color: rgba(238, 232, 220, 0.68);
+}
+
+/* Фичи-пилюли */
+.korpusa-hero__chips {
+  list-style: none;
+  margin: 0 0 1.9rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.korpusa-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  padding: 0.44rem 0.95rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.81rem;
+  line-height: 1.4;
+  color: rgba(236, 230, 218, 0.8);
+  transition: border-color 0.22s, background 0.22s, color 0.22s;
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .korpusa-hero__chip:hover {
+    border-color: rgba(193, 162, 107, 0.3);
+    background: rgba(193, 162, 107, 0.07);
+    color: rgba(240, 234, 222, 0.92);
+  }
+}
+
+.korpusa-hero__chip svg {
+  flex-shrink: 0;
+  color: rgba(193, 162, 107, 0.85);
+}
+
+/* CTA-кнопки */
+.page-korpusa .svc-hero__actions {
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.korpusa-hero__btn-ghost {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fdfcfa;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.korpusa-hero__btn-ghost:hover,
+.korpusa-hero__btn-ghost:focus-visible {
+  border-color: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fdfcfa;
+}
+
+/* ============================================================
+   Правая колонка — карточка
+   ============================================================ */
+.korpusa-hero__aside {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+
+.korpusa-hero__card {
+  position: relative;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 22px;
+  background: linear-gradient(162deg, rgba(20, 17, 14, 0.7) 0%, rgba(9, 8, 7, 0.65) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.44),
+    0 0 0 1px rgba(0, 0, 0, 0.22) inset,
+    0 1px 0 rgba(255, 255, 255, 0.07) inset;
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  overflow: hidden;
+}
+
+/* Corner glow */
+.korpusa-hero__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at top right, rgba(193, 162, 107, 0.14) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+/* Градиентная рамка */
+.korpusa-hero__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(148deg, rgba(193, 162, 107, 0.5) 0%, transparent 44%, rgba(255, 255, 255, 0.05) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Card header */
+.korpusa-hero__card-header {
+  margin: 0 0 1.3rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.korpusa-hero__card-label {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(205, 184, 148, 0.9);
+}
+
+.korpusa-hero__card-caption {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: rgba(242, 236, 224, 0.42);
+}
+
+/* Этапы */
+.korpusa-hero__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.korpusa-hero__step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.72rem 0;
+}
+
+.korpusa-hero__step:not(.korpusa-hero__step--last)::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: calc(0.72rem + 28px);
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(193, 162, 107, 0.26) 0%, rgba(193, 162, 107, 0.06) 100%);
+}
+
+.korpusa-hero__step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(205, 184, 148, 0.92);
+  background: rgba(193, 162, 107, 0.1);
+  border: 1px solid rgba(193, 162, 107, 0.28);
+  position: relative;
+  z-index: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.korpusa-hero__step-num--done {
+  background: rgba(193, 162, 107, 0.22);
+  border-color: rgba(193, 162, 107, 0.66);
+  color: rgba(232, 212, 176, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .korpusa-hero__step:hover .korpusa-hero__step-num {
+    background: rgba(193, 162, 107, 0.18);
+    border-color: rgba(193, 162, 107, 0.46);
+  }
+}
+
+.korpusa-hero__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-top: 0.3rem;
+}
+
+.korpusa-hero__step-body strong {
+  display: block;
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(252, 248, 240, 0.95);
+  line-height: 1.3;
+}
+
+.korpusa-hero__step-body span {
+  display: block;
+  font-size: 0.77rem;
+  line-height: 1.4;
+  color: rgba(218, 210, 195, 0.52);
+}
+
+/* ============================================================
+   Stat-bar (заменяет тикер)
+   ============================================================ */
+.korpusa-hero__statsbar {
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+  background: rgba(7, 6, 5, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.korpusa-hero__statsbar-inner {
+  display: flex;
+  align-items: center;
+  padding: 1.15rem 0;
+}
+
+.korpusa-hero__stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  padding: 0 clamp(1rem, 2.5vw, 2rem);
+}
+
+.korpusa-hero__stat:first-child { padding-left: 0; }
+.korpusa-hero__stat:last-child  { padding-right: 0; }
+
+.korpusa-hero__stat-num {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(228, 208, 170, 0.95);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.korpusa-hero__stat-label {
+  font-size: 0.72rem;
+  color: rgba(242, 236, 224, 0.4);
+  line-height: 1.35;
+}
+
+.korpusa-hero__stat-sep {
+  flex-shrink: 0;
+  width: 1px;
+  height: 2.2rem;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* ============================================================
+   Entrance-анимации
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes korpusa-fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .korpusa-hero__main > * {
+    opacity: 0;
+    animation: korpusa-fade-up 0.55s ease forwards;
+  }
+
+  .korpusa-hero__main > *:nth-child(1) { animation-delay: 0.04s; }
+  .korpusa-hero__main > *:nth-child(2) { animation-delay: 0.12s; }
+  .korpusa-hero__main > *:nth-child(3) { animation-delay: 0.22s; }
+  .korpusa-hero__main > *:nth-child(4) { animation-delay: 0.3s; }
+  .korpusa-hero__main > *:nth-child(5) { animation-delay: 0.38s; }
+  .korpusa-hero__main > *:nth-child(6) { animation-delay: 0.46s; }
+  .korpusa-hero__main > *:nth-child(7) { animation-delay: 0.53s; }
+
+  .korpusa-hero__aside {
+    opacity: 0;
+    animation: korpusa-fade-up 0.6s ease 0.26s forwards;
+  }
+
+  .korpusa-hero__statsbar {
+    opacity: 0;
+    animation: korpusa-fade-up 0.5s ease 0.52s forwards;
+  }
+}
+
+/* ============================================================
+   Адаптив
+   ============================================================ */
+@media (max-width: 960px) {
+  .page-korpusa .svc-hero__content.korpusa-hero__grid {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding-top: calc(120px + clamp(0.75rem, 2.5vw, 1.25rem));
+    padding-bottom: 2.5rem;
+  }
+
+  .korpusa-hero__main {
+    max-width: 100%;
+  }
+
+  .korpusa-hero__aside {
+    max-width: min(26rem, 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-korpusa .svc-hero__content.korpusa-hero__grid {
+    padding-top: calc(84px + clamp(0.75rem, 3vw, 1.25rem));
+  }
+
+  .korpusa-hero__statsbar-inner {
+    flex-wrap: wrap;
+    gap: 0.75rem 0;
+    padding: 1rem 0;
+  }
+
+  .korpusa-hero__stat {
+    flex: 0 0 50%;
+    padding: 0.5rem 1rem;
+  }
+
+  .korpusa-hero__stat:first-child { padding-left: 1rem; }
+  .korpusa-hero__stat:last-child  { padding-right: 1rem; }
+
+  .korpusa-hero__stat-sep {
+    display: none;
+  }
+
+  .korpusa-hero__deco-word {
+    font-size: clamp(5.5rem, 24vw, 11rem);
+    right: -3%;
+    bottom: 13%;
+  }
+
+  .page-korpusa .svc-hero__grain {
+    opacity: 0.025;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-korpusa .svc-hero__actions {
+    flex-direction: column;
+  }
+
+  .page-korpusa .svc-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .korpusa-hero__chips {
+    gap: 0.42rem;
+  }
+
+  .korpusa-hero__stat {
+    flex: 0 0 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-korpusa .svc-hero__bg {
+    transform: none !important;
+    transition: none;
+  }
+
+  .korpusa-hero__badge-dot {
+    animation: none;
+  }
+
+  .korpusa-hero__main > *,
+  .korpusa-hero__aside,
+  .korpusa-hero__statsbar {
+    opacity: 1 !important;
+    animation: none !important;
+  }
 }
