@@ -215,11 +215,46 @@
 .hero-photo-card {
   position: relative;
   z-index: 1;
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border-radius: 16px;
   overflow: hidden;
+  cursor: pointer;
   box-shadow:
     0 22px 48px rgba(0, 0, 0, 0.45),
     0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-photo-card:hover,
+.hero-photo-card:focus-visible {
+  box-shadow:
+    0 28px 56px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(193, 162, 107, 0.35);
+}
+
+.hero-photo-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.hero-photo-card:hover .hero-photo-card__overlay,
+.hero-photo-card:focus-visible .hero-photo-card__overlay {
+  background: linear-gradient(to top, rgba(10, 8, 6, 0.78) 0%, transparent 55%);
+}
+
+.hero-photo-card:hover .hero-photo-card__chip,
+.hero-photo-card:focus-visible .hero-photo-card__chip {
+  border-color: rgba(193, 162, 107, 0.9);
+  background: rgba(10, 8, 7, 0.88);
+}
+
+.hero-photo-card:hover img,
+.hero-photo-card:focus-visible img {
+  transform: scale(1.04);
 }
 
 .hero-photo-card--tall {
@@ -242,6 +277,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-photo-card__overlay {
@@ -515,6 +551,11 @@ body:is(.page-home, .page-prices, .page-materials, .page-contacts) {
 
   .hero-photo-card {
     animation: none;
+  }
+
+  .hero-photo-card:hover img,
+  .hero-photo-card:focus-visible img {
+    transform: none;
   }
 
   .top-hero__scroll-dot {
