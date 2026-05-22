@@ -166,6 +166,7 @@ h3.contacts-show__card-tag {
   color: var(--dark);
 }
 
+
 .site-nav__dropdown-footer {
   grid-column: 1 / -1;
   padding: 0.65rem 1.35rem 0.65rem;
@@ -257,6 +258,7 @@ h3.contacts-show__card-tag {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     color: #555;
   }
+
 
   .site-nav__dropdown-footer {
     margin-top: 0;
