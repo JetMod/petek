@@ -3,20 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Petek — профессиональный распил, покраска, проектирование и фурнитура для мебели в Симферополе. ЛДСП, МДФ, ДСП, пластик и другие материалы. Работаем с 2010 года." />
+  <meta name="description" content="Petek — распил ЛДСП и МДФ, кромление, покраска фасадов и проектирование мебели в Симферополе. Цех с 2010 года, работаем для частных и оптовых заказчиков." />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Petek — распил, покраска, проектирование и фурнитура для мебели в Симферополе.</title>
+  <title>Распил, покраска и проектирование мебели в Симферополе | Petek</title>
 
   <link rel="canonical" href="https://petek.pro/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://petek.pro/" />
-  <meta property="og:title" content="Petek — распил, покраска, проектирование и фурнитура для мебели в Симферополе." />
-  <meta property="og:description" content="Профессиональный распил, покраска, проектирование и фурнитура для мебели в Симферополе. Работаем с 2010 года." />
-  <meta property="og:image" content="https://petek.pro/img/og-preview.jpg" />
+  <meta property="og:title" content="Распил, покраска и проектирование мебели в Симферополе | Petek" />
+  <meta property="og:description" content="Распил ЛДСП и МДФ, кромление, покраска фасадов и проектирование мебели в собственном цеху в Симферополе. Работаем с 2010 года." />
+  <meta property="og:image" content="https://petek.pro/img/DSC00100.jpg" />
+  <meta property="og:image:alt" content="Распил листовых материалов в мебельном цехе Petek, Симферополь" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="Petek" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Распил, покраска и проектирование мебели в Симферополе | Petek" />
+  <meta name="twitter:description" content="Распил ЛДСП и МДФ, кромление, покраска фасадов и проектирование мебели в собственном цеху в Симферополе." />
+  <meta name="twitter:image" content="https://petek.pro/img/DSC00100.jpg" />
+  <meta name="twitter:image:alt" content="Распил листовых материалов в мебельном цехе Petek, Симферополь" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/logo/logo-default.svg" />
@@ -29,20 +37,66 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Petek",
-    "url": "https://petek.pro/",
-    "telephone": "+7-978-618-73-13",
-    "email": "zakaz@petek.pro",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Генерала Васильева, 32Д, стр.1",
-      "addressLocality": "Симферополь",
-      "addressCountry": "RU"
-    },
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "foundingDate": "2010",
-    "description": "Профессиональный распил, кромление, покраска МДФ-фасадов и проектирование мебели в Симферополе. Работаем с ЛДСП, МДФ, ДСП, пластиком и другими материалами."
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://petek.pro/#website",
+        "url": "https://petek.pro/",
+        "name": "Petek",
+        "description": "Мебельное производство в Симферополе: распил, кромление, покраска и проектирование.",
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://petek.pro/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://petek.pro/#webpage",
+        "url": "https://petek.pro/",
+        "name": "Распил, покраска и проектирование мебели в Симферополе | Petek",
+        "description": "Petek — распил ЛДСП и МДФ, кромление, покраска фасадов и проектирование мебели в Симферополе. Собственный цех с 2010 года.",
+        "isPartOf": { "@id": "https://petek.pro/#website" },
+        "about": { "@id": "https://petek.pro/#business" },
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://petek.pro/#business",
+        "name": "Petek",
+        "url": "https://petek.pro/",
+        "telephone": "+7-978-618-73-13",
+        "email": "zakaz@petek.pro",
+        "image": "https://petek.pro/img/DSC00100.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Генерала Васильева, 32Д, стр.1",
+          "addressLocality": "Симферополь",
+          "addressRegion": "Крым",
+          "addressCountry": "RU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.9483,
+          "longitude": 34.1024
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Симферополь" },
+          { "@type": "AdministrativeArea", "name": "Крым" }
+        ],
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "foundingDate": "2010",
+        "description": "Мебельное производство в Симферополе: распил ЛДСП и МДФ, кромление, покраска МДФ-фасадов, проектирование в БАЗИС-Мебельщик и продажа фурнитуры.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги Petek",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Распил и раскрой ЛДСП, МДФ, ДСП" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Кромкование ПВХ" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Покраска МДФ-фасадов" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Проектирование мебели" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Распил на ЧПУ" } }
+          ]
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -55,11 +109,11 @@
     <div class="header-util">
       <div class="container header-util__inner">
         <div class="header-util__group">
-          <a href="delivery.html" class="header-util__item header-util__item--link">Доставка</a>
+          <a href="contacts.html" class="header-util__item header-util__item--link">Доставка</a>
           <span class="header-util__sep" aria-hidden="true">|</span>
-          <a href="payment.html" class="header-util__item header-util__item--link">Оплата</a>
+          <a href="prices.html" class="header-util__item header-util__item--link">Оплата</a>
           <span class="header-util__sep" aria-hidden="true">|</span>
-          <a href="wholesale.html" class="header-util__item header-util__item--link">Оптовым покупателям</a>
+          <a href="contacts.html" class="header-util__item header-util__item--link">Оптовым покупателям</a>
         </div>
         <div class="header-util__group">
           <span class="header-util__item">
@@ -158,13 +212,13 @@
         </div>
 
         <h1 class="top-hero__title top-hero--anim" style="--delay:.15s">
-          Распил, кромление,<br />
-          покраска и проектирование<br />
-          по вашему чертежу
+          Распил, кромление, покраска<br />
+          и проектирование <br />
+          в Симферополе
         </h1>
 
         <p class="top-hero__sub top-hero--anim" style="--delay:.28s">
-          Полный цикл обработки в одном цеху: приходите со своим проектом — распилим, покрасим, склеим кромку и отдадим готовые детали
+          Petek — полный цикл обработки в одном цеху: приходите со своим проектом — распилим ЛДСП и МДФ, покрасим фасады, склеим кромку и отдадим готовые детали по чертежу
         </p>
 
         <div class="top-hero__cta top-hero--anim" style="--delay:.38s">
@@ -180,17 +234,17 @@
       <!-- Photo collage -->
       <div class="top-hero__photos top-hero--anim" style="--delay:.22s">
         <a href="raspiil.html" class="hero-photo-card hero-photo-card--tall" style="--bob-dur:5.2s; --bob-delay:0s; --card-delay:.3s">
-          <img src="img/raspil.png" alt="" loading="eager" />
+          <img src="img/raspil.png" alt="Распил ЛДСП и МДФ в цехе Petek, Симферополь" loading="eager" />
           <span class="hero-photo-card__overlay" aria-hidden="true"></span>
           <span class="hero-photo-card__chip">Распил и раскрой</span>
         </a>
         <a href="pokraska.html" class="hero-photo-card hero-photo-card--sm" style="--bob-dur:4.6s; --bob-delay:.8s; --card-delay:.5s">
-          <img src="img/pokraska.png" alt="" loading="eager" />
+          <img src="img/pokraska.png" alt="Покраска МДФ-фасадов в Симферополе" loading="eager" />
           <span class="hero-photo-card__overlay" aria-hidden="true"></span>
           <span class="hero-photo-card__chip">Покраска фасадов</span>
         </a>
         <a href="raspiil.html#kromka" class="hero-photo-card hero-photo-card--sm" style="--bob-dur:6s; --bob-delay:1.4s; --card-delay:.65s">
-          <img src="img/kromka.png" alt="" loading="eager" />
+          <img src="img/kromka.png" alt="Кромление мебельных деталей ПВХ-кромкой" loading="eager" />
           <span class="hero-photo-card__overlay" aria-hidden="true"></span>
           <span class="hero-photo-card__chip">Кромкование</span>
         </a>
@@ -220,7 +274,7 @@
           </div>
 
           <h2 class="svc-edit__heading">Полный цикл распила<br>и обработки материалов</h2>
-          <p class="svc-edit__lede">ЛДСП, МДФ, ДСП, пластик и другие листовые материалы — от раскроя до готовых фасадов в собственном цеху в Симферополе. Работаем по точным эскизам и ГОСТам.</p>
+          <p class="svc-edit__lede">ЛДСП, МДФ, ДСП, пластик и другие листовые материалы — от раскроя и <a href="chpu.html">распила на ЧПУ</a> до готовых фасадов в собственном цеху в Симферополе. Работаем по точным эскизам и ГОСТам для частных заказчиков, мебельных мастеров и оптовых клиентов.</p>
         </header>
 
         <!-- Editorial rows -->
@@ -422,7 +476,7 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 14l4-8h8l4 8v5H4v-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 19v2h6v-2M12 6V3M8 11h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
               </div>
               <h3 class="process-card__title">Выдача</h3>
-              <p class="process-card__desc">Передаём заказ с документами. По желанию организуем доставку по городу и региону.</p>
+              <p class="process-card__desc">Передаём заказ с документами. По желанию организуем доставку по всему Крыму</p>
             </article>
           </li>
         </ol>
@@ -492,7 +546,7 @@
               <form class="order__form" id="order-form" novalidate enctype="multipart/form-data" aria-labelledby="order-heading">
                 <div class="form-group">
                   <label class="form-label" for="f-name">Ваше имя <span aria-hidden="true">*</span></label>
-                  <input class="form-control" type="text" id="f-name" name="name" placeholder="Иван Иванов" autocomplete="name" required />
+                  <input class="form-control" type="text" id="f-name" name="name" placeholder="Введите ваше имя" autocomplete="name" required />
                 </div>
 
                 <div class="form-group">
@@ -692,7 +746,7 @@
           <a href="index.html" class="site-footer__logo" aria-label="Petek — на главную">
             <img src="img/logo/logo-default.svg" alt="Petek логотип" width="110" height="40" />
           </a>
-          <p class="site-footer__tagline">Производство, раскрой, кромление, присадка и сопровождение проектов с 2010 года.</p>
+          <p class="site-footer__tagline">Мебельное производство в Симферополе: раскрой ЛДСП и МДФ, кромление, присадка, покраска фасадов и сопровождение проектов с 2010 года.</p>
           <a class="site-footer__cta" href="#order-studio" data-open-quick-modal="true">Оставить заявку</a>
         </div>
 
@@ -700,12 +754,12 @@
         <div class="site-footer__col">
           <h3 class="site-footer__heading">Услуги</h3>
           <nav class="site-footer__nav" aria-label="Услуги">
-            <a href="services.html">Все услуги</a>
+            <a href="#services">Все услуги</a>
             <a href="raspiil.html">Распил и раскрой</a>
             <a href="pokraska.html">Покраска фасадов</a>
-            <a href="proektirovanie.html">Проектирование</a>
+            
             <a href="furnitura.html">Фурнитура</a>
-            <a href="prices.html">Прайс-лист</a>
+          
             <a href="gallery.html">Проекты</a>
           </nav>
         </div>

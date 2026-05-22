@@ -270,9 +270,21 @@
 .svc-prices__subtitle {
   text-align: center;
   color: #666;
-  margin-top: calc(-1 * var(--space-lg));
-  margin-bottom: var(--space-xl);
-  max-width: none;
+  max-width: 42rem;
+  margin: calc(-1 * var(--space-lg)) auto var(--space-xl);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.svc-prices__subtitle a {
+  color: #8a6b2a;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.svc-prices__subtitle a:hover,
+.svc-prices__subtitle a:focus-visible {
+  color: #5c4618;
 }
 
 .price-table-wrap {

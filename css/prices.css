@@ -199,6 +199,17 @@
   margin: 0 0 0.65rem;
 }
 
+.page-hero__lead a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.page-hero__lead a:hover,
+.page-hero__lead a:focus-visible {
+  color: #fff;
+}
+
 .page-hero__subtitle {
   font-size: 0.9375rem;
   line-height: 1.55;
@@ -761,6 +772,17 @@
   margin: 0;
   text-align: left;
   max-width: 48rem;
+}
+
+.price-cat__desc a {
+  color: #8a6b2a;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.price-cat__desc a:hover,
+.price-cat__desc a:focus-visible {
+  color: #5c4618;
 }
 
 .price-cat__footnote {
