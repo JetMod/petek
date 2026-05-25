@@ -63,22 +63,29 @@
     if (!header) return;
     var scrolled = false;
     function getScrollThreshold() {
-      var body = document.body;
-      var hero =
-        document.querySelector('.pokr-hero') ||
-        document.querySelector('.korpusa-hero') ||
-        document.querySelector('.raspiil-hero') ||
-        document.querySelector('.chpu-hero') ||
-        document.querySelector('.gallery-hero') ||
-        document.querySelector('.proekt-hero') ||
-        document.querySelector('.home-top-hero') ||
-        document.querySelector('.svc-hero');
+      var hero = document.querySelector([
+        '.top-hero',
+        '.dlv-hero',
+        '.pay-hero',
+        '.ws-hero',
+        '.prv-hero',
+        '.pokr-hero',
+        '.korpusa-hero',
+        '.raspil-hero',
+        '.gallery-hero',
+        '.proekt-hero',
+        '.svc-hero',
+        '.ctc-hero',
+        '.mat-hero',
+        '.page-hero'
+      ].join(', '));
 
       if (hero) {
         var headerH = header.offsetHeight || 110;
         return Math.max(hero.offsetHeight - headerH - 32, 96);
       }
 
+      var body = document.body;
       if (
         body.classList.contains('page-home') ||
         body.classList.contains('page-prices') ||
@@ -87,7 +94,11 @@
         body.classList.contains('page-raspiil') ||
         body.classList.contains('page-chpu') ||
         body.classList.contains('page-korpusa') ||
-        body.classList.contains('page-pokraska')
+        body.classList.contains('page-pokraska') ||
+        body.classList.contains('page-dostavka') ||
+        body.classList.contains('page-payment') ||
+        body.classList.contains('page-wholesale') ||
+        body.classList.contains('page-privacy')
       ) {
         return 96;
       }

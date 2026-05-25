@@ -803,24 +803,30 @@
     <div class="container">
       <div class="site-footer__grid">
 
+        <!-- Brand -->
         <div class="site-footer__brand">
           <a href="index.html" class="site-footer__logo" aria-label="Petek — на главную">
             <img src="img/logo/logo-default.svg" alt="Petek логотип" width="110" height="40" />
           </a>
           <p class="site-footer__tagline">Мебельное производство в Симферополе: раскрой ЛДСП и МДФ, кромление, присадка, покраска фасадов и сопровождение проектов с 2010 года.</p>
-          <a class="site-footer__cta" href="#order" data-open-quick-modal="true">Оставить заявку</a>
+          <a class="site-footer__cta" href="#order-studio" data-open-quick-modal="true">Оставить заявку</a>
         </div>
 
+        <!-- Nav -->
         <div class="site-footer__col">
           <h3 class="site-footer__heading">Услуги</h3>
           <nav class="site-footer__nav" aria-label="Услуги">
+            <a href="#services">Все услуги</a>
             <a href="raspiil.html">Распил и раскрой</a>
             <a href="pokraska.html">Покраска фасадов</a>
+            
             <a href="furnitura.html">Фурнитура</a>
+          
             <a href="gallery.html">Проекты</a>
           </nav>
         </div>
 
+        <!-- Contacts -->
         <div class="site-footer__col">
           <h3 class="site-footer__heading">Контакты</h3>
           <address class="site-footer__contacts" style="font-style:normal;">
@@ -848,7 +854,7 @@
       <div class="site-footer__bottom">
         <p class="site-footer__copy">&copy; 2010–2026 ООО «Петек». Все права защищены.</p>
         <div class="site-footer__legal">
-          <a href="contacts.html">Контакты</a>
+          <a href="#contacts-show">Контакты</a>
           <a href="privacy.html">Политика конфиденциальности</a>
         </div>
       </div>
@@ -865,9 +871,9 @@
       <button class="quick-modal__close" type="button" id="quick-modal-close" aria-label="Закрыть окно">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
-      <p class="quick-modal__eyebrow">Расчёт доставки</p>
+      <p class="quick-modal__eyebrow">Быстрая заявка</p>
       <h3 class="quick-modal__title" id="quick-modal-title">Оставьте заявку</h3>
-      <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали доставки.</p>
+      <p class="quick-modal__text">Перезвоним в рабочее время и уточним детали заказа.</p>
 
       <form class="quick-modal__form" id="quick-modal-form" novalidate enctype="multipart/form-data">
         <label class="quick-modal__label" for="qm-name">Ваше имя</label>
@@ -879,11 +885,42 @@
         <p class="quick-modal__error" id="qm-phone-error" aria-live="polite"></p>
 
         <label class="quick-modal__label" for="qm-comment">Комментарий</label>
-        <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Куда доставить и какой объём?"></textarea>
+        <textarea class="quick-modal__input quick-modal__input--area" id="qm-comment" name="comment" rows="3" placeholder="Что нужно рассчитать?"></textarea>
+
+        <label class="quick-modal__label" for="qm-files">Файлы <span class="quick-modal__optional">необязательно</span></label>
+        <p class="quick-modal__hint" id="qm-files-hint">Можно выбрать несколько файлов: фото, PDF, чертежи.</p>
+        <input class="quick-modal__input quick-modal__input--file" id="qm-files" name="attachments[]" type="file" multiple accept="image/*,.pdf,.dwg,.dxf" />
+        <p class="quick-modal__files-meta" id="qm-files-meta" aria-live="polite"></p>
 
         <button class="quick-modal__submit" type="submit">Отправить заявку</button>
       </form>
     </section>
+  </div>
+
+  <!-- Лайтбокс подборки «Наши работы» (главная) -->
+  <div class="proj-lightbox" id="proj-lightbox" role="dialog" aria-modal="true" aria-labelledby="proj-lightbox-caption" hidden>
+    <button type="button" class="proj-lightbox__close" id="proj-lightbox-close" aria-label="Закрыть просмотр">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button type="button" class="proj-lightbox__nav proj-lightbox__nav--prev" id="proj-lightbox-prev" aria-label="Предыдущее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="proj-lightbox__stage" id="proj-lightbox-stage">
+      <img class="proj-lightbox__img" id="proj-lightbox-img" src="" alt="" width="1600" height="1200" decoding="async" />
+    </div>
+    <button type="button" class="proj-lightbox__nav proj-lightbox__nav--next" id="proj-lightbox-next" aria-label="Следующее фото">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="proj-lightbox__bottom">
+      <p class="proj-lightbox__caption" id="proj-lightbox-caption"></p>
+      <div class="proj-lightbox__counter" id="proj-lightbox-counter" aria-live="polite"></div>
+    </div>
   </div>
 
   <script src="js/main.js" defer></script>
