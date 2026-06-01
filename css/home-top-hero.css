@@ -508,36 +508,82 @@ body:is(.page-home, .page-prices, .page-materials, .page-contacts) {
   .page-home .top-hero {
     min-height: auto;
     justify-content: flex-start;
-    padding-bottom: clamp(3rem, 10vw, 5rem);
-    padding-top: clamp(5rem, 12vh, 7rem);
+    padding-bottom: clamp(2rem, 8vw, 3.5rem);
+    padding-top: clamp(4.5rem, 10vh, 6rem);
   }
 
   .top-hero__inner {
     grid-template-columns: 1fr;
     padding-top: clamp(0.5rem, 2vh, 1.25rem);
+    gap: clamp(1.15rem, 3vw, 1.75rem);
+  }
+
+  .top-hero__title {
+    font-size: clamp(1.65rem, 6.8vw, 2.15rem);
+    margin-bottom: 0.85rem;
+    padding-left: 0.85rem;
+  }
+
+  .top-hero__badge {
+    font-size: 0.72rem;
+    padding: 0.32rem 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .top-hero__sub {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin-bottom: 1.15rem;
+  }
+
+  .top-hero__cta {
+    gap: 0.5rem 0.65rem;
+  }
+
+  .top-hero__cta .btn-primary,
+  .top-hero__btn-outline {
+    padding: 0.58rem 1.05rem;
+    font-size: 0.8125rem;
+    border-radius: 7px;
+  }
+
+  .top-hero__cta .btn-primary {
+    gap: 0.4rem;
+  }
+
+  .top-hero__cta .header-cta__arrow {
+    width: 12px;
+    height: 12px;
   }
 
   .top-hero__photos {
-    order: -1;
-    max-width: 440px;
+    max-width: 380px;
     margin-inline: auto;
-    min-height: 240px;
+    min-height: 210px;
   }
 }
 
 @media (max-width: 540px) {
   .top-hero__cta {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .top-hero__cta .btn {
+    width: auto;
     justify-content: center;
     text-align: center;
   }
 
   .hero-photo-card__chip {
     font-size: 0.52rem;
+  }
+
+  .top-hero__photos {
+    max-width: 100%;
+    min-height: 190px;
+    gap: 0.5rem;
   }
 }
 

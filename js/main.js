@@ -50,7 +50,7 @@
 
     nav.querySelectorAll('.site-nav__link, .site-nav__dropdown-link, .site-nav__dropdown-more').forEach(function (link) {
       link.addEventListener('click', function () {
-        if (window.innerWidth <= 768) closeNav();
+        if (window.innerWidth <= 800) closeNav();
       });
     });
   }

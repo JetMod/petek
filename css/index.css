@@ -202,7 +202,7 @@ h3.contacts-show__card-tag {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .site-nav__dropdown {
     height: auto;
     flex-direction: column;
